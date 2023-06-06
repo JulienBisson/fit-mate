@@ -104,8 +104,8 @@ event2 = Event.create!(
   de convivialité et de bien-être.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
-  max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  max_participant: 6,
+  datetime: Date.parse("18-06-2023")
 )
 
 event3 = Event.create!(
@@ -118,9 +118,9 @@ event3 = Event.create!(
   deux équipes de deux joueurs. Que vous soyez débutant ou confirmé, venez vous
   amuser, vous dépenser et partager un moment de fair-play et de respect.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
-  event_level: "intermediate",
-  max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  event_level: "beginner",
+  max_participant: 4,
+  datetime: Date.parse("23-06-2023")
 )
 
 event4 = Event.create!(
@@ -134,9 +134,9 @@ event4 = Event.create!(
   relaxation. Que vous soyez débutant ou confirmé, venez vous détendre, vous
   étirer et partager un moment de sérénité et d’harmonie.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
-  event_level: "intermediate",
+  event_level: "beginner",
   max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("10-06-2023")
 )
 
 event5 = Event.create!(
@@ -167,7 +167,7 @@ event6 = Event.create!(
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
   max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("18-06-2023")
 )
 
 event7 = Event.create!(
@@ -180,9 +180,9 @@ event7 = Event.create!(
   artificiel. Que vous soyez débutant ou confirmé, venez vous
   amuser, vous dépasser et partager un moment de coopération et de confiance.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
-  event_level: "intermediate",
-  max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  event_level: "beginner",
+  max_participant: 6,
+  datetime: Date.parse("20-06-2023")
 )
 
 event8 = Event.create!(
@@ -197,8 +197,8 @@ event8 = Event.create!(
   de convivialité et de bien-être.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
-  max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  max_participant: 2,
+  datetime: Date.parse("18-06-2023")
 )
 
 event9 = Event.create!(
@@ -213,7 +213,7 @@ event9 = Event.create!(
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
   max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("22-06-2023")
 )
 
 event10 = Event.create!(
@@ -226,9 +226,9 @@ event10 = Event.create!(
   soyez à la recherche d’aventure, de nature ou de culture, venez vous évader,
   vous ressourcer et partager un moment de convivialité et de découverte.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
-  event_level: "intermediate",
+  event_level: "beginner",
   max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("23-06-2023")
 )
 
 event11 = Event.create!(
@@ -244,7 +244,7 @@ event11 = Event.create!(
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
   max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("26-06-2023")
 )
 
 event12 = Event.create!(
@@ -259,7 +259,7 @@ event12 = Event.create!(
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
   max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("19-06-2023")
 )
 
 event13 = Event.create!(
@@ -274,8 +274,8 @@ event13 = Event.create!(
   de convivialité et de bien-être.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
-  max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  max_participant: 2,
+  datetime: Date.parse("15-06-2023")
 )
 
 event14 = Event.create!(
@@ -293,7 +293,7 @@ event14 = Event.create!(
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
   max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("23-06-2023")
 )
 
 event15 = Event.create!(
@@ -306,9 +306,9 @@ event15 = Event.create!(
   deux équipes de deux joueurs. Que vous soyez débutant ou confirmé, venez vous
   amuser, vous dépenser et partager un moment de fair-play et de respect.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
-  event_level: "intermediate",
-  max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  event_level: "beginner",
+  max_participant: 4,
+  datetime: Date.parse("24-06-2023")
 )
 
 event16 = Event.create!(
@@ -322,9 +322,9 @@ event16 = Event.create!(
   débutant ou confirmé, venez vous amuser, vous dépenser et partager un moment
   de détente et de bien-être.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
-  event_level: "intermediate",
-  max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  event_level: "beginner",
+  max_participant: 6,
+  datetime: Date.parse("19-06-2023")
 )
 
 event17 = Event.create!(
@@ -338,8 +338,8 @@ event17 = Event.create!(
   amuser, vous dépasser et partager un moment de coopération et de confiance.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
-  max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  max_participant: 6,
+  datetime: Date.parse("21-06-2023")
 )
 
 event18 = Event.create!(
@@ -354,7 +354,7 @@ event18 = Event.create!(
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
   max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("23-06-2023")
 )
 
 event19 = Event.create!(
@@ -367,9 +367,9 @@ event19 = Event.create!(
   soyez à la recherche d’aventure, de nature ou de culture, venez vous évader,
   vous ressourcer et partager un moment de convivialité et de découverte.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
-  event_level: "intermediate",
+  event_level: "beginner",
   max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("17-06-2023")
 )
 
 event20 = Event.create!(
@@ -385,7 +385,7 @@ event20 = Event.create!(
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
   max_participant: 10,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("28-06-2023")
 )
 puts "Creating event_participants..."
 
