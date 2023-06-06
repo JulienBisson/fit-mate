@@ -1,2 +1,38 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<%# CAROUSEL %>
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active w-100" data-bs-interval="2000">
+      <%= image_tag('homepage-1.jpeg') %>
+    </div>
+    <div class="carousel-item w-100" data-bs-interval="2000">
+      <%= image_tag('homepage-2.jpeg') %>
+    </div>
+    <div class="carousel-item w-100" data-bs-interval="2000">
+      <%= image_tag('homepage-3.jpeg') %>
+    </div>
+    <div class="carousel-item w-100" data-bs-interval="2000">
+      <%= image_tag('homepage-4.jpeg') %>
+    </div>
+    <div class="carousel-item w-100" data-bs-interval="2000">
+      <%= image_tag('homepage-5.jpeg') %>
+    </div>
+    <div class="carousel-item w-100" data-bs-interval="2000">
+      <%= image_tag('homepage-6.jpeg') %>
+    </div>
+    <div class="carousel-item w-100" data-bs-interval="2000">
+      <%= image_tag('homepage-7.jpeg') %>
+    </div>
+    <div class="carousel-item w-100" data-bs-interval="2000">
+      <%= image_tag('homepage-8.jpeg') %>
+    </div>
+    <div class="carousel-item w-100" data-bs-interval="2000">
+      <%= image_tag('homepage-9.jpeg') %>
+    </div>
+  </div>
+  <div class="fitmate-homepage">
+    <h3 class="fitmate-title mb-3">FITMATE</h3>
+    <%= link_to 'Enter', "#", class: "btn-index" %>
+    <%= link_to 'SIGN UP', "#", class: "fitmate-signup" %>
+  </div>
+</div>
