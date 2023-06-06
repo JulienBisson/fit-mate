@@ -27,8 +27,6 @@
   position: absolute;
   inset: 0;
   z-index: 10;
-  display: flex;
-  justify-content: center;
   align-items: center;
   .fitmate-title {
     font-family: 'Permanent Marker', cursive;
@@ -38,14 +36,26 @@
   .btn-index {
     color: black;
     background-color: #F6D0A5;
-    padding: 8px 24px;
+    padding: 10px 40px;
     text-decoration: none;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     font-family: 'Permanent Marker', cursive;
+    font-size: 26px;
   }
-  .fitmate-signup {
+}
+
+.fitmate-signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  align-items: center;
+  margin-bottom: 100px;
+  .fitmate-signup-link {
     color: white;
     text-decoration: none;
     font-weight: bold;
