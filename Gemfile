@@ -7,6 +7,7 @@ gem "bootsnap", require: false
 gem "cloudinary"
 gem "devise"
 gem "font-awesome-sass", "~> 6.1"
+gem "geocoder"
 gem "jbuilder"
 gem "jsbundling-rails"
 gem "pg", "~> 1.1"
@@ -36,6 +37,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem "geocoder"
-
