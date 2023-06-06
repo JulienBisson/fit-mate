@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   namespace :organizer do
     resources :events, only: %i[new create edit update]
   end
-  resources :event_participations, only: %i[create update]
   resources :events, only: %i[index show] do
+    resources :event_participations, only: %i[update]
     resources :chatboxes, only: %i[show] do
       resources :messages, only: %i[create]
     end
