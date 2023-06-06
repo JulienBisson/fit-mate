@@ -1,4 +1,3 @@
 class Sport < ApplicationRecord
-  has_many :events
-  validates :title, presence: true
+  LIST = ['soccer', 'football', 'basket']
 end

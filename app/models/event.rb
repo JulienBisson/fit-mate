@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :organizer
-  belongs_to :sport
+  validates :sport, inclusion: { in: Sport::LIST }
   validates :title, presence: true
   validates :description, length: { maximum: 500 }, presence: true
   validates :localisation, presence: true

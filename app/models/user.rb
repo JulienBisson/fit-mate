@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_one_attached :photo
   validates :first_name, :last_name, :username, :age, presence: true
   validates :level_user, inclusion: { in: %w(beginner intermediate expert), message: "%{value} is not valid" }
+  validates :favorite_sport, inclusion: { in: Sport::LIST }
 end

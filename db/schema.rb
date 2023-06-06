@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_05_141513) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_142214) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,11 +68,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_141513) do
     t.integer "max_participant"
     t.datetime "datetime"
     t.bigint "organizer_id", null: false
-    t.bigint "sport_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["organizer_id"], name: "index_events_on_organizer_id"
-    t.index ["sport_id"], name: "index_events_on_sport_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -83,13 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_141513) do
     t.datetime "updated_at", null: false
     t.index ["chatbox_id"], name: "index_messages_on_chatbox_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "sports", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -117,7 +108,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_141513) do
   add_foreign_key "chatboxes", "events"
   add_foreign_key "event_participants", "events"
   add_foreign_key "event_participants", "users"
-  add_foreign_key "events", "sports"
   add_foreign_key "events", "users", column: "organizer_id"
   add_foreign_key "messages", "chatboxes"
   add_foreign_key "messages", "users"
