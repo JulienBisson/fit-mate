@@ -1,0 +1,25 @@
+.fitmate-container {
+  background-color: #4B4B4B;
+}
+
+.fitmate-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .form-control {
+    background-color: black;
+    color: #F6D0A5;
+  }
+  input::placeholder {
+    color:#F6D0A5;
+    opacity: 0.5;
+    font-style: italic;
+  }
+  .btn-submit {
+    color: black;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    background-color: #F6D0A5;
+  }
+}

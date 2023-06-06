@@ -3,6 +3,10 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    if params[:query].present?
+      @events = @events.where("sport ILIKE ? OR localisation ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    end
+
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,

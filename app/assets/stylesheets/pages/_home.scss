@@ -32,6 +32,7 @@
     font-family: 'Permanent Marker', cursive;
     color: white;
     font-size: 54px;
+    margin-bottom: 20px;
   }
   .btn-index {
     color: black;
@@ -43,6 +44,7 @@
     border-bottom-right-radius: 50px;
     font-family: 'Permanent Marker', cursive;
     font-size: 26px;
+    ;
   }
 }
 
@@ -50,7 +52,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  position: absolute;
+  position: inherit;
   inset: 0;
   z-index: 10;
   align-items: center;
