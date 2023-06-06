@@ -80,16 +80,479 @@ event1 = Event.create!(
   organizer_id: alice.id,
   sport: 'yoga',
   title: "Séance de yoga",
-  description: "qsdfghjkl",
+  description: "Vous êtes invités à participer à un évènement de yoga qui vous
+  fera découvrir les bienfaits de cette pratique millénaire sur votre corps et
+  votre esprit. Au programme, une séance complète de hatha yoga, comprenant des
+  exercices de respiration, des postures adaptées à votre niveau et un temps de
+  relaxation. Que vous soyez débutant ou confirmé, venez vous détendre, vous
+  étirer et partager un moment de sérénité et d’harmonie.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "intermediate",
   max_participant: 10,
   datetime: Date.parse("16-06-2023")
 )
+
+event2 = Event.create!(
+  organizer_id: alice.id,
+  sport: 'fitness',
+  title: "Séance de fitness",
+  description: "Vous êtes invités à participer à une de séance de fitness qui
+  vous fera découvrir les bienfaits du sport sur votre forme et votre santé.
+  Au programme, des exercices variés et adaptés à votre niveau, qui sollicitent
+  tous les muscles du corps et améliorent votre endurance. Que vous soyez
+  débutant ou confirmé, venez vous éclater, vous défouler et partager un moment
+  de convivialité et de bien-être.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 6,
+  datetime: Date.parse("18-06-2023")
+)
+
+event3 = Event.create!(
+  organizer_id: alice.id,
+  sport: 'tennis',
+  title: "Partie de tennis",
+  description: "Vous êtes invités à participer à une partie de
+  tennis qui vous fera découvrir les sensations du sport de raquette le plus
+  pratiqué au monde. Au programme, des matchs amicaux entre deux joueurs ou
+  deux équipes de deux joueurs. Que vous soyez débutant ou confirmé, venez vous
+  amuser, vous dépenser et partager un moment de fair-play et de respect.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "beginner",
+  max_participant: 4,
+  datetime: Date.parse("23-06-2023")
+)
+
+event4 = Event.create!(
+  organizer_id: alice.id,
+  sport: 'yoga',
+  title: "Séance de yoga",
+  description: "Vous êtes invités à participer à un évènement de yoga qui vous
+  fera découvrir les bienfaits de cette pratique millénaire sur votre corps et
+  votre esprit. Au programme, une séance complète de hatha yoga, comprenant des
+  exercices de respiration, des postures adaptées à votre niveau et un temps de
+  relaxation. Que vous soyez débutant ou confirmé, venez vous détendre, vous
+  étirer et partager un moment de sérénité et d’harmonie.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "beginner",
+  max_participant: 10,
+  datetime: Date.parse("10-06-2023")
+)
+
+event5 = Event.create!(
+  organizer_id: julien.id,
+  sport: 'basket',
+  title: "Partie de basket",
+  description: "Vous êtes invités à participer à une de partie de
+  basket qui vous fera découvrir les sensations du sport collectif le plus
+  pratiqué en salle. Au programme, des matchs amicaux entre deux équipes de
+  cinq joueurs. Que vous soyez débutant ou confirmé, venez vous amuser,
+  vous dépenser et partager un moment de fair-play et de respect.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 10,
+  datetime: Date.parse("16-06-2023")
+)
+
+event6 = Event.create!(
+  organizer_id: julien.id,
+  sport: 'boxing',
+  title: "Séance de boxe",
+  description: "Vous êtes invités à participer à une de séance de boxe
+  qui vous fera découvrir les sensations du sport de combat le plus pratiqué en
+  salle. Au programme, des exercices variés et adaptés à votre niveau, qui
+  sollicitent tous les muscles du corps et améliorent votre endurance.
+  Que vous soyez débutant ou confirmé, venez vous amuser, vous dépenser et
+  partager un moment de respect et de discipline.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 10,
+  datetime: Date.parse("18-06-2023")
+)
+
+event7 = Event.create!(
+  organizer_id: julien.id,
+  sport: 'escalation',
+  title: "Séance d'escalade",
+  description: "Vous êtes invités à participer à une séance
+  d’escalade qui vous fera découvrir les sensations du sport vertical.
+  Au programme, des voies ou des blocs adaptés à votre niveau, sur un mur
+  artificiel. Que vous soyez débutant ou confirmé, venez vous
+  amuser, vous dépasser et partager un moment de coopération et de confiance.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "beginner",
+  max_participant: 6,
+  datetime: Date.parse("20-06-2023")
+)
+
+event8 = Event.create!(
+  organizer_id: lea.id,
+  sport: 'fitness',
+  title: "Séance de fitness",
+  description: "Vous êtes invités à participer à une de séance de fitness qui
+  vous fera découvrir les bienfaits du sport sur votre forme et votre santé.
+  Au programme, des exercices variés et adaptés à votre niveau, qui sollicitent
+  tous les muscles du corps et améliorent votre endurance. Que vous soyez
+  débutant ou confirmé, venez vous éclater, vous défouler et partager un moment
+  de convivialité et de bien-être.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 2,
+  datetime: Date.parse("18-06-2023")
+)
+
+event9 = Event.create!(
+  organizer_id: lea.id,
+  sport: 'basket',
+  title: "Partie de basket",
+  description: "Vous êtes invités à participer à une de partie de
+  basket qui vous fera découvrir les sensations du sport collectif le plus
+  pratiqué en salle. Au programme, des matchs amicaux entre deux équipes de
+  cinq joueurs. Que vous soyez débutant ou confirmé, venez vous amuser,
+  vous dépenser et partager un moment de fair-play et de respect.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 10,
+  datetime: Date.parse("22-06-2023")
+)
+
+event10 = Event.create!(
+  organizer_id: lea.id,
+  sport: 'bike',
+  title: "Balade à vélo",
+  description: "Vous êtes invités à participer à une balade à vélo
+  qui vous fera découvrir les plus beaux itinéraires de Nantes. Au programme,
+  des parcours adaptés à tous les niveaux, du débutant au confirmé. Que vous
+  soyez à la recherche d’aventure, de nature ou de culture, venez vous évader,
+  vous ressourcer et partager un moment de convivialité et de découverte.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "beginner",
+  max_participant: 10,
+  datetime: Date.parse("23-06-2023")
+)
+
+event11 = Event.create!(
+  organizer_id: maxime.id,
+  sport: 'football',
+  title: "Partie de foot",
+  description: "Vous êtes conviés à une partie de foot qui vous
+  plongera dans l’univers du ballon rond. Au menu, des rencontres conviviales
+  entre deux équipes. Le but du jeu est de faire
+  trembler les filets de l’équipe adverse.
+  Que vous soyez novice ou expert, venez vous éclater,
+  vous défouler et partager un moment de sportivité et de respect.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 10,
+  datetime: Date.parse("26-06-2023")
+)
+
+event12 = Event.create!(
+  organizer_id: maxime.id,
+  sport: 'bike',
+  title: "Balade à vélo",
+  description: "Vous êtes invités à participer à une balade à vélo
+  qui vous fera découvrir les plus beaux itinéraires de Nantes. Au programme,
+  des parcours adaptés à tous les niveaux, du débutant au confirmé. Que vous
+  soyez à la recherche d’aventure, de nature ou de culture, venez vous évader,
+  vous ressourcer et partager un moment de convivialité et de découverte.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 10,
+  datetime: Date.parse("19-06-2023")
+)
+
+event13 = Event.create!(
+  organizer_id: maxime.id,
+  sport: 'bodybuilding',
+  title: "Séance de musculation",
+  description: "Vous êtes invités à participer à une de séance de musculation qui
+  vous fera découvrir les bienfaits du sport sur votre forme et votre santé.
+  Au programme, des exercices variés et adaptés à votre niveau, qui sollicitent
+  tous les muscles du corps et améliorent votre endurance. Que vous soyez
+  débutant ou confirmé, venez vous éclater, vous défouler et partager un moment
+  de convivialité et de bien-être.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 2,
+  datetime: Date.parse("15-06-2023")
+)
+
+event14 = Event.create!(
+  organizer_id: maxime.id,
+  sport: 'judo',
+  title: "Séance de judo",
+  description: "Vous êtes invités à participer à une séance de judo
+  qui vous fera découvrir les sensations du sport de combat le plus pratiqué en
+  France. Au programme, des exercices variés et adaptés à votre niveau, qui
+  sollicitent tous les muscles du corps et améliorent votre équilibre. Le but
+  du jeu est de maîtriser son adversaire en utilisant des techniques de
+  projection, d’immobilisation, d’étranglement ou de clé. Que vous soyez
+  débutant ou confirmé, venez vous amuser, vous dépasser et partager un moment
+  de respect et de discipline.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 10,
+  datetime: Date.parse("23-06-2023")
+)
+
+event15 = Event.create!(
+  organizer_id: sarah.id,
+  sport: 'tennis',
+  title: "Partie de tennis",
+  description: "Vous êtes invités à participer à une partie de
+  tennis qui vous fera découvrir les sensations du sport de raquette le plus
+  pratiqué au monde. Au programme, des matchs amicaux entre deux joueurs ou
+  deux équipes de deux joueurs. Que vous soyez débutant ou confirmé, venez vous
+  amuser, vous dépenser et partager un moment de fair-play et de respect.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "beginner",
+  max_participant: 4,
+  datetime: Date.parse("24-06-2023")
+)
+
+event16 = Event.create!(
+  organizer_id: sarah.id,
+  sport: 'swimming',
+  title: "Séance de natation",
+  description: "Vous êtes invités à participer à une séance de
+  natation qui vous fera découvrir les bienfaits du sport aquatique.
+  Au programme, des exercices variés et adaptés à votre niveau, qui sollicitent
+  tous les muscles du corps et améliorent votre endurance. Que vous soyez
+  débutant ou confirmé, venez vous amuser, vous dépenser et partager un moment
+  de détente et de bien-être.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "beginner",
+  max_participant: 6,
+  datetime: Date.parse("19-06-2023")
+)
+
+event17 = Event.create!(
+  organizer_id: sarah.id,
+  sport: 'escalation',
+  title: "Séance d'escalade",
+  description: "Vous êtes invités à participer à une séance
+  d’escalade qui vous fera découvrir les sensations du sport vertical.
+  Au programme, des voies ou des blocs adaptés à votre niveau, sur un mur
+  artificiel. Que vous soyez débutant ou confirmé, venez vous
+  amuser, vous dépasser et partager un moment de coopération et de confiance.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 6,
+  datetime: Date.parse("21-06-2023")
+)
+
+event18 = Event.create!(
+  organizer_id: lucas.id,
+  sport: 'rugby',
+  title: "Partie de rugby",
+  description: "Vous êtes invités à une partie de rugby qui vous
+  fera vivre les émotions du sport collectif le plus pratiqué en Australie.
+  Au menu, des rencontres conviviales entre deux équipes.Que vous soyez novice
+  ou expert, venez vous éclater, vous dépenser et partager un moment de
+  sportivité et de respect.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 10,
+  datetime: Date.parse("23-06-2023")
+)
+
+event19 = Event.create!(
+  organizer_id: lucas.id,
+  sport: 'bike',
+  title: "Balade à vélo",
+  description: "Vous êtes invités à participer à une balade à vélo
+  qui vous fera découvrir les plus beaux itinéraires de Nantes. Au programme,
+  des parcours adaptés à tous les niveaux, du débutant au confirmé. Que vous
+  soyez à la recherche d’aventure, de nature ou de culture, venez vous évader,
+  vous ressourcer et partager un moment de convivialité et de découverte.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "beginner",
+  max_participant: 4,
+  datetime: Date.parse("17-06-2023")
+)
+
+event20 = Event.create!(
+  organizer_id: lucas.id,
+  sport: 'football',
+  title: "Partie de foot",
+  description: "Vous êtes conviés à une partie de foot qui vous
+  plongera dans l’univers du ballon rond. Au menu, des rencontres conviviales
+  entre deux équipes. Le but du jeu est de faire
+  trembler les filets de l’équipe adverse.
+  Que vous soyez novice ou expert, venez vous éclater,
+  vous défouler et partager un moment de sportivité et de respect.",
+  localisation: "Rue du Pré Salé, 44200 Nantes",
+  event_level: "intermediate",
+  max_participant: 10,
+  datetime: Date.parse("28-06-2023")
+)
 puts "Creating event_participants..."
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: lucas.id,
+  event_id: event16.id
+)
 
 EventParticipant.create!(
   status: "maybe",
   user_id: lucas.id,
+  event_id: event14.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: lucas.id,
+  event_id: event17.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: lucas.id,
+  event_id: event10.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: alice.id,
+  event_id: event17.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: alice.id,
+  event_id: event19.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: alice.id,
+  event_id: event14.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: alice.id,
+  event_id: event10.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: maxime.id,
+  event_id: event20.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: maxime.id,
+  event_id: event19.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: maxime.id,
+  event_id: event4.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: maxime.id,
+  event_id: event7.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: julien.id,
+  event_id: event20.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: julien.id,
+  event_id: event8.id
+)
+
+EventParticipant.create!(
+  status: "decline",
+  user_id: julien.id,
+  event_id: event15.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: julien.id,
+  event_id: event9.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: lea.id,
+  event_id: event15.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: lea.id,
+  event_id: event16.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: lea.id,
+  event_id: event7.id
+)
+
+EventParticipant.create!(
+  status: "decline",
+  user_id: lea.id,
+  event_id: event3.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: sarah.id,
+  event_id: event4.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: sarah.id,
+  event_id: event7.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: sarah.id,
+  event_id: event8.id
+)
+
+EventParticipant.create!(
+  status: "decline",
+  user_id: sarah.id,
+  event_id: event9.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: lea.id,
+  event_id: event3.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: lea.id,
   event_id: event1.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: maxime.id,
+  event_id: event2.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: lucas.id,
+  event_id: event2.id
 )
