@@ -368,7 +368,7 @@ event19 = Event.create!(
   vous ressourcer et partager un moment de convivialité et de découverte.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
   event_level: "beginner",
-  max_participant: 10,
+  max_participant: 4,
   datetime: Date.parse("17-06-2023")
 )
 
@@ -390,7 +390,169 @@ event20 = Event.create!(
 puts "Creating event_participants..."
 
 EventParticipant.create!(
+  status: "accept",
+  user_id: lucas.id,
+  event_id: event16.id
+)
+
+EventParticipant.create!(
   status: "maybe",
   user_id: lucas.id,
+  event_id: event14.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: lucas.id,
+  event_id: event17.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: lucas.id,
+  event_id: event10.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: alice.id,
+  event_id: event17.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: alice.id,
+  event_id: event19.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: alice.id,
+  event_id: event14.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: alice.id,
+  event_id: event10.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: maxime.id,
+  event_id: event20.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: maxime.id,
+  event_id: event19.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: maxime.id,
+  event_id: event4.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: maxime.id,
+  event_id: event7.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: julien.id,
+  event_id: event20.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: julien.id,
+  event_id: event8.id
+)
+
+EventParticipant.create!(
+  status: "decline",
+  user_id: julien.id,
+  event_id: event15.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: julien.id,
+  event_id: event9.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: lea.id,
+  event_id: event15.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: lea.id,
+  event_id: event16.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: lea.id,
+  event_id: event7.id
+)
+
+EventParticipant.create!(
+  status: "decline",
+  user_id: lea.id,
+  event_id: event3.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: sarah.id,
+  event_id: event4.id
+)
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: sarah.id,
+  event_id: event7.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: sarah.id,
+  event_id: event8.id
+)
+
+EventParticipant.create!(
+  status: "decline",
+  user_id: sarah.id,
+  event_id: event9.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: lea.id,
+  event_id: event3.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: lea.id,
   event_id: event1.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: maxime.id,
+  event_id: event2.id
+)
+
+EventParticipant.create!(
+  status: "accept",
+  user_id: lucas.id,
+  event_id: event2.id
 )
