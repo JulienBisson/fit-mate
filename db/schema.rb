@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_06_142214) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_151751) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,13 +63,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_142214) do
     t.string "title"
     t.text "description"
     t.string "localisation"
-    t.boolean "soldout"
     t.string "event_level"
     t.integer "max_participant"
     t.datetime "datetime"
     t.bigint "organizer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sport"
     t.index ["organizer_id"], name: "index_events_on_organizer_id"
   end
 
@@ -98,7 +98,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_142214) do
     t.text "description"
     t.string "favorite_sport"
     t.boolean "certified_profile"
-    t.string "level_user"
+    t.string "sport_level"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

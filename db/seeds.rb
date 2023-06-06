@@ -9,6 +9,7 @@ require 'open-uri'
 
 puts "Cleaning database..."
 
+EventParticipant.destroy_all
 Event.destroy_all
 User.destroy_all
 
@@ -17,7 +18,7 @@ puts 'Creating user...'
 alice = User.create!(first_name: "Alice", last_name: "Martin", username: "alice25", age: 25,
   email: "alice.martin@gmail.com", password: "secret",
   description: "étudiante en littérature et passionnée de lecture",
-  favorite_sport: "Tennis et yoga", level_user: "intermediate")
+  favorite_sport: "yoga", sport_level: "intermediate")
 
 file = File.open(Rails.root.join("db/images/alice.jpg"))
 alice.photo.attach(io: file, filename: "alice.jpg", content_type: "image/jpeg")
@@ -27,7 +28,7 @@ julien = User.create!(first_name: "Julien", last_name: "Dubois", username: "Jule
   email: "julien.dubois@gmail.com", password: "secret",
   description: "Je suis un étudiant en informatique qui aime le cinéma, la musique et les jeux vidéo.
   Je suis curieux, créatif et sociable.",
-  favorite_sport: "musculation et basketball", level_user: "intermediate")
+  favorite_sport: "basket", sport_level: "intermediate")
 
 file = File.open(Rails.root.join("db/images/julien.jpg"))
 julien.photo.attach(io: file, filename: "julien.jpg", content_type: "image/jpeg")
@@ -37,7 +38,7 @@ lea = User.create!(first_name: "Lea", last_name: "richmond", username: "LeaR", a
   email: "Lea.richmond@gmail.com", password: "secret",
   description: "Je suis une infirmière qui aime voyager, lire et faire du yoga.
   Je suis douce, généreuse et dynamique.",
-  favorite_sport: "Natation et vélo", level_user: "intermediate")
+  favorite_sport: "bike", sport_level: "intermediate")
 
 file = File.open(Rails.root.join("db/images/lea.jpg"))
 lea.photo.attach(io: file, filename: "lea.jpg", content_type: "image/jpeg")
@@ -47,7 +48,7 @@ maxime = User.create!(first_name: "Maxime", last_name: "richard", username: "Max
   email: "Maxime.richard@gmail.com", password: "secret",
   description: "Je suis un ingénieur qui aime la nature, les animaux et la photographie.
   Je suis aventurier, passionné et drôle.",
-  favorite_sport: "Escalade et boxe", level_user: "intermediate")
+  favorite_sport: "boxing", sport_level: "intermediate")
 
 file = File.open(Rails.root.join("db/images/maxime.jpg"))
 maxime.photo.attach(io: file, filename: "maxime.jpg", content_type: "image/jpeg")
@@ -57,7 +58,7 @@ sarah = User.create!(first_name: "Sarah", last_name: "Dupont", username: "SarahD
   email: "Sarah.Dupont@gmail.com", password: "secret",
   description: "Je suis une professeure de français qui aime l’art, la littérature et le théâtre.
   Je suis cultivée, élégante et sympathique.",
-  favorite_sport: "fitness et badminton", level_user: "intermediate")
+  favorite_sport: "fitness", sport_level: "intermediate")
 
 file = File.open(Rails.root.join("db/images/sarah.jpg"))
 sarah.photo.attach(io: file, filename: "sarah.jpg", content_type: "image/jpeg")
@@ -66,7 +67,7 @@ sarah.save!
 lucas = User.create!(first_name: "Lucas", last_name: "Bernard", username: "LucasB", age: 37,
   email: "Lucas.Bernard@gmail.com", password: "secret",
   description: "Je suis un avocat qui aime le sport, la politique et le vin. Je suis ambitieux, charismatique et loyal.",
-  favorite_sport: "Rugby et paddle", level_user: "intermediate")
+  favorite_sport: "paddle", sport_level: "intermediate")
 
 file = File.open(Rails.root.join("db/images/lucas.jpg"))
 lucas.photo.attach(io: file, filename: "lucas.jpg", content_type: "image/jpeg")
@@ -74,14 +75,20 @@ lucas.save!
 
 puts "Creating events..."
 
-Event.create!(
+event1 = Event.create!(
   organizer_id: alice.id,
-  sport: yoga,
+  sport: 'yoga',
   title: "Séance de yoga",
-  description: "",
+  description: "qsdfghjkl",
   localisation: "Rue du Pré Salé, 44200 Nantes",
-  soldout: false,
   event_level: "intermediate",
   max_participant: 10,
   datetime: Date.parse("16-06-2023")
+)
+puts "Creating event_participants..."
+
+EventParticipant.create!(
+  status: "maybe",
+  user_id: lucas.id,
+  event_id: event1.id
 )
