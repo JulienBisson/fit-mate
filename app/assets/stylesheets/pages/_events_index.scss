@@ -23,3 +23,34 @@
     background-color: #F6D0A5;
   }
 }
+
+/* Cibler la barre de recherche principale */
+.mapboxgl-ctrl-geocoder {
+  /* Ajoutez vos styles personnalisés ici */
+  background-color: #4B4B4B;
+}
+
+/* Cibler la zone de saisie de texte */
+.mapboxgl-ctrl-geocoder input[type="text"] {
+  /* Ajoutez vos styles personnalisés ici */
+}
+
+.mapboxgl-ctrl-geocoder input[type="text"]::placeholder {
+  /* Ajoutez les styles personnalisés pour le placeholder */
+}
+
+
+/* Cibler le bouton de recherche */
+.mapboxgl-ctrl-geocoder button[type="button"] {
+  /* Ajoutez vos styles personnalisés ici */
+}
+
+/* Cibler les résultats de recherche */
+.mapboxgl-ctrl-geocoder .suggestions {
+  /* Ajoutez vos styles personnalisés ici */
+}
+
+/* Cibler les résultats individuels de recherche */
+.mapboxgl-ctrl-geocoder .suggestion-item {
+  /* Ajoutez vos styles personnalisés ici */
+}
