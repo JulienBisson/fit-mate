@@ -1,0 +1,20 @@
+<div class="fitmate-container-show">
+  <div class="show-header">
+    <div class="show-title">
+      <%= @event.title %>
+      <%= @event.localisation.split(" ").last %>
+    </div>
+    <div class="show-image">
+      <%= image_tag('soccer-1.jpg', class:"image-event") %>
+    </div>
+    <div class="show-distance">
+      <%= @event.localisation %>
+    </div>
+    <div class="show-duration-level">
+      <%= @event.event_level %>
+    </div>
+    <div class="show-description">
+      <%= @event.description %>
+    </div>
+  </div>
+</div>
