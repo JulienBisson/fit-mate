@@ -1,0 +1,14 @@
+<h1>Add an Event</h1>
+
+<%= simple_form_for(@event) do |f| %>
+  <%= f.input :sport, collection: Sport::LIST%>
+  <%= f.input :datetime %>
+  <%= f.input :localisation %>
+  <%= f.input :event_level, collection: ['Beginner', 'Intermediate', 'Expert'], as: :radio_buttons%>
+  <%= f.input :max_participant %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+
+<%# , as: :radio_buttons %>
