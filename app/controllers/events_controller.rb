@@ -21,10 +21,4 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @organizer = @event.organizer
   end
-
-  def new
-  end
-
-  def create
-  end
 end
