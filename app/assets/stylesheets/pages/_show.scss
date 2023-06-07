@@ -2,6 +2,10 @@ body {
   padding: 20px 0px;
 }
 
+.fitmate-container-show {
+  background-color: #4B4B4B;
+}
+
 .show-distance, .show-description {
   padding: 0 20px;
 }
@@ -22,4 +26,24 @@ body {
   width: 200px;
   border-radius: 15px;
   object-fit: cover;
+}
+
+.show-distance i {
+  margin-right: 10px;
+}
+.show-organizer-img {
+  .organizer-img {
+    height: 50px;
+    width: 50px;
+    margin: 10px 10px 10px 20px;
+    border: 1px solid #F6D0A5;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+  i {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
 }

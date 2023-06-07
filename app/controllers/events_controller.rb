@@ -19,6 +19,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @organizer = @event.organizer
   end
 
   def new
