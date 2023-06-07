@@ -9,16 +9,21 @@ export default class extends Controller {
   }
 
   connect() {
-    mapboxgl.accessToken = this.apiKeyValue
+    mapboxgl.accessToken = this.apiKeyValue;
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/pdunleav/cjofefl7u3j3e2sp0ylex3cyb"
-    })
+      // style: "mapbox://styles/pdunleav/cjofefl7u3j3e2sp0ylex3cyb",
+      style: "mapbox://styles/mapbox/dark-v10",
+    });
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-                                        mapboxgl: mapboxgl }))
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,mapboxgl: mapboxgl,placeholder: 'Rechercher un lieu'}))
+    
+    var existingLayers = this.map.getStyle().layers;
+    existingLayers.forEach(function(layer) {
+      console.log(layer.id);
+    });
   }
 
   #addMarkersToMap() {
@@ -41,7 +46,4 @@ export default class extends Controller {
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
-
-
-  
 }
