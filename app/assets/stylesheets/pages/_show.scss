@@ -1,13 +1,9 @@
-body {
-  padding: 20px 0px;
+.page-container { //page commune pour tous le monde
+  padding: 20px;
 }
-
 .fitmate-container-show {
   background-color: #4B4B4B;
-}
-
-.show-distance, .show-description {
-  padding: 0 20px;
+  color: white;
 }
 
 .fitmate-container-show {
@@ -26,24 +22,42 @@ body {
   width: 200px;
   border-radius: 15px;
   object-fit: cover;
+  // margin-left
 }
 
 .show-distance i {
   margin-right: 10px;
 }
-.show-organizer-img {
-  .organizer-img {
-    height: 50px;
-    width: 50px;
-    margin: 10px 10px 10px 20px;
-    border: 1px solid #F6D0A5;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+
+.organizer-img {
+  height: 50px;
+  width: 50px;
+  margin: 10px 10px 10px 20px;
+  border: 1px solid #F6D0A5;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+;.btn-message, .btn-interested {
+  padding: 8px 24px;
+  border: 0px solid;
+  border-radius: 50px;
+  font-weight: bold;
+  background-color: #F6D0A5;
+  a {
+    color: #4B4B4B;
+    text-decoration: none;
   }
-  i {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 20px;
+}
+
+.btn-interested {
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  background-color: #F6D0A5;
+  a {
+    color: #4B4B4B;
+    text-decoration: none;
   }
 }

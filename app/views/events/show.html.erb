@@ -1,4 +1,4 @@
-<div class="fitmate-container-show">
+<div class="fitmate-container-show page-container">
   <div class="show-header">
     <div class="show-title">
       <%= @event.title %>
@@ -25,11 +25,33 @@
     </div>
     <div class="show-organizer">
       <p>Organized by</p>
-      <div class="show-organizer-img">
-        <%= cl_image_tag @organizer.photo.key, class:"organizer-img" %>
-        <%= @event.organizer.username %>
-        <i class="fa-sharp fa-solid fa-share-nodes" style="color: #f6d0a5;"></i>
+      <div class="show-organizer-img d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <%= cl_image_tag @organizer.photo.key, class:"organizer-img" %>
+          <p class="m-0"><%= @event.organizer.username %></p>
+        </div>
+        <i class="fa-sharp fa-solid fa-share-nodes fa-2xl" style="color: #f6d0a5;"></i>
       </div>
+    </div>
+    <div class="show-participant">
+
+      <p><%= @event.users.count %> /<%= @event.max_participant %> mates participate</p>
+        <% @event.users.each do |participant| %>
+          <div class="show-each-participant">
+            <%= cl_image_tag participant.photo.key, class:'organizer-img' %>
+            <%= participant.username %>
+          </div>
+        <% end %>
+    </div>
+    <div class="btn-message-interested d-flex justify-content-center mt-3">
+      <button class= "btn-message">
+        <%= link_to "Message", "#" %>
+        <%= image_tag('icon-message.svg') %>
+      </button>
+      <button class= "btn-interested">
+        <%= link_to "Interested", "#" %>
+        <i class="fa-solid fa-chevron-down" style="color: #4B4B4B;"></i>
+      </button>
     </div>
 
   </div>
