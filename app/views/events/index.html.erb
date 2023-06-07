@@ -1,16 +1,31 @@
 <div class="fitmate-container">
   <div class="fitmate-search">
     <div class="col-sm-8 my-3">
-      <%= form_with url: events_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "🔍 Which sport ? Which localisation ?"
-      %>
-      <%= submit_tag "Search", name: "", class: "btn-submit" %>
+      <%= form_with url: events_path, method: :post, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "🔍 Which sport ? Which location ?"
+        %>
+        <%= submit_tag "Search", name: "", class: "btn-submit" %>
       <% end %>
     </div>
   </div>
-  <div id='map' style='width: 100%; height: 844px;' data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
+  <div id='map' style='width: 100%; height: 422px;' data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
+  </div>
+  <%# PSEUDO CODE FILTRE %>
+  <%# filtres : event_level, sport %>
+  <div>
+    <form id="filter-form">
+      <label for="filter-category">Catégorie :</label>
+      <select id="filter-category">
+        <option value="">Tous les sports</option>
+        <option value="boxing">Boxing</option>
+        <option value="running">Running</option>
+      </select>
+      <button type="submit">Filtrer</button>
+    </form>
+
+
   </div>
 </div>

@@ -54,3 +54,25 @@
 .mapboxgl-ctrl-geocoder .suggestion-item {
   /* Ajoutez vos styles personnalisés ici */
 }
+
+.btn-al {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-al:hover {
+  background-color: #555;
+}
+
+.btn-al:focus {
+  outline: none;
+  box-shadow: 0 0 4px #fff;
+}
