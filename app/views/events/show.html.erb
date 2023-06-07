@@ -8,7 +8,14 @@
       <%= image_tag('soccer-1.jpg', class:"image-event") %>
     </div>
     <div class="show-distance">
-      <%= @event.localisation %>
+      <% user_coordinates = request.location.coordinates %>
+      <% wagon_coordinates = [47.21112643898949, -1.5500990500139393] %>
+      <% event_coordinates = [@event.latitude, @event.longitude] %>
+      <% unless user_coordinates.empty? %>
+        <%= Geocoder::Calculations.distance_between([user_coordinates],[@event.latitude,@event.longitude]) %>
+      <% else %>
+        <%= Geocoder::Calculations.distance_between(wagon_coordinates,[@event.latitude,@event.longitude]).round(2) km from your position %>
+      <% end %>
     </div>
     <div class="show-duration-level">
       <%= @event.event_level %>

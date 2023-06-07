@@ -102,7 +102,7 @@ event2 = Event.create!(
   tous les muscles du corps et améliorent votre endurance. Que vous soyez
   débutant ou confirmé, venez vous éclater, vous défouler et partager un moment
   de convivialité et de bien-être.",
-  localisation: "entre Commercial Beaulieu, Bd Général de Gaulle, 44200 Nantes",
+  localisation: "Centre Commercial Beaulieu, Bd Général de Gaulle, 44200 Nantes",
   event_level: "intermediate",
   max_participant: 6,
   datetime: Date.parse("18-06-2023")
