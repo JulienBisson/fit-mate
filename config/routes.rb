@@ -18,5 +18,6 @@ Rails.application.routes.draw do
       resources :messages, only: %i[create]
     end
   end
+  resources :users, only: %i[show]
 end
 # organizer quand je créé events mais user quand index/show
