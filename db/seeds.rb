@@ -1,5 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+# The data can then be loaded wgvjygujgjjbjbith the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
 #
@@ -102,7 +102,7 @@ event2 = Event.create!(
   tous les muscles du corps et améliorent votre endurance. Que vous soyez
   débutant ou confirmé, venez vous éclater, vous défouler et partager un moment
   de convivialité et de bien-être.",
-  localisation: "entre Commercial Beaulieu, Bd Général de Gaulle, 44200 Nantes",
+  localisation: "Centre Commercial Beaulieu, Bd Général de Gaulle, 44200 Nantes",
   event_level: "intermediate",
   max_participant: 6,
   datetime: Date.parse("18-06-2023")

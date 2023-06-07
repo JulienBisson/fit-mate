@@ -1,0 +1,63 @@
+.page-container { //page commune pour tous le monde
+  padding: 20px;
+}
+.fitmate-container-show {
+  background-color: #4B4B4B;
+  color: white;
+}
+
+.fitmate-container-show {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-title {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.image-event {
+  height: 100px;
+  width: 200px;
+  border-radius: 15px;
+  object-fit: cover;
+  // margin-left
+}
+
+.show-distance i {
+  margin-right: 10px;
+}
+
+.organizer-img {
+  height: 50px;
+  width: 50px;
+  margin: 10px 10px 10px 20px;
+  border: 1px solid #F6D0A5;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+;.btn-message, .btn-interested {
+  padding: 8px 24px;
+  border: 0px solid;
+  border-radius: 50px;
+  font-weight: bold;
+  background-color: #F6D0A5;
+  a {
+    color: #4B4B4B;
+    text-decoration: none;
+  }
+}
+
+.btn-interested {
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  background-color: #F6D0A5;
+  a {
+    color: #4B4B4B;
+    text-decoration: none;
+  }
+}
