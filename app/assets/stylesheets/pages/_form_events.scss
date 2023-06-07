@@ -1,0 +1,63 @@
+body {
+  background-color: #414141;
+}
+
+.container-event{
+  background-color: #414141;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 50px;
+
+  .title-event{
+    background-color: #414141;
+    color: white;
+    text-align: center;
+  }
+
+  .form-new-events{
+  display: flex;
+  justify-content: center;
+  background-color: #414141;
+  }
+}
+
+.sport-selection{
+  align-items: center;
+  color: white;
+
+  .category-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+    flex-wrap: wrap;
+    padding: 0px 20px 0px 20px;
+
+    .category-item{
+      margin: 5px 0;
+
+      .category-selector{
+        position: absolute;
+        transform: scale(0)
+      }
+    }
+  }
+}
+
+.category-selector + label{
+  cursor: pointer;
+  color: black;
+  background-color: #F0D1AF;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 6px;
+}
+
+.category-selector:checked + label{
+color: white;
+}
+
+.select-date .datetime{
+  color: #888888;
+}

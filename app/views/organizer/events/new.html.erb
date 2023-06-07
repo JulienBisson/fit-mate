@@ -1,14 +1,31 @@
-<h1>Add an Event</h1>
+<div class="container-event">
 
-<%= simple_form_for(@event) do |f| %>
-  <%= f.input :sport, collection: Sport::LIST%>
-  <%= f.input :datetime %>
-  <%= f.input :localisation %>
-  <%= f.input :event_level, collection: ['Beginner', 'Intermediate', 'Expert'], as: :radio_buttons%>
-  <%= f.input :max_participant %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.submit %>
-<% end %>
+  <div class="title-event">
+    <h1>Add an Event</h1>
+  </div>
 
-<%# , as: :radio_buttons %>
+  <div class= "form-new-events">
+    <%= simple_form_for(@event) do |f| %>
+    <div class="sport-selection">
+        <%= f.input :sport,
+                as: :radio_buttons,
+                collection_wrapper_tag: 'div',
+                collection_wrapper_class: 'category-wrapper',
+                item_wrapper_class: 'category-item',
+                input_html: {class: 'category-selector'},
+                collection: Sport::LIST%>
+    </div>
+      <div class= "select-date">
+        <%= f.input :datetime, label: false, html5: true%>
+      </div>
+
+      <%= f.input :localisation, label: false, placeholder: "localisation" %>
+      <%= f.input :event_level, collection: ['Beginner', 'Intermediate', 'Expert'], as: :radio_buttons%>
+      <%= f.input :max_participant %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+</div>
