@@ -1,46 +1,70 @@
-<div class="container-event">
-
-  <div class="title-event">
-    <h1>Add an Event</h1>
-  </div>
-
-  <div class= "form-new-events">
-    <%= simple_form_for(@event) do |f| %>
-    <div class="sport-selection">
-      <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Dropdown link
-      </a>
-        <%= f.input :sport,
-                as: :radio_buttons,
-                collection_wrapper_tag: 'div',
-                collection_wrapper_class: 'category-wrapper',
-                item_wrapper_class: 'category-item',
-                input_html: {class: 'category-selector'},
-                collection: Sport::LIST%>
+<div class="event-wrapper">
+  <div class="container-event">
+    <%# TITLE %>
+    <div class="title-event">
+      <h1>Add an Event</h1>
     </div>
-      <div class= "select-date">
-        <%= f.input :datetime, label: false, html5: true%>
-      </div>
-      <div class= "localisation-event">
-        <%= f.input :localisation, label: false, placeholder: "Addresse" %>
-      </div>
-      <div class="event-level">
-        <%= f.input :event_level, collection: ['Beginner', 'Intermediate', 'Expert'], as: :radio_buttons%>
-      </div>
-      <div class="max-participant-event">
-        <%= f.input :max_participant, label: false, placeholder: "Nombre de participant" %>
-      </div>
-      <div class="title-event">
-        <%= f.input :title, label: false, placeholder: "Titre de l'évènement" %>
-      </div>
-      <div class="description-event">
-        <%= f.input :description, label: false, placeholder: "Description de l'évènement"%>
-      </div>
-      <div class="photo-event">
-        <%= f.input :photo, as: :file%>
-      </div>
-      <%= f.submit "Ajouter", class: "btn-signin btn-create-event"%>
-    <% end %>
-  </div>
 
+    <%# FORM %>
+    <div class= "form-new-events">
+      <%= simple_form_for(@event) do |f| %>
+
+        <%# SPORT SELECT %>
+        <div class="sport-selection">
+          <div class="dropdown sport-event">
+            <button class="dropdown-toggle btn-sport-event" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Sport
+            </button>
+            <div class="dropdown-menu">
+                <%= f.input :sport, label: false,
+                  as: :radio_buttons,
+                  collection_wrapper_tag: 'div',
+                  collection_wrapper_class: 'category-wrapper',
+                  item_wrapper_class: 'category-item',
+                  input_html: {class: 'category-selector'},
+                  collection: Sport::LIST%>
+            </div>
+          </div>
+        </div>
+
+        <%# DATE %>
+        <div class= "select-date">
+          <%= f.input :datetime, label: false, html5: true%>
+        </div>
+
+        <%# LOCAL %>
+        <div class= "localisation-event">
+          <%= f.input :localisation, label: false, placeholder: "Addresse" %>
+        </div>
+
+        <%# LEVEL %>
+        <div class="event-level">
+          <%= f.input :event_level, collection: ['Beginner', 'Intermediate', 'Expert'], as: :radio_buttons%>
+        </div>
+
+        <%# PARTICIPANTS %>
+        <div class="max-participant-event">
+          <%= f.input :max_participant, label: false, placeholder: "Nombre de participant" %>
+        </div>
+
+        <%# TITLE %>
+        <div class="title-event">
+          <%= f.input :title, label: false, placeholder: "Titre de l'évènement" %>
+        </div>
+
+        <%# DESC %>
+        <div class="description-event">
+          <%= f.input :description, label: false, placeholder: "Description de l'évènement"%>
+        </div>
+
+        <%# IMG %>
+        <div class="photo-event">
+          <%= f.input :photo, as: :file%>
+        </div>
+
+        <%# CTA %>
+        <%= f.submit "Ajouter", class: "btn-signin btn-create-event"%>
+      <% end %>
+    </div>
+  </div>
 </div>
