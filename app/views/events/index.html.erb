@@ -1,27 +1,11 @@
 <div class="fitmate-container">
-  </div>
   <div id='map' style='width: 100%; height: 422px;' data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
   </div>
-  <%# PSEUDO CODE FILTRE %>
-  <%# filtres : event_level, sport %>
   <div>
-    <form id="filter-form" data-action="submit->map#filter">
-      <label for="filter-sport">Sports :</label>
-      <select id="filter-sport">
-        <option value="">Tous les sports</option>
-        <option value="boxing">Boxing</option>
-        <option value="running">Running</option>
-      </select>
-      <button type="submit">Filtrer</button>
-    </form>
-
-
+    <%= form_with url: events_path, method: :get do |form| %>
+    <%= form.label :query, "sports" %>
+    <%= form.select :query, @sports %>
+    <%= form.submit "Filter" %>
+    <% end %>
   </div>
-
-<script>
-  console.log("Hello");
-  let geojson = <%= raw @geojson %>;
-  console.log("Goodbye");
-</script>
-
 </div>

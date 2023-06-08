@@ -26,37 +26,6 @@ export default class extends Controller {
       console.log("testal");
       console.log(layer.id);
     });
-
-    // DEBUT AJOUT CALQUE SYLMBOL LAYER
-    this.map.addLayer({
-      id: 'sportsselected',
-      type: 'symbol',
-      source: {
-        type: 'geojson',
-        data: 'data.geojson',
-      },
-      layout: {
-        'icon-image': 'marker-15',
-        'icon-allow-overlap': true,
-      }
-    });
-    // FIN AJOUT CALQUE SYLMBOL LAYER
-
-    // DEBUT FONCTION FILTRE
-    let filterForm = document.getElementById('filter-form');
-
-    filterForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      let selectedSport = document.getElementById('filter-sport').value;
-      this.map.setFilter('points', ['==', 'sport', selectedSport]);
-    });
-
-    filter(event) {
-      event.preventDefault();
-      const selectedSport = document.getElementById('filter-sport').value;
-      this.map.setFilter('points', ['==', 'sport', selectedSport]);
-    };
-    // FIN FONCTION FILTRE
   }
 
   #addMarkersToMap() {

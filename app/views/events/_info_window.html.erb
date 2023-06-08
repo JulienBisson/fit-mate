@@ -1,2 +1,4 @@
 <h2><%= event.title %></h2>
 <p><%= event.localisation %></p>
+<p><%= event.sport %></p>
+<p>proposé par <%= User.find(event.organizer_id).username %></p>
