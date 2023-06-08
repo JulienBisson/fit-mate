@@ -91,6 +91,9 @@ event1 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("16-06-2023")
 )
+file = File.open(Rails.root.join("db/images/yoga.jpg"))
+event1.photo.attach(io: file, filename: "yoga.jpg", content_type: "image/jpeg")
+event1.save!
 
 event2 = Event.create!(
   organizer_id: alice.id,
@@ -107,6 +110,9 @@ event2 = Event.create!(
   max_participant: 6,
   datetime: Date.parse("18-06-2023")
 )
+file = File.open(Rails.root.join("db/images/fitness.jpg"))
+event2.photo.attach(io: file, filename: "fitness.jpg", content_type: "image/jpeg")
+event2.save!
 
 event3 = Event.create!(
   organizer_id: alice.id,
@@ -122,6 +128,9 @@ event3 = Event.create!(
   max_participant: 4,
   datetime: Date.parse("23-06-2023")
 )
+file = File.open(Rails.root.join("db/images/tennis.jpg"))
+event3.photo.attach(io: file, filename: "tennis.jpg", content_type: "image/jpeg")
+event3.save!
 
 event4 = Event.create!(
   organizer_id: alice.id,
@@ -138,6 +147,9 @@ event4 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("10-06-2023")
 )
+file = File.open(Rails.root.join("db/images/yoga.jpg"))
+event4.photo.attach(io: file, filename: "yoga.jpg", content_type: "image/jpeg")
+event4.save!
 
 event5 = Event.create!(
   organizer_id: julien.id,
@@ -153,6 +165,9 @@ event5 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("16-06-2023")
 )
+file = File.open(Rails.root.join("db/images/basket.jpg"))
+event5.photo.attach(io: file, filename: "basket.jpg", content_type: "image/jpeg")
+event5.save!
 
 event6 = Event.create!(
   organizer_id: julien.id,
@@ -169,6 +184,9 @@ event6 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("18-06-2023")
 )
+file = File.open(Rails.root.join("db/images/boxing.jpg"))
+event6.photo.attach(io: file, filename: "boxing.jpg", content_type: "image/jpeg")
+event6.save!
 
 event7 = Event.create!(
   organizer_id: julien.id,
@@ -184,6 +202,9 @@ event7 = Event.create!(
   max_participant: 6,
   datetime: Date.parse("20-06-2023")
 )
+file = File.open(Rails.root.join("db/images/escalation.jpg"))
+event7.photo.attach(io: file, filename: "escalation.jpg", content_type: "image/jpeg")
+event7.save!
 
 event8 = Event.create!(
   organizer_id: lea.id,
@@ -200,6 +221,9 @@ event8 = Event.create!(
   max_participant: 2,
   datetime: Date.parse("18-06-2023")
 )
+file = File.open(Rails.root.join("db/images/fitness.jpg"))
+event8.photo.attach(io: file, filename: "fitness.jpg", content_type: "image/jpeg")
+event8.save!
 
 event9 = Event.create!(
   organizer_id: lea.id,
@@ -215,6 +239,9 @@ event9 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("22-06-2023")
 )
+file = File.open(Rails.root.join("db/images/basket.jpg"))
+event9.photo.attach(io: file, filename: "basket.jpg", content_type: "image/jpeg")
+event9.save!
 
 event10 = Event.create!(
   organizer_id: lea.id,
@@ -230,6 +257,9 @@ event10 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("23-06-2023")
 )
+file = File.open(Rails.root.join("db/images/bike.jpg"))
+event10.photo.attach(io: file, filename: "bike.jpg", content_type: "image/jpeg")
+event10.save!
 
 event11 = Event.create!(
   organizer_id: maxime.id,
@@ -246,6 +276,9 @@ event11 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("26-06-2023")
 )
+file = File.open(Rails.root.join("db/images/football.jpg"))
+event11.photo.attach(io: file, filename: "football.jpg", content_type: "image/jpeg")
+event11.save!
 
 event12 = Event.create!(
   organizer_id: maxime.id,
@@ -261,6 +294,9 @@ event12 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("19-06-2023")
 )
+file = File.open(Rails.root.join("db/images/bike.jpg"))
+event12.photo.attach(io: file, filename: "bike.jpg", content_type: "image/jpeg")
+event12.save!
 
 event13 = Event.create!(
   organizer_id: maxime.id,
@@ -277,6 +313,9 @@ event13 = Event.create!(
   max_participant: 2,
   datetime: Date.parse("15-06-2023")
 )
+file = File.open(Rails.root.join("db/images/bodybuilding.jpg"))
+event13.photo.attach(io: file, filename: "bodybuilding.jpg", content_type: "image/jpeg")
+event13.save!
 
 event14 = Event.create!(
   organizer_id: maxime.id,
@@ -295,6 +334,9 @@ event14 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("23-06-2023")
 )
+file = File.open(Rails.root.join("db/images/judo.jpg"))
+event14.photo.attach(io: file, filename: "judo.jpg", content_type: "image/jpeg")
+event14.save!
 
 event15 = Event.create!(
   organizer_id: sarah.id,
@@ -310,6 +352,9 @@ event15 = Event.create!(
   max_participant: 4,
   datetime: Date.parse("24-06-2023")
 )
+file = File.open(Rails.root.join("db/images/tennis.jpg"))
+event15.photo.attach(io: file, filename: "tennis.jpg", content_type: "image/jpeg")
+event15.save!
 
 event16 = Event.create!(
   organizer_id: sarah.id,
@@ -326,6 +371,9 @@ event16 = Event.create!(
   max_participant: 6,
   datetime: Date.parse("19-06-2023")
 )
+file = File.open(Rails.root.join("db/images/swimming.jpg"))
+event16.photo.attach(io: file, filename: "swimming.jpg", content_type: "image/jpeg")
+event16.save!
 
 event17 = Event.create!(
   organizer_id: sarah.id,
@@ -341,6 +389,9 @@ event17 = Event.create!(
   max_participant: 6,
   datetime: Date.parse("21-06-2023")
 )
+file = File.open(Rails.root.join("db/images/escalation.jpg"))
+event17.photo.attach(io: file, filename: "escalation.jpg", content_type: "image/jpeg")
+event17.save!
 
 event18 = Event.create!(
   organizer_id: lucas.id,
@@ -356,6 +407,9 @@ event18 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("23-06-2023")
 )
+file = File.open(Rails.root.join("db/images/rugby.jpg"))
+event18.photo.attach(io: file, filename: "rugby.jpg", content_type: "image/jpeg")
+event18.save!
 
 event19 = Event.create!(
   organizer_id: lucas.id,
@@ -371,6 +425,9 @@ event19 = Event.create!(
   max_participant: 4,
   datetime: Date.parse("17-06-2023")
 )
+file = File.open(Rails.root.join("db/images/bike.jpg"))
+event19.photo.attach(io: file, filename: "bike.jpg", content_type: "image/jpeg")
+event19.save!
 
 event20 = Event.create!(
   organizer_id: lucas.id,
@@ -387,6 +444,10 @@ event20 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("28-06-2023")
 )
+file = File.open(Rails.root.join("db/images/football.jpg"))
+event20.photo.attach(io: file, filename: "football.jpg", content_type: "image/jpeg")
+event20.save!
+
 puts "Creating event_participants..."
 
 EventParticipant.create!(
