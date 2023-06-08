@@ -2,7 +2,8 @@ class Event < ApplicationRecord
   belongs_to :organizer, class_name: "User"
   has_many :event_participants
   has_many :users, through: :event_participants
-  
+  has_one_attached :photo
+
   validates :sport, inclusion: { in: Sport::LIST }
   validates :title, presence: true
   validates :description, length: { maximum: 800 }, presence: true

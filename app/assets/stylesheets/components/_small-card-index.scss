@@ -19,9 +19,10 @@
   font-weight:bold ;
 }
 
-.picto{
-  width: 20px;
-  height: 20px;
+.pictogram {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
 
@@ -31,4 +32,8 @@
   border-radius: 5px;
   margin: 7px;
   object-fit: inherit;
+}
+
+.picto-sport {
+  margin-right: 10px;
 }
