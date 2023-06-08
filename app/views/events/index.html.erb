@@ -3,39 +3,26 @@
   <div class="fitmate-container">
     <div class="fitmate-title">FitMate</div>
       <div class="form-container">
-       <%= form_with url: events_path, method: :get do |form| %>
-        <div class="inside-form-container">
-         <%= form.label :query, "Filtres:", class: "form-label" %>
-          <div class="formpasselect"> <%= form.select :query, [["all sports", ""]] + @selected_sports %>
+        <%= form_with url: events_path, method: :get do |form| %>
+          <div class="inside-form-container">
+            <%= form.label :query, "Filtres:", class: "form-label" %>
+            <div class="formpasselect">
+              <%= form.select :query, [["all sports", ""]] + @selected_sports %>
+            </div>
+            <%= form.submit "Go!", class: "form-submit" %>
+            <% end %>
           </div>
-        <%= form.submit "Go!", class: "form-submit" %>
-        <% end %>
       </div>
-      <div id='map' style='width: 100%; height: 422px;' data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
+      <div id='map' data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
       </div>
-      <%# PSEUDO CODE FILTRE %>
-      <%# filtres : event_level, sport %>
-      <div>
-        <form id="filter-form">
-          <label for="filter-category">Catégorie :</label>
-          <select id="filter-category">
-            <option value="">Tous les sports</option>
-            <option value="boxing">Boxing</option>
-            <option value="running">Running</option>
-          </select>
-          <button type="submit">Filtrer</button>
-        </form>
-      </div>
-     <div id='map' data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
-     </div>
-
+    </div>
+  </div>
 
   <%# mini card sur  %>
   <div class="big-container">
-
-  </div>
     <% @events.each do |event| %>
-      <div class="card-container d-flex align-items-center" data-displayevent-target= "card"</div>>
+  </div>
+      <div class="card-container d-flex align-items-center" data-displayevent-target= "display "</div>>
         <%= cl_image_tag event.photo.key, class:"image" %>
         <div class="card-infos">
           <div class="card-infos-details d-flex align-items-center mb-3">
