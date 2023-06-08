@@ -19,11 +19,51 @@ export default class extends Controller {
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
     this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,mapboxgl: mapboxgl,placeholder: 'Rechercher un lieu'}))
-    
-    var existingLayers = this.map.getStyle().layers;
+
+    let existingLayers = this.map.getStyle().layers;
     existingLayers.forEach(function(layer) {
       console.log(layer.id);
     });
+
+    // DEBUT AJOUT CALQUE SYLMBOL LAYER
+    map.addLayer({
+      id: 'sportsselected',
+      type: 'symbol',
+      source: {
+        type: 'geojson',
+        data: 'data.geojson'
+      },
+      layout: {
+        'icon-image': 'marker-15', // Nom de l'image d'icône utilisée pour les symboles
+        'icon-allow-overlap': true // Autoriser le chevauchement des icônes
+      }
+    });
+    // FIN AJOUT CALQUE SYLMBOL LAYER
+
+    // DEBUT FONCTION FILTRE
+    let filterForm = document.getElementById('filter-form');
+
+    filterForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Récupérer les valeurs des champs de filtrage
+      let selectedSport = document.getElementById('filter-sport').value;
+
+      // Appliquer le filtre sur la carte en fonction des valeurs sélectionnées
+      // Ici, vous pouvez utiliser les valeurs du formulaire pour filtrer les données de votre carte
+      // et mettre à jour l'affichage des événements en conséquence.
+
+      // Exemple : mettre à jour le filtre d'un calque existant avec Mapbox GL JS
+      this.map.setFilter('points', ['==', 'sport', selectedsport]);
+    });
+
+    filter(event) {
+      event.preventDefault();
+      const selectedSport = document.getElementById('filter-sport').value;
+      this.map.setFilter('points', ['==', 'sport', selectedSport]);
+    }
+
+    // FIN FONCTION FILTRE
   }
 
   #addMarkersToMap() {
