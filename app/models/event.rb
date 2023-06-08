@@ -21,4 +21,5 @@ class Event < ApplicationRecord
   geocoded_by :localisation
   after_validation :geocode, if: :will_save_change_to_localisation?
 
+  has_one_attached :photo
 end

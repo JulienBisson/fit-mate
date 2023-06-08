@@ -1,78 +1,89 @@
 .fitmate-container {
   background-color: #4B4B4B;
+  height: 844px;
+  display: flex;
+  flex-direction: column;
 }
 
-.fitmate-search {
+.fitmate-title {
+  font-family: 'Permanent Marker', cursive;
+  color: #F6D0A5;
+  font-size: 5vh;
+  text-align: center;
+  padding-bottom: 1vh;
+}
+
+.form-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  .form-control {
-    background-color: black;
-    color: #F6D0A5;
-  }
-  input::placeholder {
-    color:#F6D0A5;
-    opacity: 0.5;
-    font-style: italic;
-  }
-  .btn-submit {
-    color: black;
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-weight: bold;
-    background-color: #F6D0A5;
-  }
+}
+
+.inside-form-container {
+  display: flex;
+  align-items: center;
+  padding-bottom: 2vh;
+  justify-content: center;
+}
+
+// label "filtres:"
+.form-label {
+  color: #F6D0A5;
+  margin-right: 2vh;
+}
+
+// menu déroulant "all sports"
+.formpasselect #query {
+  background-color: #4B4B4B;
+  color: whitesmoke;
+}
+
+// bouton "go!"
+.form-submit {
+  color: #4B4B4B;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  background-color: #F6D0A5;
+  border: none;
+  margin-left: 2vh;
+}
+
+.form-submit:hover {
+  background-color: #D1946F;
+}
+
+#map {
+  width: 100%;
+  flex: 1;
 }
 
 /* Cibler la barre de recherche principale */
-.mapboxgl-ctrl-geocoder {
+.fitmate-container .mapboxgl-ctrl-geocoder {
   /* Ajoutez vos styles personnalisés ici */
   background-color: #4B4B4B;
-}
+  color: red;
 
-/* Cibler la zone de saisie de texte */
-.mapboxgl-ctrl-geocoder input[type="text"] {
-  /* Ajoutez vos styles personnalisés ici */
 }
-
-.mapboxgl-ctrl-geocoder input[type="text"]::placeholder {
-  /* Ajoutez les styles personnalisés pour le placeholder */
-}
-
 
 /* Cibler le bouton de recherche */
 .mapboxgl-ctrl-geocoder button[type="button"] {
   /* Ajoutez vos styles personnalisés ici */
+  color: orange;
 }
 
 /* Cibler les résultats de recherche */
+/* Quand s'affiche "no results found */
 .mapboxgl-ctrl-geocoder .suggestions {
   /* Ajoutez vos styles personnalisés ici */
+  background-color: rgb(75, 75, 75);
+  // color: rgba(117, 117, 117, 0);
+  color: yellow;
 }
 
 /* Cibler les résultats individuels de recherche */
 .mapboxgl-ctrl-geocoder .suggestion-item {
   /* Ajoutez vos styles personnalisés ici */
-}
-
-.btn-al {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.btn-al:hover {
-  background-color: #555;
-}
-
-.btn-al:focus {
-  outline: none;
-  box-shadow: 0 0 4px #fff;
+  background-color: blueviolet;
 }

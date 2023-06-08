@@ -1,45 +1,65 @@
-body {
+.event-wrapper {
   background-color: #414141;
-}
 
-.container-event{
-  background-color: #414141;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid black;
-  margin: 50px;
-
-  .title-event{
+  .container-event{
     background-color: #414141;
     color: white;
-    text-align: center;
-  }
-
-  .form-new-events{
-  display: flex;
-  justify-content: center;
-  background-color: #414141;
-  }
-}
-
-.sport-selection{
-  align-items: center;
-  color: white;
-
-  .category-wrapper{
     display: flex;
-    justify-content: flex-start;
-    column-gap: 10px;
-    flex-wrap: wrap;
-    padding: 0px 20px 0px 20px;
+    flex-direction: column;
+    justify-content: center;
+    // border: 1px solid black;
+    margin: 50px;
 
-    .category-item{
-      margin: 5px 0;
+    .title-event{
+      background-color: #414141;
+      color: white;
+      text-align: center;
+    }
 
-      .category-selector{
-        position: absolute;
-        transform: scale(0)
+    .form-new-events{
+      display: flex;
+      justify-content: center;
+      background-color: #414141;
+      margin: 20px;
+
+      .sport-selection{
+        align-items: center;
+        color: white;
+        margin-bottom: 20px;
+
+        .btn-sport-event{
+          color: #888888;
+          background-color: white;
+          border-radius: 10px;
+          padding: 5px;
+          width: 100%;
+          text-align: left;
+          border: none;
+        }
+        .radio_buttons .col-form-label{
+          display: none;
+          background-color: #888888;
+        }
+        .dropdown-menu {
+          background-color: #888888;
+          border: 1px solid #F6D0A5;
+        }
+        .category-wrapper{
+          display: flex;
+          justify-content: flex-start;
+          column-gap: 10px;
+          flex-wrap: wrap;
+          padding: 0px 20px 0px 20px;
+
+          .category-item{
+            margin: 5px 0;
+
+            .category-selector{
+              position: absolute;
+              transform: scale(0)
+            }
+          }
+        }
       }
     }
   }
@@ -47,17 +67,70 @@ body {
 
 .category-selector + label{
   cursor: pointer;
-  color: black;
-  background-color: #F0D1AF;
-  border: 1px solid black;
+  color: #888888;
+  background-color: #F6D0A5;
+  border: 1px solid #888888;
   border-radius: 25px;
   padding: 6px;
 }
-
 .category-selector:checked + label{
-color: white;
+color: #F6D0A5;
+background-color: #888888;
+border: 1px solid #F6D0A5;
 }
 
 .select-date .datetime{
   color: #888888;
+}
+.select-date .form-select{
+  color: #888888;
+  border-radius: 10px;
+}
+
+.localisation-event .string .form-control{
+  border-radius: 10px;
+  color: #888888;
+}
+.localisation-event .string .form-control::placeholder{
+  color: #888888;
+}
+
+.max-participant-event .integer .form-control{
+  border-radius: 10px;
+  color: #888888;
+}
+.max-participant-event .integer .form-control::placeholder{
+  color: #888888;
+}
+
+.event-level .form-check .radio_buttons{
+  color:#888888;
+  background-color: #888888;
+}
+
+.title-event .string .form-control{
+  border-radius: 10px;
+  color: #888888;
+}
+.title-event .string .form-control::placeholder{
+  color: #888888;
+}
+
+.description-event .event_description .form-control{
+  border-radius: 10px;
+  color: #888888;
+}
+.description-event .event_description .form-control::placeholder{
+  color: #888888;
+}
+
+.photo-event .file .form-control{
+  border-radius: 10px;
+  color: #888888;
+}
+
+.btn-create-event {
+  width: 100%;
+  color: #888888;
+  border: none;
 }

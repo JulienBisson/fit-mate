@@ -13,17 +13,13 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      // style: "mapbox://styles/pdunleav/cjofefl7u3j3e2sp0ylex3cyb",
       style: "mapbox://styles/mapbox/dark-v10",
+      center: [-1.553621, 47.218371],
+      zoom: 12,
     });
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,mapboxgl: mapboxgl,placeholder: 'Rechercher un lieu'}))
-    
-    var existingLayers = this.map.getStyle().layers;
-    existingLayers.forEach(function(layer) {
-      console.log(layer.id);
-    });
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,mapboxgl: mapboxgl,placeholder: 'Rechercher un lieu'}));
   }
 
   #addMarkersToMap() {
@@ -37,13 +33,13 @@ export default class extends Controller {
           .setLngLat([ marker.lng, marker.lat ])
           .setPopup(popup)
           .addTo(this.map)
-      })
+      });
   }
 
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   }
 
 }
