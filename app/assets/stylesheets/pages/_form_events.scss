@@ -29,10 +29,20 @@
 
         .btn-sport-event{
           color: #888888;
-          background-color: #F6D0A5;
+          background-color: white;
+          border-radius: 10px;
+          padding: 5px;
+          width: 100%;
+          text-align: left;
+          border: none;
         }
-        .dropdown-menu .radio_buttons .col-form-label{
+        .radio_buttons .col-form-label{
           display: none;
+          background-color: #888888;
+        }
+        .dropdown-menu {
+          background-color: #888888;
+          border: 1px solid #F6D0A5;
         }
         .category-wrapper{
           display: flex;
@@ -66,7 +76,7 @@
 .category-selector:checked + label{
 color: #F6D0A5;
 background-color: #888888;
-border: 1px solid #888888;
+border: 1px solid #F6D0A5;
 }
 
 .select-date .datetime{
@@ -93,6 +103,11 @@ border: 1px solid #888888;
   color: #888888;
 }
 
+.event-level .form-check .radio_buttons{
+  color:#888888;
+  background-color: #888888;
+}
+
 .title-event .string .form-control{
   border-radius: 10px;
   color: #888888;
@@ -117,4 +132,5 @@ border: 1px solid #888888;
 .btn-create-event {
   width: 100%;
   color: #888888;
+  border: none;
 }
