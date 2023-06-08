@@ -20,12 +20,6 @@ export default class extends Controller {
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
     this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,mapboxgl: mapboxgl,placeholder: 'Rechercher un lieu'}));
-
-    let existingLayers = this.map.getStyle().layers;
-    existingLayers.forEach(function(layer) {
-      console.log("testal");
-      console.log(layer.id);
-    });
   }
 
   #addMarkersToMap() {

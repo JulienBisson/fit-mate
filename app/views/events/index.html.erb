@@ -4,7 +4,7 @@
   <div>
     <%= form_with url: events_path, method: :get do |form| %>
     <%= form.label :query, "sports" %>
-    <%= form.select :query, @sports %>
+    <%= form.select :query, @selected_sports %>
     <%= form.submit "Filter" %>
     <% end %>
   </div>
