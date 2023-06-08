@@ -1,11 +1,15 @@
 <div class="fitmate-container">
-  <div id='map' style='width: 100%; height: 422px;' data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
-  </div>
-  <div>
+  <div class="fitmate-title">FitMate</div>
+  <div class="form-container">
     <%= form_with url: events_path, method: :get do |form| %>
-    <%= form.label :query, "sports" %>
-    <%= form.select :query, [["all sports", ""]] + @selected_sports %>
-    <%= form.submit "Filter" %>
-    <% end %>
+    <div class="inside-form-container">
+      <%= form.label :query, "Filtres:", class: "form-label" %>
+      <div class="formpasselect"> <%= form.select :query, [["all sports", ""]] + @selected_sports %>
+      </div>
+      <%= form.submit "Go!", class: "form-submit" %>
+      <% end %>
+    </div>
+  </div>
+  <div id='map' data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
   </div>
 </div>
