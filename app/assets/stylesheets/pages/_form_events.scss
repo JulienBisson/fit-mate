@@ -4,10 +4,11 @@ body {
 
 .container-event{
   background-color: #414141;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid black;
+  // border: 1px solid black;
   margin: 50px;
 
   .title-event{
@@ -20,6 +21,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: #414141;
+  margin: 20px;
   }
 }
 
@@ -47,17 +49,63 @@ body {
 
 .category-selector + label{
   cursor: pointer;
-  color: black;
+  color: #888888;
   background-color: #F0D1AF;
-  border: 1px solid black;
+  border: 1px solid #888888;
   border-radius: 25px;
   padding: 6px;
 }
-
 .category-selector:checked + label{
-color: white;
+color: #F0D1AF;
+background-color: #888888;
+border: 1px solid #888888;
 }
 
 .select-date .datetime{
   color: #888888;
+}
+.select-date .form-select{
+  color: #888888;
+  border-radius: 10px;
+}
+
+.localisation-event .string .form-control{
+  border-radius: 10px;
+  color: #888888;
+}
+.localisation-event .string .form-control::placeholder{
+  color: #888888;
+}
+
+.max-participant-event .integer .form-control{
+  border-radius: 10px;
+  color: #888888;
+}
+.max-participant-event .integer .form-control::placeholder{
+  color: #888888;
+}
+
+.title-event .string .form-control{
+  border-radius: 10px;
+  color: #888888;
+}
+.title-event .string .form-control::placeholder{
+  color: #888888;
+}
+
+.description-event .event_description .form-control{
+  border-radius: 10px;
+  color: #888888;
+}
+.description-event .event_description .form-control::placeholder{
+  color: #888888;
+}
+
+.photo-event .file .form-control{
+  border-radius: 10px;
+  color: #888888;
+}
+
+.btn-create-event {
+  width: 100%;
 }

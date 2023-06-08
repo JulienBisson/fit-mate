@@ -7,6 +7,9 @@
   <div class= "form-new-events">
     <%= simple_form_for(@event) do |f| %>
     <div class="sport-selection">
+      <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown link
+      </a>
         <%= f.input :sport,
                 as: :radio_buttons,
                 collection_wrapper_tag: 'div',
@@ -18,13 +21,25 @@
       <div class= "select-date">
         <%= f.input :datetime, label: false, html5: true%>
       </div>
-
-      <%= f.input :localisation, label: false, placeholder: "localisation" %>
-      <%= f.input :event_level, collection: ['Beginner', 'Intermediate', 'Expert'], as: :radio_buttons%>
-      <%= f.input :max_participant %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.submit %>
+      <div class= "localisation-event">
+        <%= f.input :localisation, label: false, placeholder: "Addresse" %>
+      </div>
+      <div class="event-level">
+        <%= f.input :event_level, collection: ['Beginner', 'Intermediate', 'Expert'], as: :radio_buttons%>
+      </div>
+      <div class="max-participant-event">
+        <%= f.input :max_participant, label: false, placeholder: "Nombre de participant" %>
+      </div>
+      <div class="title-event">
+        <%= f.input :title, label: false, placeholder: "Titre de l'évènement" %>
+      </div>
+      <div class="description-event">
+        <%= f.input :description, label: false, placeholder: "Description de l'évènement"%>
+      </div>
+      <div class="photo-event">
+        <%= f.input :photo, as: :file%>
+      </div>
+      <%= f.submit "Ajouter", class: "btn-signin btn-create-event"%>
     <% end %>
   </div>
 
