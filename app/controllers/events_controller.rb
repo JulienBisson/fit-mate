@@ -9,7 +9,7 @@ class EventsController < ApplicationController
 
     geojson_features = []
 
-    @events.geocoded.each do |event|
+    @markers = @events.geocoded.each do |event|
       geojson_features << {
         type: 'Feature',
         geometry: {
@@ -22,7 +22,7 @@ class EventsController < ApplicationController
       }
     end
 
-    geojson = {
+    @geojson = {
       type: 'FeatureCollection',
       features: geojson_features
     }.to_json

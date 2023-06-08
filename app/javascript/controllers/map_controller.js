@@ -13,29 +13,31 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      // style: "mapbox://styles/pdunleav/cjofefl7u3j3e2sp0ylex3cyb",
       style: "mapbox://styles/mapbox/dark-v10",
+      center: [-1.553621, 47.218371],
+      zoom: 12,
     });
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,mapboxgl: mapboxgl,placeholder: 'Rechercher un lieu'}))
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,mapboxgl: mapboxgl,placeholder: 'Rechercher un lieu'}));
 
     let existingLayers = this.map.getStyle().layers;
     existingLayers.forEach(function(layer) {
+      console.log("testal");
       console.log(layer.id);
     });
 
     // DEBUT AJOUT CALQUE SYLMBOL LAYER
-    map.addLayer({
+    this.map.addLayer({
       id: 'sportsselected',
       type: 'symbol',
       source: {
         type: 'geojson',
-        data: 'data.geojson'
+        data: 'data.geojson',
       },
       layout: {
-        'icon-image': 'marker-15', // Nom de l'image d'icône utilisée pour les symboles
-        'icon-allow-overlap': true // Autoriser le chevauchement des icônes
+        'icon-image': 'marker-15',
+        'icon-allow-overlap': true,
       }
     });
     // FIN AJOUT CALQUE SYLMBOL LAYER
@@ -43,26 +45,17 @@ export default class extends Controller {
     // DEBUT FONCTION FILTRE
     let filterForm = document.getElementById('filter-form');
 
-    filterForm.addEventListener('submit', function(event) {
+    filterForm.addEventListener('submit', (event) => {
       event.preventDefault();
-
-      // Récupérer les valeurs des champs de filtrage
       let selectedSport = document.getElementById('filter-sport').value;
-
-      // Appliquer le filtre sur la carte en fonction des valeurs sélectionnées
-      // Ici, vous pouvez utiliser les valeurs du formulaire pour filtrer les données de votre carte
-      // et mettre à jour l'affichage des événements en conséquence.
-
-      // Exemple : mettre à jour le filtre d'un calque existant avec Mapbox GL JS
-      this.map.setFilter('points', ['==', 'sport', selectedsport]);
+      this.map.setFilter('points', ['==', 'sport', selectedSport]);
     });
 
     filter(event) {
       event.preventDefault();
       const selectedSport = document.getElementById('filter-sport').value;
       this.map.setFilter('points', ['==', 'sport', selectedSport]);
-    }
-
+    };
     // FIN FONCTION FILTRE
   }
 
@@ -77,13 +70,13 @@ export default class extends Controller {
           .setLngLat([ marker.lng, marker.lat ])
           .setPopup(popup)
           .addTo(this.map)
-      })
+      });
   }
 
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   }
 
 }
