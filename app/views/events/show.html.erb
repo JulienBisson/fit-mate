@@ -67,8 +67,8 @@
           </button>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
             <li><a id="going-link" class="dropdown-item" href="#">Going!</a></li>
-            <li><a class="dropdown-item" href="#">Interested</a></li>
-            <li><a class="dropdown-item" href="#">Not interested</a></li>
+            <li><a id="interested-link" class="dropdown-item" href="#">Interested</a></li>
+            <li><a id="not-interested-link" class="dropdown-item" href="#">Not interested</a></li>
           </ul>
         </div>
 
@@ -79,11 +79,31 @@
 <script>
   window.onload = function() {
     let goingLink = document.getElementById('going-link');
+    let interestedLink = document.getElementById('interested-link');
+    let notInterestedLink = document.getElementById('not-interested-link');
+
 
     goingLink.addEventListener('click', function(event) {
       event.preventDefault();
       window.location.href = '/events';
-      alert('You are successfully registered!!');
+      alert('You are successfully registered!');
     });
+
+    interestedLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      window.location.href = '/events';
+      alert('You are interested by this event');
+    });
+
+    notInterestedLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      window.location.href = '/events';
+      alert('Not interested by this event? Look for another!');
+    });
+
+
+
+
+
   };
 </script>
