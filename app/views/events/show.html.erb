@@ -61,12 +61,47 @@
         <button class= "btn-message">
           <%= link_to "Message", "#" %>
           <%= image_tag('icon-message.svg') %>
+
         </button>
-        <button class= "btn-interested">
-          <%= link_to "Interested", "#" %>
-          <i class="fa-solid fa-chevron-down" style="color: #4B4B4B;"></i>
-        </button>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle btn-interested" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            Interested?
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+            <li><a id="going-link" class="dropdown-item" href="#">Going!</a></li>
+            <li><a id="interested-link" class="dropdown-item" href="#">Interested</a></li>
+            <li><a id="not-interested-link" class="dropdown-item" href="#">Not interested</a></li>
+          </ul>
+        </div>
+
       </div>
 
     </div>
 </div>
+
+<script>
+  window.onload = function() {
+    let goingLink = document.getElementById('going-link');
+    let interestedLink = document.getElementById('interested-link');
+    let notInterestedLink = document.getElementById('not-interested-link');
+
+    goingLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      window.location.href = '/events';
+      alert('You are successfully registered for this event!');
+    });
+
+    interestedLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      window.location.href = '/events';
+      alert('You are interested by this event');
+    });
+
+    notInterestedLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      window.location.href = '/events';
+      alert('Not interested by this event? Look for another!');
+    });
+  };
+</script>
