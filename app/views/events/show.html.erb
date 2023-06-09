@@ -61,19 +61,14 @@
           <%= image_tag('icon-message.svg') %>
         </button>
 
-        <button class= "btn-interested">
-          <%= link_to "Interested", "#" %>
-          <i class="fa-solid fa-chevron-down" style="color: #4B4B4B;"></i>
-        </button>
-
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
+          <button class="btn btn-secondary dropdown-toggle btn-interested" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            Interested?
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+            <li><a class="dropdown-item" href="#">Going!</a></li>
+            <li><a class="dropdown-item" href="#">Interested</a></li>
+            <li><a class="dropdown-item" href="#">Not interested</a></li>
           </ul>
         </div>
 
