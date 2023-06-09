@@ -2,41 +2,40 @@
 <div data-controller="displayevent">
   <div class="fitmate-container">
     <div class="fitmate-title">FitMate</div>
-      <div class="form-container">
-        <%= form_with url: events_path, method: :get do |form| %>
-          <div class="inside-form-container">
-            <%= form.label :query, "Filtres:", class: "form-label" %>
-            <div class="formpasselect">
-              <%= form.select :query, [["all sports", ""]] + @selected_sports %>
-            </div>
-            <%= form.submit "Go!", class: "form-submit" %>
-            <% end %>
+    <div class="form-container">
+      <%= form_with url: events_path, method: :get do |form| %>
+        <div class="inside-form-container">
+          <%= form.label :query, "Filtres:", class: "form-label" %>
+          <div class="formpasselect">
+            <%= form.select :query, [["all sports", ""]] + @selected_sports %>
           </div>
-      </div>
-      <div id='map' data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
+          <%= form.submit "Go!", class: "form-submit" %>
+        </div>
+      <% end %>
+    </div>
+    <div id='map' class="position-relative" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
+      <div class="big-container position-absolute fixed-bottom">
+        <% @events.each do |event| %>
+          <%= link_to event_path(event), class:"event-card-link" do %>
+            <div class="card-container d-flex align-items-center d-none" id="card_<%= event.id%>">
+              <%= cl_image_tag event.photo.key, class:"image" %>
+              <div class="card-infos">
+                <div class="card-infos-details d-flex align-items-center mb-3">
+                  <%= image_tag("#{event.sport}.png", class: "pictogram-sports") %>
+                  <%= event.title %>
+                </div>
+                <div class="card-infos-details d-flex align-items-center">
+                  <%= image_tag("place_small_card.png", class: "pictogram") %>
+                  <%= event.localisation.split(" ").last %>
+                </div>
+              </div>
+          </div>
+            <% end %>
+        <% end %>
+        </div>
       </div>
     </div>
   </div>
-
   <%# mini card sur  %>
-  <div class="big-container">
-    <% @events.each do |event| %>
-  </div>
-      <div class="card-container d-flex align-items-center" data-displayevent-target= "display "</div>>
-        <%= cl_image_tag event.photo.key, class:"image" %>
-        <div class="card-infos">
-          <div class="card-infos-details d-flex align-items-center mb-3">
-            <%= image_tag("#{event.sport}.png", class: "pictogram-sports") %>
-            <%= event.title %>
-          </div>
-          <div class="card-infos-details d-flex align-items-center">
-            <%= image_tag("place_small_card.png", class: "pictogram") %>
-            <%= event.localisation.split(" ").last %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-
-  </div>
 
 </div>
