@@ -1,39 +1,41 @@
 <div class="fitmate-container-show page-container">
   <div class="fitmate-header-navbar">
-    <button>
+    <button class='transparent-button'>
       <i class="fa-solid fa-chevron-left" style="color: #f6d0a5;"></i>
       <%= link_to '', events_path %>
     </button>
   </div>
-  
+
   <div class="show-header">
     <div class="show-title">
-      <%= @event.title %>
+      <%= @event.title %><br>
       <%= @event.localisation.split(" ").last %>
     </div>
     <div class="show-image">
       <%= cl_image_tag @event.photo.key, class:'image-event' %>
     </div>
-    
+
     <div class="show-distance">
         <% user_coordinates = request.location.coordinates %>
         <% wagon_coordinates = [47.21112643898949, -1.5500990500139393] %>
         <% event_coordinates = [@event.latitude, @event.longitude] %>
       <% unless user_coordinates.empty? %>
-        <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i><%= Geocoder::Calculations.distance_between([user_coordinates],[@event.latitude,@event.longitude]).round(2) %> km from your position 
+        <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i><%= Geocoder::Calculations.distance_between([user_coordinates],[@event.latitude,@event.longitude]).round(2) %> km from your position
       <% else %>
         <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i><%= Geocoder::Calculations.distance_between(wagon_coordinates,[@event.latitude,@event.longitude]).round(2) %> km from your position
       <% end %>
     </div>
-    
+
     <div class="show-duration-level">
+      <p>Difficulty</p>
       <%= @event.event_level %>
+      <%= image_tag("#{@event.event_level}.svg", class: "pictogram-levels") %>
     </div>
-    
+
     <div class="show-description">
       <%= @event.description %>
     </div>
-    
+
     <div class="show-organizer">
       <p>Organized by</p>
       <div class="show-organizer-img d-flex align-items-center justify-content-between">
@@ -44,7 +46,7 @@
           <i class="fa-sharp fa-solid fa-share-nodes fa-2xl" style="color: #f6d0a5;"></i>
         </div>
       </div>
-    
+
       <div class="show-participant">
         <p><%= @event.users.count %> /<%= @event.max_participant %> mates participate</p>
           <% @event.users.each do |participant| %>
@@ -54,18 +56,17 @@
             </div>
           <% end %>
       </div>
-    
+
       <div class="btn-message-interested d-flex justify-content-center mt-3">
         <button class= "btn-message">
           <%= link_to "Message", "#" %>
           <%= image_tag('icon-message.svg') %>
-        </button>      
+        </button>
         <button class= "btn-interested">
           <%= link_to "Interested", "#" %>
           <i class="fa-solid fa-chevron-down" style="color: #4B4B4B;"></i>
         </button>
       </div>
-    
+
     </div>
 </div>
-
