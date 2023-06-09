@@ -82,11 +82,10 @@
     let interestedLink = document.getElementById('interested-link');
     let notInterestedLink = document.getElementById('not-interested-link');
 
-
     goingLink.addEventListener('click', function(event) {
       event.preventDefault();
       window.location.href = '/events';
-      alert('You are successfully registered!');
+      alert('You are successfully registered for this event!');
     });
 
     interestedLink.addEventListener('click', function(event) {
@@ -100,10 +99,5 @@
       window.location.href = '/events';
       alert('Not interested by this event? Look for another!');
     });
-
-
-
-
-
   };
 </script>

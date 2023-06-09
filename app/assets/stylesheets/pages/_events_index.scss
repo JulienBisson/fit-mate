@@ -59,27 +59,21 @@
   flex: 1;
 }
 
-/* Cibler la barre de recherche principale */
+/* contenant de "Rechercher un lieu" */
 .fitmate-container .mapboxgl-ctrl-geocoder {
   /* Ajoutez vos styles personnalisés ici */
-  background-color: #4B4B4B;
-  color: red;
+  // background-color: #4B4B4B;
+  // color: red;
 
 }
 
-/* Cibler le bouton de recherche */
-.mapboxgl-ctrl-geocoder button[type="button"] {
-  /* Ajoutez vos styles personnalisés ici */
-  color: orange;
-}
-
-/* Cibler les résultats de recherche */
-/* Quand s'affiche "no results found */
+/* Quand suggestions de lieux
++ s'affiche "no results found */
 .mapboxgl-ctrl-geocoder .suggestions {
   /* Ajoutez vos styles personnalisés ici */
-  background-color: rgb(75, 75, 75);
+  // background-color: rgb(75, 75, 75);
   // color: rgba(117, 117, 117, 0);
-  color: yellow;
+  // color: yellow;
 }
 
 /* Cibler les résultats individuels de recherche */
