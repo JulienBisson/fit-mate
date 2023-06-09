@@ -10,6 +10,9 @@ application.register("address-autocomplete", AddressAutocompleteController)
 import DisplayeventController from "./displayevent_controller"
 application.register("displayevent", DisplayeventController)
 
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

@@ -17,7 +17,7 @@ module Organizer
     private
 
     def organizer_params
-      params.require(@event).permit(:title, :description, :localisation,
+      params.require(:event).permit(:title, :description, :localisation,
                                     :event_level, :max_participant, :datetime, :sport, :photo)
     end
   end

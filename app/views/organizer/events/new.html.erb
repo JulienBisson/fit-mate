@@ -1,13 +1,19 @@
-<div class="event-wrapper">
+<div class="event-wrapper page-container">
   <div class="container-event">
     <%# TITLE %>
-    <div class="title-event">
+    <div class="title-event-creation">
       <h1>Add an Event</h1>
+
+      <%# AVATAR USER %>
+      <div class="avatar-user">
+        <%= cl_image_tag current_user.photo.key, width:45, height:45, class:"avatar-event"%>
+      </div>
     </div>
+
 
     <%# FORM %>
     <div class= "form-new-events">
-      <%= simple_form_for(@event) do |f| %>
+      <%= simple_form_for([:organizer, @event]) do |f| %>
 
         <%# SPORT SELECT %>
         <div class="sport-selection">
@@ -29,7 +35,10 @@
 
         <%# DATE %>
         <div class= "select-date">
-          <%= f.input :datetime, label: false, html5: true%>
+          <%= f.input :datetime, as: :string, label: false,
+            wrapper_html: { class: "mb-4" },
+            input_html: { data: { controller: "flatpickr" } }
+          %>
         </div>
 
         <%# LOCAL %>
@@ -39,7 +48,7 @@
 
         <%# LEVEL %>
         <div class="event-level">
-          <%= f.input :event_level, collection: ['Beginner', 'Intermediate', 'Expert'], as: :radio_buttons%>
+          <%= f.input :event_level, collection: ['beginner', 'intermediate', 'expert'], as: :radio_buttons%>
         </div>
 
         <%# PARTICIPANTS %>
