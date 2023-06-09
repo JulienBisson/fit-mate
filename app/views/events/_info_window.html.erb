@@ -1,5 +1,5 @@
 <h2><%= event.title %></h2>
 <p><%= event.localisation %></p>
-<div data-action="click->displayevent#display" id=" <%= event.id %>">Details</div>
+<div>Details</div>
 <p><%= event.sport %></p>
-<p>organized by <%= User.find(event.organizer_id).username %></p>
+<p>Organized by <%= User.find(event.organizer_id).username %></p>

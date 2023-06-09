@@ -6,3 +6,9 @@
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
+
+.mapboxgl-ctrl-top-right {
+  margin: auto;
+  inset: 0;
+  width: fit-content;
+}

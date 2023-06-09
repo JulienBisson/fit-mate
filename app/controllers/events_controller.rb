@@ -12,7 +12,6 @@ class EventsController < ApplicationController
       {
         lat: event.latitude,
         lng: event.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { event: event }),
         marker_html: render_to_string(partial: "marker", locals: { event: event })
       }
     end
