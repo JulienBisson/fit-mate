@@ -2,6 +2,11 @@
 <div data-controller="displayevent">
   <div class="fitmate-container">
     <div class="fitmate-title">FitMate</div>
+    <%= link_to new_organizer_event_path do %>
+      <div class="button-create">
+      <%= image_tag('add_event (1).svg') %>
+      </div>
+    <% end %>
     <div class="form-container">
       <%= form_with url: events_path, method: :get do |form| %>
         <div class="inside-form-container">
