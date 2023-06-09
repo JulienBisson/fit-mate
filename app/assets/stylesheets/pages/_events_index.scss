@@ -59,27 +59,24 @@
   flex: 1;
 }
 
-/* contenant de "Rechercher un lieu" */
-.fitmate-container .mapboxgl-ctrl-geocoder {
-  /* Ajoutez vos styles personnalisés ici */
+.mapboxgl-ctrl-geocoder--input {
+  // background-color: red
   // background-color: #4B4B4B;
-  // color: red;
-
+  // color: whitesmoke;
 }
-
 /* Quand suggestions de lieux
 + s'affiche "no results found */
 .mapboxgl-ctrl-geocoder .suggestions {
   /* Ajoutez vos styles personnalisés ici */
-  // background-color: rgb(75, 75, 75);
-  // color: rgba(117, 117, 117, 0);
-  // color: yellow;
+  // background-color: yellow;
+  // background-color: #4B4B4B;
+  // color: whitesmoke;
 }
 
-/* Cibler les résultats individuels de recherche */
-.mapboxgl-ctrl-geocoder .suggestion-item {
-  /* Ajoutez vos styles personnalisés ici */
-  background-color: blueviolet;
+.mapboxgl-ctrl-geocoder--suggestion {
+  // background-color: aqua;
+  // background-color: #4B4B4B;
+  // color: whitesmoke;
 }
 
 .hidden {
