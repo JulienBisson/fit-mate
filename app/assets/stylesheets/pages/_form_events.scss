@@ -1,5 +1,6 @@
 .event-wrapper {
   background-color: #414141;
+  height: 100dvh;
 
   .container-event{
     background-color: #414141;
@@ -14,6 +15,10 @@
       background-color: #414141;
       color: white;
       text-align: center;
+      h1{
+        padding: 10px;
+        border-bottom: 1px solid white;
+      }
     }
 
     .form-new-events{
