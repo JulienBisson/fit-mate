@@ -8,7 +8,9 @@ export default class extends Controller {
   }
 
   display(event) {
-  
+    console.log(event.currentTarget.id);
+    this.displayTargets.forEach((element) => element.classList.add("d-none"));
+
     const card = document.querySelector(
       `#card_${parseInt(event.currentTarget.id)}`
     );

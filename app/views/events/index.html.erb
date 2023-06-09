@@ -17,7 +17,7 @@
       <div class="big-container position-absolute fixed-bottom">
         <% @events.each do |event| %>
           <%= link_to event_path(event), class:"event-card-link" do %>
-            <div class="card-container d-flex align-items-center d-none" id="card_<%= event.id%>">
+            <div class="card-container d-flex align-items-center d-none" id="card_<%= event.id%>" data-displayevent-target='display'>
               <%= cl_image_tag event.photo.key, class:"image" %>
               <div class="card-infos">
                 <div class="card-infos-details d-flex align-items-center mb-3">
