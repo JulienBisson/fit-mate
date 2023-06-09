@@ -1,10 +1,15 @@
 <div class="event-wrapper page-container">
   <div class="container-event">
     <%# TITLE %>
-    <div class="title-event">
+    <div class="title-event-creation">
       <h1>Add an Event</h1>
-    <%# <%= cl_image_tag user.photo.key, width:30 %>
+
+      <%# AVATAR USER %>
+      <div class="avatar-user">
+        <%= cl_image_tag current_user.photo.key, width:45, height:45, class:"avatar-event"%>
+      </div>
     </div>
+
 
     <%# FORM %>
     <div class= "form-new-events">
@@ -31,7 +36,9 @@
         <%# DATE %>
         <div class= "select-date">
           <%= f.input :datetime, as: :string, label: false,
-          input_html: { data: { controller: "flatpickr" } } %>
+            wrapper_html: { class: "mb-4" },
+            input_html: { data: { controller: "flatpickr" } }
+          %>
         </div>
 
         <%# LOCAL %>

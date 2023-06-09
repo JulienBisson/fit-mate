@@ -8,7 +8,7 @@ export default class extends Controller {
     new flatpickr(this.element, {
       enableTime: true,
       dateFormat: "d-m-Y H:i",
-      minDate: "2023-01",
+      minDate: "2023-01-01",
       // more options available on the documentation!
     });
   }

@@ -11,13 +11,23 @@
     // border: 1px solid black;
     margin: 50px;
 
-    .title-event{
+    .title-event-creation{
+      display:flex;
+      align-self: center;
       background-color: #414141;
       color: white;
       text-align: center;
+      align-items: center;
       h1{
         padding: 10px;
         border-bottom: 1px solid white;
+      }
+      .avatar-user{
+        padding-left: 15px;
+        .avatar-event{
+          border-radius: 50%;
+          border: 1px solid #F6D0A5;
+        }
       }
     }
 
