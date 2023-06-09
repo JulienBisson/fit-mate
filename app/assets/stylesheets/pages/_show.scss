@@ -2,7 +2,7 @@
   padding: 20px;
 }
 .fitmate-container-show {
-  background-color: #4B4B4B;
+  background-color: #414141;
   color: white;
 }
 
@@ -11,22 +11,66 @@
   flex-direction: column;
 }
 
+.transparent-button {
+  background-color: transparent;
+  font-size: 25px;
+
+}
+
 .show-title {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  color: #F6D0A5;
+  margin-left: 31px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
+
 .image-event {
-  height: 100px;
-  width: 200px;
+  height: 186px;
+  width: 350px;
   border-radius: 15px;
   object-fit: cover;
+  padding: 5px;
+  margin-top: 12px;
+
   // margin-left
 }
 
+.show-image {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
 .show-distance i {
-  margin-right: 10px;
+  margin-right: 8px;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.show-duration-level {
+  background-color: #F6D0A5;
+  color: #414141;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+
+.pictogram-levels {
+  width: 25px;
+  height: 18px;
+  float: left;
+  margin-right: 5px;
+}
+
+.show-description {
+  margin-bottom: 20px
 }
 
 .organizer-img {
@@ -38,6 +82,7 @@
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
+
 
 ;.btn-message, .btn-interested {
   padding: 8px 24px;
