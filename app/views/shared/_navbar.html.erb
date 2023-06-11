@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
+  <div class="container-fluid d-flex flex-row align-content-center">
     <%= link_to "Fit Mate", event_path(@event), class: "btn btn-logo" %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,18 +8,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= link_to "#{@event.organizer.username}", class:"nav-link" %>
-          <%= cl_image_tag @event.organizer.photo.key, class:"organizer-img", alt: "dropdown menu" %>
-          </a>
+        <div class="nav-item-card d-flex justify-content-center">
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= link_to "#{@event.organizer.username}", class:"nav-link" %>
+            <%= cl_image_tag @event.organizer.photo.key, class:"organizer-img", alt: "dropdown menu" %>
+            </a>
+          </div>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
