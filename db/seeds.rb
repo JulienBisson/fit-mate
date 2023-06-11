@@ -451,7 +451,7 @@ event20.save!
 puts "Creating event_participants..."
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: lucas.id,
   event_id: event16.id
 )
@@ -469,7 +469,7 @@ EventParticipant.create!(
 )
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: lucas.id,
   event_id: event10.id
 )
@@ -481,13 +481,13 @@ EventParticipant.create!(
 )
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: alice.id,
   event_id: event19.id
 )
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: alice.id,
   event_id: event14.id
 )
@@ -499,7 +499,7 @@ EventParticipant.create!(
 )
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: maxime.id,
   event_id: event20.id
 )
@@ -511,7 +511,7 @@ EventParticipant.create!(
 )
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: maxime.id,
   event_id: event4.id
 )
@@ -535,13 +535,13 @@ EventParticipant.create!(
 )
 
 EventParticipant.create!(
-  status: "decline",
+  status: "maybe",
   user_id: julien.id,
   event_id: event15.id
 )
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: julien.id,
   event_id: event9.id
 )
@@ -565,7 +565,7 @@ EventParticipant.create!(
 )
 
 EventParticipant.create!(
-  status: "decline",
+  status: "maybe",
   user_id: lea.id,
   event_id: event3.id
 )
@@ -583,37 +583,120 @@ EventParticipant.create!(
 )
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: sarah.id,
   event_id: event8.id
 )
 
 EventParticipant.create!(
-  status: "decline",
+  status: "maybe",
   user_id: sarah.id,
   event_id: event9.id
 )
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: lea.id,
   event_id: event3.id
 )
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: lea.id,
   event_id: event1.id
 )
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: maxime.id,
   event_id: event2.id
 )
 
 EventParticipant.create!(
-  status: "accept",
+  status: "maybe",
   user_id: lucas.id,
   event_id: event2.id
+)
+
+puts "Creating chatboxes..."
+
+Chatbox.create!(
+  event_id: event1.id,
+  name: event1.title
+)
+Chatbox.create!(
+  event_id: event2.id,
+  name: event2.title
+)
+Chatbox.create!(
+  event_id: event3.id,
+  name: event3.title
+)
+Chatbox.create!(
+  event_id: event4.id,
+  name: event4.title
+)
+Chatbox.create!(
+  event_id: event5.id,
+  name: event5.title
+)
+Chatbox.create!(
+  event_id: event6.id,
+  name: event6.title
+)
+Chatbox.create!(
+  event_id: event7.id,
+  name: event7.title
+)
+Chatbox.create!(
+  event_id: event8.id,
+  name: event8.title
+)
+Chatbox.create!(
+  event_id: event9.id,
+  name: event9.title
+)
+Chatbox.create!(
+  event_id: event10.id,
+  name: event10.title
+)
+Chatbox.create!(
+  event_id: event11.id,
+  name: event11.title
+)
+Chatbox.create!(
+  event_id: event12.id,
+  name: event12.title
+)
+Chatbox.create!(
+  event_id: event13.id,
+  name: event13.title
+)
+Chatbox.create!(
+  event_id: event14.id,
+  name: event14.title
+)
+Chatbox.create!(
+  event_id: event15.id,
+  name: event15.title
+)
+Chatbox.create!(
+  event_id: event16.id,
+  name: event16.title
+)
+Chatbox.create!(
+  event_id: event17.id,
+  name: event17.title
+)
+Chatbox.create!(
+  event_id: event18.id,
+  name: event18.title
+)
+Chatbox.create!(
+  event_id: event19.id,
+  name: event19.title
+)
+Chatbox.create!(
+  event_id: event20.id,
+  name: event20.title
 )
