@@ -1,6 +1,12 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid d-flex flex-row align-content-center">
-    <%= link_to "Fit Mate", event_path(@event), class: "btn btn-logo" %>
+    <%= link_to event_path do %>
+      <div class="fitmate-header-navbar">
+        <button class='transparent-button'>
+          <i class="fa-solid fa-chevron-left" style="color: #f6d0a5;"></i>
+        </button>
+      </div>
+    <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
