@@ -35,7 +35,7 @@
       display: flex;
       justify-content: center;
       background-color: #414141;
-      padding: 5px;
+      padding: 10px;
 
       .sport-selection{
         align-items: center;
@@ -63,8 +63,9 @@
           display: flex;
           justify-content: flex-start;
           column-gap: 10px;
-          flex-wrap: wrap;
           padding: 0px 20px 0px 20px;
+          overflow-x: scroll;
+          width: 100vw;
 
           .category-item{
             margin: 5px 0;
@@ -88,6 +89,7 @@
   border-radius: 25px;
   padding: 6px;
 }
+
 .category-selector:checked + label{
 color: #F6D0A5;
 background-color: #888888;
