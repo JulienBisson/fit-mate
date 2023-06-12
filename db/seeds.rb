@@ -10,8 +10,8 @@ require 'open-uri'
 
 puts "Cleaning database..."
 
-Chatbox.destroy_all
 EventParticipant.destroy_all
+Message.destroy_all
 Chatbox.destroy_all
 Event.destroy_all
 User.destroy_all
