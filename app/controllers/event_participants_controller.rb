@@ -17,4 +17,11 @@ class EventParticipantsController < ApplicationController
 
   def update
   end
+
+  def destroy
+    raise
+    @event_participant = EventParticipant.find(params[:id])
+    @event_participant.destroy
+    redirect_to events_path, status: :see_other
+  end
 end
