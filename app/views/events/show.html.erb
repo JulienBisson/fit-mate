@@ -56,7 +56,6 @@
               <%= participant.username %>
             </div>
           <% end %>
-          <p>Nouveau paragraphe</p>
       </div>
 
       <div class="btn-message-interested d-flex justify-content-center mt-3">
@@ -67,13 +66,16 @@
 
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle btn-interested" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-            Interested?
+            Intéressé?
           </button>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-            <li><a id="going-link" class="dropdown-item" href="#">Going!</a></li>
-            <li><a id="interested-link" class="dropdown-item" href="#">Interested</a></li>
-            <li><a id="not-interested-link" class="dropdown-item" href="#">Not interested</a></li>
+            <li><%= button_to "Participer", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post %></li>
+            <li id="going-link"> <%= button_to "Je participe!", event_event_participants_path(@event), method: :post%></li>
+            <li><a id="interested-link" class="dropdown-item" href="#">Ca m'intéresse</a></li>
+            <li><a id="not-interested-link" class="dropdown-item" href="#">Pas pour moi</a></li>
           </ul>
+          <p>NOUVEAU PARAGRAPHE</p>
+          <p><%= @event.users.count %></p>
         </div>
 
       </div>
