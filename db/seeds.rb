@@ -87,7 +87,7 @@ event1 = Event.create!(
   relaxation. Que vous soyez débutant ou confirmé, venez vous détendre, vous
   étirer et partager un moment de sérénité et d’harmonie.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("16-06-2023")
 )
@@ -106,7 +106,7 @@ event2 = Event.create!(
   débutant ou confirmé, venez vous éclater, vous défouler et partager un moment
   de convivialité et de bien-être.",
   localisation: "Centre Commercial Beaulieu, Bd Général de Gaulle, 44200 Nantes",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 6,
   datetime: Date.parse("18-06-2023")
 )
@@ -124,7 +124,7 @@ event3 = Event.create!(
   deux équipes de deux joueurs. Que vous soyez débutant ou confirmé, venez vous
   amuser, vous dépenser et partager un moment de fair-play et de respect.",
   localisation: "Stade Pascal Laporte, 74 Bd des Anglais, 44100 Nantes",
-  event_level: "beginner",
+  event_level: "débutant",
   max_participant: 4,
   datetime: Date.parse("23-06-2023")
 )
@@ -143,7 +143,7 @@ event4 = Event.create!(
   relaxation. Que vous soyez débutant ou confirmé, venez vous détendre, vous
   étirer et partager un moment de sérénité et d’harmonie.",
   localisation: "Rue du Pré Salé, 44200 Nantes",
-  event_level: "beginner",
+  event_level: "débutant",
   max_participant: 10,
   datetime: Date.parse("10-06-2023")
 )
@@ -161,7 +161,7 @@ event5 = Event.create!(
   cinq joueurs. Que vous soyez débutant ou confirmé, venez vous amuser,
   vous dépenser et partager un moment de fair-play et de respect.",
   localisation: "6 Rue des Bourdonnières.",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("16-06-2023")
 )
@@ -180,7 +180,7 @@ event6 = Event.create!(
   Que vous soyez débutant ou confirmé, venez vous amuser, vous dépenser et
   partager un moment de respect et de discipline.",
   localisation: "5 Rue Gaston Michel, 44000 Nantes",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("18-06-2023")
 )
@@ -198,7 +198,7 @@ event7 = Event.create!(
   artificiel. Que vous soyez débutant ou confirmé, venez vous
   amuser, vous dépasser et partager un moment de coopération et de confiance.",
   localisation: "27 Bd Bâtonnier Cholet, 44100 Nantes",
-  event_level: "beginner",
+  event_level: "débutant",
   max_participant: 6,
   datetime: Date.parse("20-06-2023")
 )
@@ -217,7 +217,7 @@ event8 = Event.create!(
   débutant ou confirmé, venez vous éclater, vous défouler et partager un moment
   de convivialité et de bien-être.",
   localisation: "Rue du Calvaire 18, 44000 Nantes",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 2,
   datetime: Date.parse("18-06-2023")
 )
@@ -235,7 +235,7 @@ event9 = Event.create!(
   cinq joueurs. Que vous soyez débutant ou confirmé, venez vous amuser,
   vous dépenser et partager un moment de fair-play et de respect.",
   localisation: "5 Allée du Recteur Jean Prud’homme.",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("22-06-2023")
 )
@@ -253,7 +253,7 @@ event10 = Event.create!(
   soyez à la recherche d’aventure, de nature ou de culture, venez vous évader,
   vous ressourcer et partager un moment de convivialité et de découverte.",
   localisation: "Route de Saint-Joseph de Porterie, 44300 Nantes",
-  event_level: "beginner",
+  event_level: "débutant",
   max_participant: 10,
   datetime: Date.parse("23-06-2023")
 )
@@ -272,7 +272,7 @@ event11 = Event.create!(
   Que vous soyez novice ou expert, venez vous éclater,
   vous défouler et partager un moment de sportivité et de respect.",
   localisation: " Maison des Haubans, 1 bis Bd de Berlin, 44000 Nantes",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("26-06-2023")
 )
@@ -290,7 +290,7 @@ event12 = Event.create!(
   soyez à la recherche d’aventure, de nature ou de culture, venez vous évader,
   vous ressourcer et partager un moment de convivialité et de découverte.",
   localisation: "Rue de la Gaudinière, 44300 Nantes",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("19-06-2023")
 )
@@ -309,7 +309,7 @@ event13 = Event.create!(
   débutant ou confirmé, venez vous éclater, vous défouler et partager un moment
   de convivialité et de bien-être.",
   localisation: "entre Commercial Beaulieu, Bd Général de Gaulle, 44200 Nantes",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 2,
   datetime: Date.parse("15-06-2023")
 )
@@ -330,7 +330,7 @@ event14 = Event.create!(
   débutant ou confirmé, venez vous amuser, vous dépasser et partager un moment
   de respect et de discipline.",
   localisation: "Palais des Sports de Beaulieu, Rue André Tardieu, 44200 Nantes",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("23-06-2023")
 )
@@ -348,7 +348,7 @@ event15 = Event.create!(
   deux équipes de deux joueurs. Que vous soyez débutant ou confirmé, venez vous
   amuser, vous dépenser et partager un moment de fair-play et de respect.",
   localisation: "Rue des Champs Garnier, 44400 Rezé",
-  event_level: "beginner",
+  event_level: "débutant",
   max_participant: 4,
   datetime: Date.parse("24-06-2023")
 )
@@ -367,7 +367,7 @@ event16 = Event.create!(
   débutant ou confirmé, venez vous amuser, vous dépenser et partager un moment
   de détente et de bien-être.",
   localisation: "All. de l'Île Gloriette, 44000 Nantes",
-  event_level: "beginner",
+  event_level: "débutant",
   max_participant: 6,
   datetime: Date.parse("19-06-2023")
 )
@@ -385,7 +385,7 @@ event17 = Event.create!(
   artificiel. Que vous soyez débutant ou confirmé, venez vous
   amuser, vous dépasser et partager un moment de coopération et de confiance.",
   localisation: "27 Bd Bâtonnier Cholet, 44100 Nantes",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 6,
   datetime: Date.parse("21-06-2023")
 )
@@ -403,7 +403,7 @@ event18 = Event.create!(
   ou expert, venez vous éclater, vous dépenser et partager un moment de
   sportivité et de respect.",
   localisation: "2 Rue Louis Joxe, 44200 Nantes",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("23-06-2023")
 )
@@ -421,7 +421,7 @@ event19 = Event.create!(
   soyez à la recherche d’aventure, de nature ou de culture, venez vous évader,
   vous ressourcer et partager un moment de convivialité et de découverte.",
   localisation: "Boulevard de la Bégraisière, 44240 La Chapelle-sur-Erdre",
-  event_level: "beginner",
+  event_level: "débutant",
   max_participant: 4,
   datetime: Date.parse("17-06-2023")
 )
@@ -440,7 +440,7 @@ event20 = Event.create!(
   Que vous soyez novice ou expert, venez vous éclater,
   vous défouler et partager un moment de sportivité et de respect.",
   localisation: "18 Rue Marie Curie, 44230 Saint-Sébastien-sur-Loire",
-  event_level: "intermediate",
+  event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("28-06-2023")
 )
