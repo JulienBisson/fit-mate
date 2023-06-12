@@ -70,7 +70,6 @@
           </button>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
             <li><%= button_to "Participer", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post %></li>
-            <li id="going-link"> <%= button_to "Je participe!", event_event_participants_path(@event), method: :post%></li>
             <li><a id="interested-link" class="dropdown-item" href="#">Ca m'intéresse</a></li>
             <li><a id="not-interested-link" class="dropdown-item" href="#">Pas pour moi</a></li>
           </ul>
