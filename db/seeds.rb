@@ -12,6 +12,7 @@ puts "Cleaning database..."
 
 Chatbox.destroy_all
 EventParticipant.destroy_all
+Chatbox.destroy_all
 Event.destroy_all
 User.destroy_all
 
@@ -452,169 +453,169 @@ event20.save!
 puts "Creating event_participants..."
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: lucas.id,
   event_id: event16.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: lucas.id,
   event_id: event14.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: lucas.id,
   event_id: event17.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: lucas.id,
   event_id: event10.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: alice.id,
   event_id: event17.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: alice.id,
   event_id: event19.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: alice.id,
   event_id: event14.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: alice.id,
   event_id: event10.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: maxime.id,
   event_id: event20.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: maxime.id,
   event_id: event19.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: maxime.id,
   event_id: event4.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: maxime.id,
   event_id: event7.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: julien.id,
   event_id: event20.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: julien.id,
   event_id: event8.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: julien.id,
   event_id: event15.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: julien.id,
   event_id: event9.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: lea.id,
   event_id: event15.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: lea.id,
   event_id: event16.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: lea.id,
   event_id: event7.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: lea.id,
   event_id: event3.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: sarah.id,
   event_id: event4.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: sarah.id,
   event_id: event7.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: sarah.id,
   event_id: event8.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: sarah.id,
   event_id: event9.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: lea.id,
   event_id: event3.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: lea.id,
   event_id: event1.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: maxime.id,
   event_id: event2.id
 )
 
 EventParticipant.create!(
-  status: "maybe",
+  status: "participe",
   user_id: lucas.id,
   event_id: event2.id
 )

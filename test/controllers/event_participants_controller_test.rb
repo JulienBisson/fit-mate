@@ -1,23 +1,23 @@
 require "test_helper"
 
-class EventParticipationsControllerTest < ActionDispatch::IntegrationTest
+class EventparticipantsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get event_participations_new_url
+    get event_participants_new_url
     assert_response :success
   end
 
   test "should get create" do
-    get event_participations_create_url
+    get event_participants_create_url
     assert_response :success
   end
 
   test "should get edit" do
-    get event_participations_edit_url
+    get event_participants_edit_url
     assert_response :success
   end
 
   test "should get update" do
-    get event_participations_update_url
+    get event_participants_update_url
     assert_response :success
   end
 end
