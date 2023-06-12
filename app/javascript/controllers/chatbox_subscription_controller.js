@@ -23,8 +23,6 @@ export default class extends Controller {
       currentUserIsSender,
       data.message
     );
-    this.messagesTarget.insertAdjacentHTML("beforeend", data);
-    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight);
 
     // Inserting the `message` in the DOM
     this.messagesTarget.insertAdjacentHTML("beforeend", messageElement);
