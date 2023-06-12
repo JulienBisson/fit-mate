@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :events, only: %i[new create edit update]
   end
   resources :events, only: %i[index show] do
-    resources :event_participations, only: %i[update]
+    resources :event_participants, only: %i[update]
     resources :chatboxes, only: %i[show] do
       resources :messages, only: %i[create]
     end
