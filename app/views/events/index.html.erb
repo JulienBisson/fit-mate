@@ -2,11 +2,6 @@
 <div data-controller="displayevent">
   <div class="fitmate-container">
     <div class="fitmate-title">FitMate</div>
-    <%= link_to new_organizer_event_path do %>
-      <div class="button-create">
-      <%= image_tag('add_event (1).svg') %>
-      </div>
-    <% end %>
     <div class="form-container">
       <%= form_with url: events_path, method: :get do |form| %>
         <div class="inside-form-container">
@@ -20,6 +15,11 @@
     </div>
     <div id='map' class="position-relative" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
       <div class="big-container position-absolute fixed-bottom">
+          <%= link_to new_organizer_event_path do %>
+            <div class="button-create">
+            <%= image_tag('add_event (1).svg') %>
+            </div>
+          <% end %>
         <% @events.each do |event| %>
           <%= link_to event_path(event), class:"event-card-link" do %>
             <div class="card-container d-flex align-items-center d-none" id="card_<%= event.id%>" data-displayevent-target='display'>
