@@ -1,5 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid d-flex flex-row align-content-center">
+<div class="chat-container">
+  <nav class="navbar navbar-chat w-100">
+    <div class="navbar-chat-container d-flex justify-content-between w-100">
     <%= link_to event_path do %>
       <div class="fitmate-header-navbar">
         <button class='transparent-button'>
@@ -7,33 +8,12 @@
         </button>
       </div>
     <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <h1 class="chat-title">Message</h1>
       <ul class="navbar-nav me-auto">
         <div class="nav-item-card d-flex justify-content-center">
-          <% if user_signed_in? %>
-            <li class="nav-item dropdown">
-            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= link_to "#{@event.organizer.username}", class:"nav-link" %>
-            <%= cl_image_tag @event.organizer.photo.key, class:"organizer-img", alt: "dropdown menu" %>
-            </a>
-          </div>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
+          <%= cl_image_tag @event.organizer.photo.key, class:"organizer-img", alt: "dropdown menu" %>
+        </div>
       </ul>
     </div>
-  </div>
+  </nav>
 </div>

@@ -20,38 +20,7 @@
             <%= image_tag('add_event (1).svg') %>
             </div>
           <% end %>
-        <% @events.each do |event| %>
-          <%= link_to event_path(event), class:"event-card-link" do %>
-            <div class="card-container d-flex align-items-center d-none" id="card_<%= event.id%>" data-displayevent-target='display'>
-              <%= cl_image_tag event.photo.key, class:"image" %>
-              <div class="card-infos">
-                <div class="card-infos-details d-flex align-items-center mb-3">
-                  <%= image_tag("#{event.sport}.png", class: "pictogram-sports") %>
-                  <h5 class="card-event-title"><%= event.title %></h5>
-                </div>
-                <div class="icon-people-group">
-                  <i class="fa-solid fa-people-group" style="color: ##4B4B4B;"><%= event.users.count %> /<%= event.max_participant %></i>
-                </div>
-                <div class="d-flex flex-row justify-content-between align-items-center">
-                  <div class="card-infos-details d-flex align-items-center">
-                    <%= image_tag("place_small_card.png", class: "pictogram") %>
-                    <p class="card-event-localisation"><%= event.localisation.split(" ").last %></p>
-                  </div>
-                  <div class="show-distance">
-                    <% user_coordinates = request.location.coordinates %>
-                    <% wagon_coordinates = [47.21112643898949, -1.5500990500139393] %>
-                    <% event_coordinates = [event.latitude, event.longitude] %>
-                    <% if user_coordinates.empty? %>
-                    <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i><p><%= Geocoder::Calculations.distance_between(wagon_coordinates,[event.latitude,event.longitude]).round(2) %> km</p>
-                    <% else %>
-                    <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i><p><%= Geocoder::Calculations.distance_between([user_coordinates],[event.latitude,event.longitude]).round(2) %> km</p>
-                  <% end %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
+        <%= render "events/mini_card_index" %>
       </div>
     </div>
   </div>

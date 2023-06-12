@@ -1,3 +1,7 @@
+.chat-container {
+  display: flex;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background-color: #414141;
@@ -6,4 +10,14 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.navbar-chat {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+.transparent-button {
+  background-color: transparent;
+  font-size: 25px;
 }
