@@ -1,6 +1,6 @@
 .event-wrapper {
   background-color: #414141;
-  height: 100dvh;
+  padding: 10px;
 
   .container-event{
     background-color: #414141;
@@ -8,8 +8,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // border: 1px solid black;
-    margin: 50px;
+    margin: 10px;
+    margin-top: 0px;
 
     .title-event-creation{
       display:flex;
@@ -35,7 +35,7 @@
       display: flex;
       justify-content: center;
       background-color: #414141;
-      margin: 20px;
+      padding: 5px;
 
       .sport-selection{
         align-items: center;
@@ -97,7 +97,7 @@ border: 1px solid #F6D0A5;
 .select-date .datetime{
   color: #888888;
 }
-.select-date .form-select{
+.select-date .form-control{
   color: #888888;
   border-radius: 10px;
 }
@@ -119,13 +119,17 @@ border: 1px solid #F6D0A5;
 }
 
 .event-level .form-check .radio_buttons{
-  color:#888888;
   background-color: #888888;
+  border: 1px solid #F6D0A5;
+}
+.event-level .col-form-label{
+  color: #F6D0A5;
 }
 
 .title-event .string .form-control{
   border-radius: 10px;
   color: #888888;
+  margin-bottom: 10px;
 }
 .title-event .string .form-control::placeholder{
   color: #888888;
@@ -148,4 +152,5 @@ border: 1px solid #F6D0A5;
   width: 100%;
   color: #888888;
   border: none;
+  margin-top: 10px;
 }

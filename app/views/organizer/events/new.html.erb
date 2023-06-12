@@ -9,7 +9,7 @@
   <div class="container-event">
     <%# TITLE %>
     <div class="title-event-creation">
-      <h1>Add an Event</h1>
+      <h1>Créer un évènement</h1>
 
       <%# AVATAR USER %>
       <div class="avatar-user">
@@ -26,10 +26,10 @@
         <div class="sport-selection">
           <div class="dropdown sport-event">
             <button class="dropdown-toggle btn-sport-event" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Sport
+              choisie un sport
             </button>
             <div class="dropdown-menu">
-                <%= f.input :sport, label: false,
+                <%= f.input :sport, label: "Sport",
                   as: :radio_buttons,
                   collection_wrapper_tag: 'div',
                   collection_wrapper_class: 'category-wrapper',
@@ -42,35 +42,34 @@
 
         <%# DATE %>
         <div class= "select-date">
-          <%= f.input :datetime, as: :string, label: false,
-            wrapper_html: { class: "mb-4" },
+          <%= f.input :datetime, as: :string, label: "Date",
             input_html: { data: { controller: "flatpickr" } }
           %>
         </div>
 
         <%# LOCAL %>
         <div class= "localisation-event">
-          <%= f.input :localisation, label: false, placeholder: "Addresse" %>
+          <%= f.input :localisation, label: "Adresse", placeholder: "18, rue ..." %>
         </div>
 
         <%# LEVEL %>
         <div class="event-level">
-          <%= f.input :event_level, collection: ['beginner', 'intermediate', 'expert'], as: :radio_buttons%>
+          <%= f.input :event_level, label: "Niveau", collection: ['débutant', 'intermediaire', 'expert'], as: :radio_buttons%>
         </div>
 
         <%# PARTICIPANTS %>
         <div class="max-participant-event">
-          <%= f.input :max_participant, label: false, placeholder: "Nombre de participant" %>
+          <%= f.input :max_participant, label: "Nbr de participant", placeholder: "1...25" %>
         </div>
 
         <%# TITLE %>
         <div class="title-event">
-          <%= f.input :title, label: false, placeholder: "Titre de l'évènement" %>
+          <%= f.input :title, label: "Titre de l'évènement", placeholder: "Séance de yoga..." %>
         </div>
 
         <%# DESC %>
         <div class="description-event">
-          <%= f.input :description, label: false, placeholder: "Description de l'évènement"%>
+          <%= f.input :description, label: "Description", placeholder: "...maximum 800 caractères"%>
         </div>
 
         <%# IMG %>
