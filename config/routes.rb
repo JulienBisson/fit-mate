@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # get 'event_participations/new'
-  # get 'event_participations/create'
-  # get 'event_participations/edit'
-  # get 'event_participations/update'
+  # get 'event_participants/new'
+  # get 'event_participants/create'
+  # get 'event_participants/edit'
+  # get 'event_participants/update'
   # get 'events/index'
   # get 'events/show'
   # get 'events/new'
