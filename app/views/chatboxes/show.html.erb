@@ -1,13 +1,17 @@
 <div class="container chatbox page-container" data-controller="chatbox-subscription"
-  data-chatbox-subscription-chatbox-id-value="<%= @chatbox.id %>">
+  data-chatbox-subscription-chatbox-id-value="<%= @chatbox.id %>"
+  data-chatbox-subscription-current-user-id-value="<%= current_user.id %>">
   <%= render "shared/navbar" %>
-    <h1 class="event-chat-title">Chat on Event</h1>
-
-    <div class="messages" data-chatbox-subscription-target="messages">
-      <% @chatbox.messages.each do |message| %>
-        <%= render "messages/message", message: message %>
-      <% end %>
-    </div>
+    <h1>Chat on Event</h1>
+      <div class="messages" data-chatbox-subscription-target="messages">
+        <% @chatbox.messages.each do |message| %>
+          <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+            <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+              <%= render "messages/message", message: message %>
+            </div>
+          </div>
+        <% end %>
+      </div>
   <%= simple_form_for [@event, @chatbox, @message],
     html: { data: { action: "turbo:submit-end->chatbox-subscription#resetForm" },
     class: "d-flex" } do |f| %>
@@ -15,6 +19,6 @@
     label: false,
     placeholder: "Chat with your mates",
     wrapper_html: {class: "flex-grow-1"} %>
-    <%= f.submit "Send", class: "btn-chat-send mb-3" %>
+    <%= f.submit "send", class: "btn-chat-send mb-3" %>
     <% end %>
 </div>
