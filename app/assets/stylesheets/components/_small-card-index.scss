@@ -1,4 +1,3 @@
-
 .big-container{
   padding: 20px;
 }
@@ -7,47 +6,36 @@
   background: #F0D1AF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  padding: 10px;
+  height: 120px;
 }
 
 .card-infos {
   flex-grow: 1;
+  margin-left: 10px;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.card-infos-details p {
-  margin-left: 5px;
-  margin-bottom: 0;
-  font-weight:bold ;
-}
+.card-infos-details {
 
-.pictogram {
-  width: 30px;
+  p {
+    margin-left: 5px;
+    font-weight:bold ;
+    margin-bottom: 0;
+  }
+}
+.pictogram-sports-card {
   height: 30px;
-  margin-right: 10px;
+  width: 25px;
 }
-
-
-.image {
-  width: 97px;
-  height: 90px;
-  border-radius: 5px;
-  margin: 7px;
-  object-fit: inherit;
-}
-
-.pictogram-sports {
-  margin-top: 10px;
-}
-
-.event-card-link {
-  text-decoration: none;
-  color: #4B4B4B;
-}
-
 .card-event-title {
   font-weight: bold;
-  padding-top: 10px;
+  font-size: 16px;
+  margin-bottom: 0;
 }
-
 .card-event-localisation {
   font-size: 16px;
   text-overflow: ellipsis;
@@ -56,10 +44,31 @@
   max-width: 11ch;
 }
 
+.pictogram {
+  width: 20px;
+  height: 20px;
+  margin: 0px 10px 0px 4px;
+}
+
+.image {
+  width: 97px;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: inherit;
+}
+
+
+.event-card-link {
+  text-decoration: none;
+  color: #4B4B4B;
+}
+
 .show-distance p {
     margin-right: 10px;
     font-size: 16px;
+    margin-bottom: 0;
 }
-.icon-people-group i {
+.fa-people-group::before {
   font-size: 15px;
+  margin: 10px 17px 10px 8px;
 }
