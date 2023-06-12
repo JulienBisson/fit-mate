@@ -1,15 +1,12 @@
-import { Controller } from "@hotwired/stimulus"
-
-// Connects to data-controller="flatpickr"
+import { Controller } from "@hotwired/stimulus";
 import flatpickr from "flatpickr";
 
+// Connects to data-controller="flatpickr"
 export default class extends Controller {
   connect() {
+    console.log(this.element)
     new flatpickr(this.element, {
       enableTime: true,
-      dateFormat: "d-m-Y H:i",
-      minDate: "2023-01-01",
-      // more options available on the documentation!
     });
   }
 }
