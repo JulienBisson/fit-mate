@@ -52,13 +52,22 @@
       </div>
 
       <div class="show-participant">
-        <p><%= @event.users.count %> /<%= @event.max_participant %> potes sont de la partie</p>
-          <% @event.users.each do |participant| %>
-            <div class="show-each-participant">
-              <%= cl_image_tag participant.photo.key, class:'organizer-img' %>
-              <%= participant.username %>
-            </div>
+        <p><%= @event.event_participants.participe.count %> / <%= @event.max_participant %> potes sont de la partie</p>
+        <% @event.event_participants.participe.each do |event_participant| %>
+          <div class="show-each-participant">
+            <%= cl_image_tag event_participant.user.photo.key, class: 'organizer-img' %>
+            <%= event_participant.user.username %>
+          </div>
+        <% end %>
+      </div>
+
+      <div>
+        <p>Les personnes intéressées par l'événement : </p>
+        <ul>
+          <% @event.event_participants.interesse.each do |event_participant| %>
+            <li><%= event_participant.user.username %></li>
           <% end %>
+        </ul>
       </div>
 
       <div class="btn-message-interested d-flex justify-content-center mt-3">
@@ -73,9 +82,9 @@
           </button>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
             <li><%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post %></li>
-            <li><a id="interested-link" class="dropdown-item" href="#">Ca m'intéresse</a></li>
-            <li><a id="not-interested-link" class="dropdown-item" href="#">Pas pour moi</a></li>
-            <%# <li><%= button_to 'Supprimer', delete_participation_path(event_id: @event.id, id: @event_participant.id), method: :delete %>
+            <li><%= button_to "Ca m'intéresse", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "intéressé"), method: :post %></li>
+            <li><%= link_to "Je ne participe plus", event_delete_participation_path(@event_participant), data: {turbo_method: :delete} %></li>
+
           </ul>
         </div>
       </div>
@@ -99,8 +108,6 @@
       </div>
     </div>
 </div>
-
-<%# <%= button_to "Je ne participe plus", event_event_participants_path(event_id: @event.id), method: :destroy %>
 
 <%# <script>
   window.onload = function() {

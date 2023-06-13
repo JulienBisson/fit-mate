@@ -547,7 +547,7 @@ EventParticipant.create!(
 EventParticipant.create!(
   status: "participe",
   user_id: lea.id,
-  event_id: event3.id
+  event_id: event2.id
 )
 
 EventParticipant.create!(
@@ -596,6 +596,18 @@ EventParticipant.create!(
   status: "participe",
   user_id: lucas.id,
   event_id: event2.id
+)
+
+EventParticipant.create!(
+  status: "intéressé",
+  user_id: lea.id,
+  event_id: event20.id
+)
+
+EventParticipant.create!(
+  status: "intéressé",
+  user_id: sarah.id,
+  event_id: event20.id
 )
 
 puts "Creating chatboxes..."

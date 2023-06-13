@@ -23,7 +23,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @organizer = @event.organizer
-
+    @event_participant = EventParticipant.where(event_id: params[:id], user_id: current_user)
     url = "https://portail.sportsregions.fr/#{@event.sport}/loire-atlantique/annuaire-clubs-de-#{@event.sport}-en-loire-atlantique"
     doc = Nokogiri::HTML.parse(URI.open(url).read, nil, "utf-8")
 
