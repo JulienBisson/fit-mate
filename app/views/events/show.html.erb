@@ -82,18 +82,19 @@
       <h5 class= show-info-list-club>Vous voulez rencontrer encore plus de potes ?</h5>
       <em>Voici une liste des clubs à prowimité de vous</em>
 
-        <div class="btn-group dropup">
+        <div class="btn-group dropup mt-3 dropdown-list-club">
           <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
             Liste des clubs
           </button>
           <ul class="dropdown-menu dropdown-menu-lg-end">
-            <li> <% @list_club.each do |club| %>
-              <div class="show-list-club">
-                <%= club["name"].upcase %>
-                <%= club["localisation"].capitalize %>
-              <% end %>
-              </div>
-            </li>
+            <% @list_club.each do |club| %>
+              <li>
+                <div class="show-list-club">
+                  <div class="show-list-club-name"><strong><%= club["name"].capitalize %></strong></div>
+                  <div class="show-list-club-locality"><%= club["localisation"].capitalize %></div>
+                </div>
+              </li>
+            <% end %>
           </ul>
       </div>
     </div>
