@@ -21,14 +21,8 @@
     </div>
 
     <div class="show-distance">
-        <% user_coordinates = request.location.coordinates %>
-        <% wagon_coordinates = [47.21112643898949, -1.5500990500139393] %>
-        <% event_coordinates = [@event.latitude, @event.longitude] %>
-      <% if user_coordinates.empty? %>
-        <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i><%= Geocoder::Calculations.distance_between(wagon_coordinates,[@event.latitude,@event.longitude]).round(2).to_s %> km from your position
-      <% else %>
-        <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i><%= Geocoder::Calculations.distance_between([user_coordinates],[@event.latitude,@event.longitude]).round(2).to_s  %> km from your position
-      <% end %>
+      <% wagon_coordinates = [47.21112643898949, -1.5500990500139393] %>
+      <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i><%= Geocoder::Calculations.distance_between(wagon_coordinates,[@event.latitude,@event.longitude]).round(2).to_s %> km from your position
     </div>
 
     <div class="show-duration-level">
