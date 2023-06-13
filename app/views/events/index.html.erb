@@ -3,9 +3,9 @@
   <div class="fitmate-container">
     <%# TITLE %>
     <% if current_user %>
-    <div class="fitmate-title">FitMate
-          <%= cl_image_tag current_user.photo.key, class:'image-profil-corner' %>
-    </div>
+      <div class="fitmate-title">FitMate
+            <%= cl_image_tag current_user.photo.key, class:'image-profil-corner' %>
+      </div>
     <% end %>
 
     <%# FILTER BTN %>
