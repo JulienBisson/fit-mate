@@ -1,5 +1,5 @@
 class Sport < ApplicationRecord
-  LIST = ['soccer', 'football', 'basket', 'tennis', 'yoga', 'paddle', 'swimming',
-          'bike', 'escalation', 'badminton', 'rugby', 'boxing', 'curling', 'judo',
-          'fitness', 'volleyball', 'bodybuilding']
+  LIST = ['football', 'football-americain', 'basketball', 'tennis', 'yoga', 'paddle', 'natation',
+          'cyclisme', 'escalade', 'badminton', 'rugby', 'boxe', 'curling', 'judo',
+          'fitness', 'volleyball', 'musculation']
 end
