@@ -1,0 +1,124 @@
+/* USER_PROFIL */
+.page-container { //page commune pour tous le monde
+  padding: 20px;
+  height: 100dvh;
+}
+.big-container {
+  background-color: #414141;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LINK-TITLE */
+.link-title-profil {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .fitmate-header-navbar {
+    border: 0px solid;
+
+    .transparent-button {
+      background-color: transparent;
+      font-size: 25px;
+    }
+  }
+
+  /* TITLE */
+  .show-title-user {
+    color: #F6D0A5;
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+  /* IMAGE-USER-CORNER */
+  .image-user-corner {
+    display: block;
+    width: 27.63px;
+    height: 20px;
+  }
+}
+
+/* IMAGE-PROFIL-CENTER & USERNAME */
+.image-profil-username {
+  /* border: 1px solid black; */
+  justify-content: center;
+  justify-items: center;
+  display: grid;
+  margin-top: 20px;
+
+  /* IMAGE-PROFIL-CENTER */
+  .image-profil-center {
+    margin: 20px;
+    margin-top: 40px;
+
+    .image-profil {
+      height: 150px;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      border: 1px solid #F6D0A5;
+    }
+  }
+
+  /* USERNAME */
+  .username {
+    margin: 20px;
+    color: #F6D0A5;
+    font-size: 25px
+  }
+}
+
+/* SHOW-DISTANCE-USER & LEVEL */
+.show-distance-user-level {
+  /* border: 1px solid black; */
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+
+  /* SHOW-DISTANCE-USER */
+  .show-distance-user {
+    width: 100%;
+
+    .pictogram-localisation {
+      margin-right: 10px;
+    }
+  }
+  /* LEVEL */
+  .level-user {
+    width: 100%;
+
+    .pictogram-levels {
+      margin-top: 5px;
+    }
+  }
+}
+
+/* DESCRIPTION */
+.description-user {
+  border: 3px solid #F6D0A5;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+/* FAVORITE-SPORT */
+.favorite-sport {
+  /* border: 1px solid black; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  .btn-favorite-sport {
+    color: #888888;
+    background-color: #F6D0A5;
+    border: 1px solid #888888;
+    border-radius: 25px;
+    padding: 6px;
+    width: 100%;
+  }
+}

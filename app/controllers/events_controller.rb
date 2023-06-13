@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'nokogiri'
+
 class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
@@ -21,6 +24,17 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @organizer = @event.organizer
     @event_participant = EventParticipant.where(event_id: params[:id], user_id: current_user)
+    url = "https://portail.sportsregions.fr/#{@event.sport}/loire-atlantique/annuaire-clubs-de-#{@event.sport}-en-loire-atlantique"
+    doc = Nokogiri::HTML.parse(URI.open(url).read, nil, "utf-8")
+
+    @list_club = []
+
+    doc.search(".association").first(10).each do |element|
+      club = {}
+      club["name"] = element.search("h2").text.strip
+      club["localisation"] = element.search("span > span").last.text.strip
+      @list_club << club
+    end
   end
 
 end
