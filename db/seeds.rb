@@ -569,7 +569,7 @@ EventParticipant.create!(
 EventParticipant.create!(
   status: "participe",
   user_id: lea.id,
-  event_id: event3.id
+  event_id: event2.id
 )
 
 EventParticipant.create!(
