@@ -83,8 +83,7 @@
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
             <li><%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post %></li>
             <li><%= button_to "Ca m'intéresse", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "intéressé"), method: :post %></li>
-            <li><%= link_to "Je ne participe plus", event_delete_participation_path(@event_participant), data: {turbo_method: :delete} %></li>
-
+            <li><%= button_to "Je ne participe plus", event_delete_participation_path(@event_participant), method: :delete %></li>
           </ul>
         </div>
       </div>

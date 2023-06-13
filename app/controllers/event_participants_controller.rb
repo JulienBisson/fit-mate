@@ -43,7 +43,7 @@ class EventParticipantsController < ApplicationController
   def destroy
     event_participation_to_delete = Event.find(params[:id])
     @event_participant = EventParticipant.find_by(event_id: event_participation_to_delete.id, user_id: current_user)
-    @event_participant.delete
+    @event_participant.destroy
     redirect_to event_path(Event.find(params[:id])), status: :see_other
   end
 end
