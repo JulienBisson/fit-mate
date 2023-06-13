@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 require 'open-uri'
+require "nokogiri"
 
 puts "Cleaning database..."
 
@@ -138,15 +139,7 @@ event4 = Event.create!(
   organizer_id: alice.id,
   sport: 'soccer',
   title: "Foot à la Beaujoire",
-  description: "Vivez le frisson du football dans l'emblématique stade de la Beaujoire à Nantes !
-  Rejoignez-nous pour un événement sportif inoubliable qui enflammera votre passion pour le jeu.
-  Ressentez l'énergie de la foule alors que des athlètes talentueux présentent leurs compétences sur le terrain verdoyant.
-  Que vous soyez joueur ou passionné de football, cette invitation est pour vous.
-  Entrez dans la grandeur du stade, assistez à la précision des dribbles et des buts et faites partie de l'action.
-  Le Stade de la Beaujoire propose des installations à la pointe de la technologie et une ambiance électrique qui vous laissera envoûté.
-  Ne manquez pas l'occasion de frapper, tacler et marquer sur ce terrain légendaire.
-  Rejoignez-nous, encouragez les autres fans et créez des souvenirs qui dureront toute une vie.
-  Enfilez vos chaussures et vivez l'ivresse du football au stade de la Beaujoire à Nantes. Laissez le jeu vous couper le souffle !",
+  description: "Venez vivre l'excitation du football à la Beaujoire à Nantes ! Rejoignez-nous pour un événement inoubliable qui enflammera votre passion. Découvrez le talent des joueurs sur le terrain verdoyant, entouré d'une ambiance électrique. Que vous soyez joueur ou fan de foot, cette invitation est pour vous. Ne manquez pas l'occasion de marquer des buts sur ce terrain légendaire. Rejoignez-nous, encouragez les autres fans et créez des souvenirs qui dureront toute une vie. Enfilez vos chaussures et vivez l'ivresse du football à la Beaujoire de Nantes. Laissez le jeu vous couper le souffle !",
   localisation: "Route de Saint-Joseph, 44300 Nantes",
   event_level: "débutant",
   max_participant: 10,
@@ -197,13 +190,7 @@ event7 = Event.create!(
   organizer_id: julien.id,
   sport: 'volleyball',
   title: "Beach's Volley",
-  description: "Préparez-vous à sauter, plonger et rire jusqu'à la victoire pour une manche de volley sur la plage !
-  Rejoignez-nous au Rezé Beach Volley Club, à deux pas de la ville animée de Nantes.
-  Cet événement est une extravagance de volley-ball de plage qui vous laissera avec des cheveux sableux,
-  une peau bronzée et des abdominaux douloureux à cause de rires incessants. Que vous soyez un pro du volley-ball
-  ou un novice, venez découvrir les batailles sur le terrain sablonneux, les plongeons scandaleux et les pointes épiques
-  qui vous feront vous sentir comme une superstar de la plage. Prenez vos lunettes de soleil, badigeonnez-vous de crème solaire
-  et rejoignez-nous pour une journée remplie de compétitions amicales, de nettoyages hilarants et de beaucoup de plaisir sur le sable !",
+  description: "Préparez-vous à rire, transpirer et atteindre de nouveaux sommets lors d'une session de paddle sur la Sèvre, au sud de Nantes ! Rejoignez-nous pour une expérience pleine d'amusement où vous glisserez sur les eaux pittoresques. Que vous soyez débutant ou expert, cette invitation est pour tous les aventuriers. Équilibrez-vous, riez et peut-être même faites quelques plongeons imprévus (pas de panique, c'est dans l'esprit du jeu !). Alors, enfilez votre crème solaire, libérez le paddleboardeur qui sommeille en vous et rejoignez-nous pour une journée de rires, de folies aquatiques et de paddleboard inoubliable sur la Sèvre, au sud de Nantes !",
   localisation: "101 Rue de la Trocardière, 44400 Rezé",
   event_level: "débutant",
   max_participant: 6,
@@ -217,13 +204,7 @@ event8 = Event.create!(
   organizer_id: lea.id,
   sport: 'paddle',
   title: "Paddle à Beautour",
-  description: "Préparez-vous à pagayer sur la pittoresque Sèvre, juste au sud de Nantes !
-  Rejoignez-nous pour un événement de paddle qui vous fera glisser,
-  éclabousser et rire à travers les eaux pittoresques. Que vous soyez un pro du paddle ou un débutant,
-  cet événement promet un plaisir sans fin et des moments inoubliables. Préparez-vous à vous équilibrer,
-  à vaciller et peut-être même à faire un plongeon inattendu (ne vous inquiétez pas, tout cela fait partie du plaisir !).
-  Alors prenez votre crème solaire, libérez votre gourou intérieur du paddle et rejoignez-nous pour une journée remplie de rires,
-  de bouffonneries aquatiques et de beaucoup de manigances de paddleboard!",
+  description: "Préparez-vous à pagayer, éclabousser et rire à volonté lors d'une session de paddle sur la Sèvre, au sud de Nantes ! Rejoignez-nous pour un événement délirant où vous glisserez sur les eaux pittoresques. Que vous soyez débutant ou expert, cette invitation est pour tous les aventuriers. Équilibrez-vous, vacillez et laissez-vous surprendre par quelques plongeons inattendus (pas de souci, c'est tout le charme de l'aventure !). Alors, préparez votre crème solaire, libérez votre esprit paddle et venez vous amuser avec nous lors d'une journée mémorable de rires, d'éclaboussures et de paddle sur la Sèvre, au sud de Nantes !",
   localisation: "Rue du Calvaire 18, 44000 Nantes",
   event_level: "intermediaire",
   max_participant: 2,
@@ -255,15 +236,7 @@ event10 = Event.create!(
   organizer_id: lea.id,
   sport: 'bike',
   title: "Tour de Nantes",
-  description: "Appel à tous les passionnés de vélo et les aventuriers !
-  Rejoignez-nous pour un événement exaltant alors que nous pédalons dans les charmantes rues de Nantes,
-  explorant les monuments emblématiques qui font de cette ville la fierté de la duchesse Anne.
-  Enfourchez vos vélos et embarquez pour un voyage qui vous emmènera sur une route panoramique,
-  en passant par les sites incontournables qui définissent Nantes.
-  Du magnifique Château des Ducs de Bretagne à la vibrante et artistique Île de Nantes,
-  chaque tour de pédale dévoilera un nouveau morceau d'histoire et de culture. Alors dépoussiérez vos casques,
-  attrapez vos vélos et rejoignez-nous pour une journée inoubliable de vélo, de camaraderie
-  et de découverte alors que nous explorons le cœur et l'âme de Nantes, le royaume de la duchesse Anne.",
+  description: "Appel à tous les passionnés de vélo et aventuriers ! Rejoignez-nous pour une balade exaltante à travers les rues pittoresques de Nantes, à la découverte des emblèmes qui font la fierté de la duchesse Anne. Enfourchez vos vélos pour un parcours panoramique, passant par le magnifique Château des Ducs de Bretagne et l'effervescente Île de Nantes. Chaque coup de pédale vous fera vivre une nouvelle tranche d'histoire et de culture. Alors, sortez vos casques, préparez vos vélos et joignez-vous à nous pour une journée inoubliable de cyclisme, d'amitié et de découverte au cœur de Nantes, le royaume de la duchesse Anne.",
   localisation: "Bd Léon Bureau, 44200 Nantes",
   event_level: "débutant",
   max_participant: 10,
@@ -277,14 +250,7 @@ event11 = Event.create!(
   organizer_id: maxime.id,
   sport: 'badminton',
   title: "A vos volants",
-  description: "Préparez-vous à smasher, à glisser et à faire la fête comme jamais auparavant
-  lors de notre extravaganza de badminton ! Rejoignez-nous pour un événement rempli de joie
-  et de rigolade qui vous fera brandir vos raquettes et vous tordre de rire. Que vous soyez un pro du badminton
-  ou un novice complet, cette soirée est placée sous le signe des échanges délirants, des ratés épiques
-  et de l'exhibition de vos meilleurs mouvements de danse avec volant. Attendez-vous à des coups fous,
-  des plongeons farfelus et plus de fous rires que vous ne pouvez imaginer. Alors attrapez votre raquette,
-  mettez votre visage de compétiteur (ou votre expression la plus ridicule) et préparez-vous à une soirée de folie badmintonesque
-  qui vous laissera quémander encore plus !",
+  description: "Préparez-vous à smasher, glisser et faire la fête comme jamais lors de notre soirée de badminton déjantée ! Rejoignez-nous pour un événement hilarant où vous pourrez brandir vos raquettes avec style et vous tordre de rire. Que vous soyez un pro du badminton ou un novice intrépide, cette soirée est placée sous le signe des échanges loufoques, des ratés spectaculaires et des mouvements de danse décalés. Attendez-vous à des coups délirants, des plongeons déjantés et des éclats de rire à n'en plus finir. Alors, attrapez votre raquette, mettez votre plus beau sourire et préparez-vous à une soirée de folie badmintonesque qui vous laissera des souvenirs mémorables !",
   localisation: "20 rue de la Saint-Médard, 44300 Nantes",
   event_level: "intermediaire",
   max_participant: 10,
@@ -714,3 +680,4 @@ Chatbox.create!(
   event_id: event20.id,
   name: event20.title
 )
+
