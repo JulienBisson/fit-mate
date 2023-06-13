@@ -53,7 +53,7 @@
 
       <div class="show-participant">
         <p><%= @event.users.count %> /<%= @event.max_participant %> mates participate</p>
-          <% @event.users.each do |participant| %>
+          <% @event.users.joins(:event_participants).uniq.each do |participant| %>
             <div class="show-each-participant">
               <%= cl_image_tag participant.photo.key, class:'organizer-img' %>
               <%= participant.username %>
@@ -61,13 +61,25 @@
           <% end %>
       </div>
 
+
       <div>
-      <% if @event_participant.exists? %>
-      <%= "Déjà inscrit" %>
-      <% else %>
-      <%= "Vous pouvez vous inscrire" %>
-      <% end %>
+        <p>Les personnes participant à l'événement : </p>
+        <ul>
+          <% @event.event_participants.participe.each do |event_participant| %>
+            <li><%= event_participant.user.username %></li>
+          <% end %>
+        </ul>
+
+        <p>Les personnes intéressées par l'événement : </p>
+        <ul>
+          <% @event.event_participants.interesse.each do |event_participant| %>
+            <li><%= event_participant.user.username %></li>
+          <% end %>
+        </ul>
       </div>
+
+
+
 
       <div class="btn-message-interested d-flex justify-content-center mt-3">
         <button class= "btn-message">
@@ -81,8 +93,7 @@
           </button>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
             <li><%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post %></li>
-            <li><a id="interested-link" class="dropdown-item" href="#">Ca m'intéresse</a></li>
-            <li><a id="not-interested-link" class="dropdown-item" href="#">Pas pour moi</a></li>
+            <li><%= button_to "Ca m'intéresse", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "intéressé"), method: :post %></li>
             <li><%= link_to "Je ne participe plus", event_delete_participation_path(@event_participant), data: {turbo_method: :delete} %></li>
 
           </ul>
