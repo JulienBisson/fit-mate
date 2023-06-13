@@ -1,15 +1,51 @@
-<%# card container %>
-<div class="big-container">
+<%# USER_PROFIL %>
+<div class="big-container page-container">
+  <%# LINK-TITLE %>
+  <div class="link-title-profil">
+    <%= link_to events_path do %>
+      <div class="fitmate-header-navbar">
+        <button class='transparent-button'>
+          <i class="fa-solid fa-chevron-left" style="color: #f6d0a5;"></i>
+        </button>
+      </div>
+    <% end %>
 
-  <div class="card-container d-flex align-items-center">
-    <%= image_tag('homepage-8.jpg', class:"image") %>
-    <div class="card-infos">
-      <div class="card-infos-details d-flex align-items-center mb-3">
-        <p>Playground Rezé</p>
-      </div>
-      <div class="card-infos-details d-flex align-items-center">
-        <p>Parc du Loiry, Rezé</p>
-      </div>
+    <%# TITLE %>
+    <div class="show-title-user">
+      <h3>Profil</h3>
+    </div>
+
+    <%# IMAGE-USER-CORNER %>
+    <div class="image-user-corner">
+      <%= cl_image_tag current_user.photo.key, class:'image-profil-corner' %>
+    </div>
+  </div>
+
+  <%# IMAGE-PROFIL-CENTER & USERNAME %>
+  <div class="photo-profil-username">
+    <%# IMAGE-PROFIL-CENTER %>
+    <div class="image-profil-center">
+      <%= cl_image_tag @current_user.photo.key, class:'image-profil' %>
+    </div>
+
+    <%# USERNAME %>
+    <div class="username">
+      <%= @user.username %>
+    </div>
+  </div>
+
+  <%# SHOW-DISTANCE-USER & LEVEL %>
+  <div class="show-distance-user-level">
+    <%# SHOW-DISTANCE-USER %>
+    <div class="show-distance-user">
+      <%= image_tag("localisation-pin.svg", class: "pictogram-localisation") %>
+      <%= wagon_coordinates = "Nantes" %>
+    </div>
+
+    <%# LEVEL %>
+    <div class="level-user">
+      <%= @current_user.sport_level %>
+      <%= image_tag("#{@current_user.sport_level}.svg", class: "pictogram-levels") %>
     </div>
   </div>
 

@@ -1,0 +1,72 @@
+/* USER_PROFIL */
+.page-container { //page commune pour tous le monde
+  padding: 20px;
+  height: 100dvh;
+}
+.big-container {
+  background-color: #414141;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LINK-TITLE */
+.link-title-profil {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .fitmate-header-navbar {
+    border: 0px solid;
+
+    .transparent-button {
+      background-color: transparent;
+      font-size: 25px;
+    }
+  }
+
+  /* TITLE */
+  .show-title-user {
+    color: #F6D0A5;
+  }
+
+  /* IMAGE-USER-CORNER */
+  .image-profil-corner {
+    height: 50px;
+    width: 50px;
+    border: 1px solid #F6D0A5;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+}
+
+/* IMAGE-PROFIL-CENTER & USERNAME */
+.photo-profil-username {
+  border: 1px solid black;
+  justify-content: center;
+  justify-items: center;
+  display: grid;
+  margin-top: 20px;
+
+  /* IMAGE-PROFIL-CENTER */
+  .image-profil-center {
+    margin: 20px;
+    margin-top: 40px;
+
+    .image-profil {
+      height: 150px;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      border: 1px solid #F6D0A5;
+    }
+  }
+
+  /* USERNAME */
+  .username {
+    margin: 20px;
+    color: #F6D0A5;
+    font-size: 25px
+  }
+}
