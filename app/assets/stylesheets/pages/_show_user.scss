@@ -28,22 +28,23 @@
   /* TITLE */
   .show-title-user {
     color: #F6D0A5;
+
+    h3 {
+      margin-bottom: 0;
+    }
   }
 
   /* IMAGE-USER-CORNER */
-  .image-profil-corner {
-    height: 50px;
-    width: 50px;
-    border: 1px solid #F6D0A5;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+  .image-user-corner {
+    display: block;
+    width: 27.63px;
+    height: 20px;
   }
 }
 
 /* IMAGE-PROFIL-CENTER & USERNAME */
-.photo-profil-username {
-  border: 1px solid black;
+.image-profil-username {
+  /* border: 1px solid black; */
   justify-content: center;
   justify-items: center;
   display: grid;
@@ -68,5 +69,56 @@
     margin: 20px;
     color: #F6D0A5;
     font-size: 25px
+  }
+}
+
+/* SHOW-DISTANCE-USER & LEVEL */
+.show-distance-user-level {
+  /* border: 1px solid black; */
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+
+  /* SHOW-DISTANCE-USER */
+  .show-distance-user {
+    width: 100%;
+
+    .pictogram-localisation {
+      margin-right: 10px;
+    }
+  }
+  /* LEVEL */
+  .level-user {
+    width: 100%;
+
+    .pictogram-levels {
+      margin-top: 5px;
+    }
+  }
+}
+
+/* DESCRIPTION */
+.description-user {
+  border: 3px solid #F6D0A5;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+/* FAVORITE-SPORT */
+.favorite-sport {
+  /* border: 1px solid black; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  .btn-favorite-sport {
+    color: #888888;
+    background-color: #F6D0A5;
+    border: 1px solid #888888;
+    border-radius: 25px;
+    padding: 6px;
+    width: 100%;
   }
 }
