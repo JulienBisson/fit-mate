@@ -8,7 +8,39 @@
 }
 
 .mapboxgl-ctrl-top-right {
-  margin: auto;
-  inset: 0;
   width: fit-content;
+}
+
+.mapboxgl-ctrl-bottom-left{
+  display: none;
+}
+
+.mapboxgl-ctrl-bottom-right{
+  display: none;
+}
+
+
+.mapboxgl-ctrl-group button{
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 425px;
+  margin-right: 18px;
+}
+
+.mapboxgl-ctrl button .mapboxgl-ctrl-icon {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  display: none !important;
+  height: 100%;
+  width: 100%;
+}
+
+.mapboxgl-ctrl-geolocate {
+  display: none;
+}
+
+
+.mapboxgl-user-location-accuracy-circle {
+  z-index: -1;
 }

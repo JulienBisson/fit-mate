@@ -1,29 +1,39 @@
 
 <div data-controller="displayevent">
   <div class="fitmate-container">
-    <div class="fitmate-title">FitMate</div>
-    <div class="form-container">
-      <%= form_with url: events_path, method: :get do |form| %>
-        <div class="inside-form-container">
-          <%= form.label :query, "Filtres:", class: "form-label" %>
-          <div class="formpasselect">
-            <%= form.select :query, [["all sports", ""]] + @selected_sports %>
-          </div>
-          <%= form.submit "Go!", class: "form-submit" %>
-        </div>
-      <% end %>
+    <%# TITLE %>
+    <div class="fitmate-title">FitMate
+          <%= cl_image_tag current_user.photo.key, class:'image-profil-corner' %>
     </div>
-    <div id='map' class="position-relative" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
-      <div class="big-container position-absolute fixed-bottom">
-          <%= link_to new_organizer_event_path do %>
-            <div class="button-create">
-            <%= image_tag('add_event (1).svg') %>
+
+    <%# FILTER BTN %>
+    <div class="filter-cta">
+      <div data-controller="burger-menu" >
+        <%= image_tag('burger-menu.svg', class: 'burger-menu', data: { action: "click->burger-menu#toggleForm" }) %>
+        <div class="form-container filter-form d-none" data-burger-menu-target="form">
+          <%= form_with url: events_path, method: :get do |form| %>
+            <div class="inside-form-container">
+              <%= form.label :query, "Filtres:", class: "form-label" %>
+              <div class="formpasselect">
+                <%= form.select :query, [["Sport", ""]] + @selected_sports, {}, data: { action: "change->displayevent#submitForm" } %>
+              </div>
             </div>
           <% end %>
+        </div>
+      </div>
+    </div>
+
+    <%# MAP %>
+    <div id='map' class="position-relative" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
+      <div class="big-container position-absolute fixed-bottom">
+        <%= link_to new_organizer_event_path do %>
+          <div class="button-create">
+            <%= image_tag('add_event (1).svg', class: "add_event") %>
+          </div>
+        <% end %>
+            <%= image_tag('localisation-button(3).svg',class: 'localisation-button')%>
         <%= render "events/mini_card_index" %>
       </div>
     </div>
   </div>
-  </div>
-
 </div>
