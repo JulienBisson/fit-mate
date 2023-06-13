@@ -171,8 +171,8 @@ event7 = Event.create!(
   max_participant: 11,
   datetime: Date.parse("20-06-2023")
 )
-file = File.open(Rails.root.join("db/images/volley-ball.jpg"))
-event7.photo.attach(io: file, filename: "volley-ball.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/volleyball.jpg"))
+event7.photo.attach(io: file, filename: "volleyball.jpg", content_type: "image/jpeg")
 event7.save!
 
 event8 = Event.create!(
