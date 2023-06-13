@@ -24,7 +24,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @organizer = @event.organizer
 
-    url = "https://portail.sportsregions.fr/#{@event.sport}ball/loire-atlantique/annuaire-clubs-de-#{@event.sport}ball-en-loire-atlantique"
+    url = "https://portail.sportsregions.fr/#{@event.sport}/loire-atlantique/annuaire-clubs-de-#{@event.sport}-en-loire-atlantique"
     doc = Nokogiri::HTML.parse(URI.open(url).read, nil, "utf-8")
 
     @list_club = []
@@ -32,7 +32,7 @@ class EventsController < ApplicationController
     doc.search(".association").first(10).each do |element|
       club = {}
       club["name"] = element.search("h2").text.strip
-      club["localisation"] = element.search("span > span").text.strip
+      club["localisation"] = element.search("span > span").last.text.strip
       @list_club << club
     end
   end
