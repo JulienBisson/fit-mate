@@ -52,7 +52,7 @@
       </div>
 
       <div class="show-participant">
-        <p><%= @event.users.count %> /<%= @event.max_participant %> mates participate</p>
+        <p><%= @event.users.count %> /<%= @event.max_participant %> potes sont de la partie</p>
           <% @event.users.each do |participant| %>
             <div class="show-each-participant">
               <%= cl_image_tag participant.photo.key, class:'organizer-img' %>
@@ -60,6 +60,14 @@
             </div>
           <% end %>
       </div>
+
+      <div class="show-list-club">
+        <% @list_club.each do |club| %>
+          <%= club["name"].upcase %>
+          <%= club["localisation"].capitalize %>
+        <% end %>
+      </div>
+
 
       <div class="btn-message-interested d-flex justify-content-center mt-3">
         <button class= "btn-message">
