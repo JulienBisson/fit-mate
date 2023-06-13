@@ -59,7 +59,14 @@
               <%= participant.username %>
             </div>
           <% end %>
-          <p><%# @event_participant.status %></p>
+      </div>
+
+      <div>
+      <% if @event_participant.exists? %>
+      <%= "Déjà inscrit" %>
+      <% else %>
+      <%= "Vous pouvez vous inscrire" %>
+      <% end %>
       </div>
 
       <div class="btn-message-interested d-flex justify-content-center mt-3">
