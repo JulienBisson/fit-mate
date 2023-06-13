@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 require 'open-uri'
+require "nokogiri"
 
 puts "Cleaning database..."
 
@@ -51,7 +52,7 @@ maxime = User.create!(first_name: "Maxime", last_name: "richard", username: "Max
   email: "Maxime.richard@gmail.com", password: "secret",
   description: "Je suis un ingénieur qui aime la nature, les animaux et la photographie.
   Je suis aventurier, passionné et drôle.",
-  favorite_sport: "boxing", sport_level: "intermediaire")
+  favorite_sport: "tennis", sport_level: "intermediaire")
 
 file = File.open(Rails.root.join("db/images/maxime.jpg"))
 maxime.photo.attach(io: file, filename: "maxime.jpg", content_type: "image/jpeg")
@@ -81,14 +82,14 @@ puts "Creating events..."
 event1 = Event.create!(
   organizer_id: alice.id,
   sport: 'yoga',
-  title: "Séance de yoga",
+  title: "Yoga pour tous",
   description: "Vous êtes invités à participer à un évènement de yoga qui vous
   fera découvrir les bienfaits de cette pratique millénaire sur votre corps et
   votre esprit. Au programme, une séance complète de hatha yoga, comprenant des
   exercices de respiration, des postures adaptées à votre niveau et un temps de
   relaxation. Que vous soyez débutant ou confirmé, venez vous détendre, vous
   étirer et partager un moment de sérénité et d’harmonie.",
-  localisation: "Rue du Pré Salé, 44200 Nantes",
+  localisation: "30 Allée Robert Cheval, 44980 Sainte-Luce-sur-Loire",
   event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("16-06-2023")
@@ -100,15 +101,15 @@ event1.save!
 event2 = Event.create!(
   organizer_id: alice.id,
   sport: 'fitness',
-  title: "Séance de fitness",
+  title: "Fitness au Loiry",
   description: "Vous êtes invités à participer à une de séance de fitness qui
   vous fera découvrir les bienfaits du sport sur votre forme et votre santé.
   Au programme, des exercices variés et adaptés à votre niveau, qui sollicitent
   tous les muscles du corps et améliorent votre endurance. Que vous soyez
   débutant ou confirmé, venez vous éclater, vous défouler et partager un moment
   de convivialité et de bien-être.",
-  localisation: "Centre Commercial Beaulieu, Bd Général de Gaulle, 44200 Nantes",
-  event_level: "intermediaire",
+  localisation: "Bd Guichet Serex, 44120 Vertou",
+  event_level: "débutant",
   max_participant: 6,
   datetime: Date.parse("18-06-2023")
 )
@@ -119,13 +120,13 @@ event2.save!
 event3 = Event.create!(
   organizer_id: alice.id,
   sport: 'tennis',
-  title: "Partie de tennis",
+  title: "Grand Chelem pour les nuls",
   description: "Vous êtes invités à participer à une partie de
   tennis qui vous fera découvrir les sensations du sport de raquette le plus
   pratiqué au monde. Au programme, des matchs amicaux entre deux joueurs ou
   deux équipes de deux joueurs. Que vous soyez débutant ou confirmé, venez vous
   amuser, vous dépenser et partager un moment de fair-play et de respect.",
-  localisation: "Stade Pascal Laporte, 74 Bd des Anglais, 44100 Nantes",
+  localisation: "74 Bd des Anglais, 44100 Nantes",
   event_level: "débutant",
   max_participant: 4,
   datetime: Date.parse("23-06-2023")
@@ -136,15 +137,10 @@ event3.save!
 
 event4 = Event.create!(
   organizer_id: alice.id,
-  sport: 'yoga',
-  title: "Séance de yoga",
-  description: "Vous êtes invités à participer à un évènement de yoga qui vous
-  fera découvrir les bienfaits de cette pratique millénaire sur votre corps et
-  votre esprit. Au programme, une séance complète de hatha yoga, comprenant des
-  exercices de respiration, des postures adaptées à votre niveau et un temps de
-  relaxation. Que vous soyez débutant ou confirmé, venez vous détendre, vous
-  étirer et partager un moment de sérénité et d’harmonie.",
-  localisation: "Rue du Pré Salé, 44200 Nantes",
+  sport: 'soccer',
+  title: "Foot à la Beaujoire",
+  description: "Venez vivre l'excitation du football à la Beaujoire à Nantes ! Rejoignez-nous pour un événement inoubliable qui enflammera votre passion. Découvrez le talent des joueurs sur le terrain verdoyant, entouré d'une ambiance électrique. Que vous soyez joueur ou fan de foot, cette invitation est pour vous. Ne manquez pas l'occasion de marquer des buts sur ce terrain légendaire. Rejoignez-nous, encouragez les autres fans et créez des souvenirs qui dureront toute une vie. Enfilez vos chaussures et vivez l'ivresse du football à la Beaujoire de Nantes. Laissez le jeu vous couper le souffle !",
+  localisation: "Route de Saint-Joseph, 44300 Nantes",
   event_level: "débutant",
   max_participant: 10,
   datetime: Date.parse("10-06-2023")
@@ -156,13 +152,13 @@ event4.save!
 event5 = Event.create!(
   organizer_id: julien.id,
   sport: 'basket',
-  title: "Partie de basket",
+  title: "Vivez le playground",
   description: "Vous êtes invités à participer à une de partie de
   basket qui vous fera découvrir les sensations du sport collectif le plus
   pratiqué en salle. Au programme, des matchs amicaux entre deux équipes de
   cinq joueurs. Que vous soyez débutant ou confirmé, venez vous amuser,
   vous dépenser et partager un moment de fair-play et de respect.",
-  localisation: "6 Rue des Bourdonnières.",
+  localisation: "6 Rue des Bourdonnières, 44200 Nantes",
   event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("16-06-2023")
@@ -192,39 +188,30 @@ event6.save!
 
 event7 = Event.create!(
   organizer_id: julien.id,
-  sport: 'escalation',
-  title: "Séance d'escalade",
-  description: "Vous êtes invités à participer à une séance
-  d’escalade qui vous fera découvrir les sensations du sport vertical.
-  Au programme, des voies ou des blocs adaptés à votre niveau, sur un mur
-  artificiel. Que vous soyez débutant ou confirmé, venez vous
-  amuser, vous dépasser et partager un moment de coopération et de confiance.",
-  localisation: "27 Bd Bâtonnier Cholet, 44100 Nantes",
+  sport: 'volleyball',
+  title: "Beach's Volley",
+  description: "Préparez-vous à rire, transpirer et atteindre de nouveaux sommets lors d'une session de paddle sur la Sèvre, au sud de Nantes ! Rejoignez-nous pour une expérience pleine d'amusement où vous glisserez sur les eaux pittoresques. Que vous soyez débutant ou expert, cette invitation est pour tous les aventuriers. Équilibrez-vous, riez et peut-être même faites quelques plongeons imprévus (pas de panique, c'est dans l'esprit du jeu !). Alors, enfilez votre crème solaire, libérez le paddleboardeur qui sommeille en vous et rejoignez-nous pour une journée de rires, de folies aquatiques et de paddleboard inoubliable sur la Sèvre, au sud de Nantes !",
+  localisation: "101 Rue de la Trocardière, 44400 Rezé",
   event_level: "débutant",
   max_participant: 6,
   datetime: Date.parse("20-06-2023")
 )
-file = File.open(Rails.root.join("db/images/escalation.jpg"))
-event7.photo.attach(io: file, filename: "escalation.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/volley-ball.jpg"))
+event7.photo.attach(io: file, filename: "volley-ball.jpg", content_type: "image/jpeg")
 event7.save!
 
 event8 = Event.create!(
   organizer_id: lea.id,
-  sport: 'fitness',
-  title: "Séance de fitness",
-  description: "Vous êtes invités à participer à une de séance de fitness qui
-  vous fera découvrir les bienfaits du sport sur votre forme et votre santé.
-  Au programme, des exercices variés et adaptés à votre niveau, qui sollicitent
-  tous les muscles du corps et améliorent votre endurance. Que vous soyez
-  débutant ou confirmé, venez vous éclater, vous défouler et partager un moment
-  de convivialité et de bien-être.",
+  sport: 'paddle',
+  title: "Paddle à Beautour",
+  description: "Préparez-vous à pagayer, éclabousser et rire à volonté lors d'une session de paddle sur la Sèvre, au sud de Nantes ! Rejoignez-nous pour un événement délirant où vous glisserez sur les eaux pittoresques. Que vous soyez débutant ou expert, cette invitation est pour tous les aventuriers. Équilibrez-vous, vacillez et laissez-vous surprendre par quelques plongeons inattendus (pas de souci, c'est tout le charme de l'aventure !). Alors, préparez votre crème solaire, libérez votre esprit paddle et venez vous amuser avec nous lors d'une journée mémorable de rires, d'éclaboussures et de paddle sur la Sèvre, au sud de Nantes !",
   localisation: "Rue du Calvaire 18, 44000 Nantes",
   event_level: "intermediaire",
   max_participant: 2,
   datetime: Date.parse("18-06-2023")
 )
-file = File.open(Rails.root.join("db/images/fitness.jpg"))
-event8.photo.attach(io: file, filename: "fitness.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/paddle.jpg"))
+event8.photo.attach(io: file, filename: "paddle.jpg", content_type: "image/jpeg")
 event8.save!
 
 event9 = Event.create!(
@@ -236,7 +223,7 @@ event9 = Event.create!(
   pratiqué en salle. Au programme, des matchs amicaux entre deux équipes de
   cinq joueurs. Que vous soyez débutant ou confirmé, venez vous amuser,
   vous dépenser et partager un moment de fair-play et de respect.",
-  localisation: "5 Allée du Recteur Jean Prud’homme.",
+  localisation: "Rue des Dervallières, 44100 Nantes",
   event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("22-06-2023")
@@ -248,13 +235,9 @@ event9.save!
 event10 = Event.create!(
   organizer_id: lea.id,
   sport: 'bike',
-  title: "Balade à vélo",
-  description: "Vous êtes invités à participer à une balade à vélo
-  qui vous fera découvrir les plus beaux itinéraires de Nantes. Au programme,
-  des parcours adaptés à tous les niveaux, du débutant au confirmé. Que vous
-  soyez à la recherche d’aventure, de nature ou de culture, venez vous évader,
-  vous ressourcer et partager un moment de convivialité et de découverte.",
-  localisation: "Route de Saint-Joseph de Porterie, 44300 Nantes",
+  title: "Tour de Nantes",
+  description: "Appel à tous les passionnés de vélo et aventuriers ! Rejoignez-nous pour une balade exaltante à travers les rues pittoresques de Nantes, à la découverte des emblèmes qui font la fierté de la duchesse Anne. Enfourchez vos vélos pour un parcours panoramique, passant par le magnifique Château des Ducs de Bretagne et l'effervescente Île de Nantes. Chaque coup de pédale vous fera vivre une nouvelle tranche d'histoire et de culture. Alors, sortez vos casques, préparez vos vélos et joignez-vous à nous pour une journée inoubliable de cyclisme, d'amitié et de découverte au cœur de Nantes, le royaume de la duchesse Anne.",
+  localisation: "Bd Léon Bureau, 44200 Nantes",
   event_level: "débutant",
   max_participant: 10,
   datetime: Date.parse("23-06-2023")
@@ -265,21 +248,16 @@ event10.save!
 
 event11 = Event.create!(
   organizer_id: maxime.id,
-  sport: 'football',
-  title: "Partie de foot",
-  description: "Vous êtes conviés à une partie de foot qui vous
-  plongera dans l’univers du ballon rond. Au menu, des rencontres conviviales
-  entre deux équipes. Le but du jeu est de faire
-  trembler les filets de l’équipe adverse.
-  Que vous soyez novice ou expert, venez vous éclater,
-  vous défouler et partager un moment de sportivité et de respect.",
-  localisation: " Maison des Haubans, 1 bis Bd de Berlin, 44000 Nantes",
+  sport: 'badminton',
+  title: "A vos volants",
+  description: "Préparez-vous à smasher, glisser et faire la fête comme jamais lors de notre soirée de badminton déjantée ! Rejoignez-nous pour un événement hilarant où vous pourrez brandir vos raquettes avec style et vous tordre de rire. Que vous soyez un pro du badminton ou un novice intrépide, cette soirée est placée sous le signe des échanges loufoques, des ratés spectaculaires et des mouvements de danse décalés. Attendez-vous à des coups délirants, des plongeons déjantés et des éclats de rire à n'en plus finir. Alors, attrapez votre raquette, mettez votre plus beau sourire et préparez-vous à une soirée de folie badmintonesque qui vous laissera des souvenirs mémorables !",
+  localisation: "20 rue de la Saint-Médard, 44300 Nantes",
   event_level: "intermediaire",
   max_participant: 10,
   datetime: Date.parse("26-06-2023")
 )
-file = File.open(Rails.root.join("db/images/football.jpg"))
-event11.photo.attach(io: file, filename: "football.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/badminton.jpg"))
+event11.photo.attach(io: file, filename: "badminton.jpg", content_type: "image/jpeg")
 event11.save!
 
 event12 = Event.create!(
@@ -310,7 +288,7 @@ event13 = Event.create!(
   tous les muscles du corps et améliorent votre endurance. Que vous soyez
   débutant ou confirmé, venez vous éclater, vous défouler et partager un moment
   de convivialité et de bien-être.",
-  localisation: "entre Commercial Beaulieu, Bd Général de Gaulle, 44200 Nantes",
+  localisation: "Bd Général de Gaulle, 44200 Nantes",
   event_level: "intermediaire",
   max_participant: 2,
   datetime: Date.parse("15-06-2023")
@@ -368,7 +346,7 @@ event16 = Event.create!(
   tous les muscles du corps et améliorent votre endurance. Que vous soyez
   débutant ou confirmé, venez vous amuser, vous dépenser et partager un moment
   de détente et de bien-être.",
-  localisation: "All. de l'Île Gloriette, 44000 Nantes",
+  localisation: "Allée de l'Île Gloriette, 44000 Nantes",
   event_level: "débutant",
   max_participant: 6,
   datetime: Date.parse("19-06-2023")
@@ -422,7 +400,7 @@ event19 = Event.create!(
   des parcours adaptés à tous les niveaux, du débutant au confirmé. Que vous
   soyez à la recherche d’aventure, de nature ou de culture, venez vous évader,
   vous ressourcer et partager un moment de convivialité et de découverte.",
-  localisation: "Boulevard de la Bégraisière, 44240 La Chapelle-sur-Erdre",
+  localisation: "8 Pl. des Muses, 44800 Saint-Herblain",
   event_level: "débutant",
   max_participant: 4,
   datetime: Date.parse("17-06-2023")
