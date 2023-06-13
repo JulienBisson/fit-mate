@@ -61,14 +61,6 @@
           <% end %>
       </div>
 
-      <div class="show-list-club">
-        <% @list_club.each do |club| %>
-          <%= club["name"].upcase %>
-          <%= club["localisation"].capitalize %>
-        <% end %>
-      </div>
-
-
       <div class="btn-message-interested d-flex justify-content-center mt-3">
         <button class= "btn-message">
           <%= link_to "Message", event_chatbox_path(@event) %>
@@ -86,6 +78,23 @@
             <%# <li><%= button_to 'Supprimer', delete_participation_path(event_id: @event.id, id: @event_participant.id), method: :delete %>
           </ul>
         </div>
+      </div>
+      <h5 class= show-info-list-club>Vous voulez rencontrer encore plus de potes ?</h5>
+      <em>Voici une liste des clubs à prowimité de vous</em>
+
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+            Liste des clubs
+          </button>
+          <ul class="dropdown-menu dropdown-menu-lg-end">
+            <li> <% @list_club.each do |club| %>
+              <div class="show-list-club">
+                <%= club["name"].upcase %>
+                <%= club["localisation"].capitalize %>
+              <% end %>
+              </div>
+            </li>
+          </ul>
       </div>
     </div>
 </div>
