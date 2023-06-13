@@ -20,6 +20,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @organizer = @event.organizer
+    @event_participant = EventParticipant.where(event_id: params[:id], user_id: current_user)
   end
 
 end

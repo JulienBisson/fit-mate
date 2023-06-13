@@ -19,9 +19,10 @@ class EventParticipantsController < ApplicationController
   end
 
   def destroy
-    raise
-    @event_participant = EventParticipant.find(params[:id])
-    @event_participant.destroy
+    # @event_participant = EventParticipant.find(params[:id])
+    event = Event.find(params[:id])
+    @event_participant = EventParticipant.where(event_id: event.id, user_id: current_user)
+    @event_participant.delete(@event_participant)
     redirect_to events_path, status: :see_other
   end
 end

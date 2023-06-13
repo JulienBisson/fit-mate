@@ -75,14 +75,18 @@
             <li><%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post %></li>
             <li><a id="interested-link" class="dropdown-item" href="#">Ca m'intéresse</a></li>
             <li><a id="not-interested-link" class="dropdown-item" href="#">Pas pour moi</a></li>
-            <%# <li><%= button_to 'Supprimer', delete_participation_path(event_id: @event.id, id: @event_participant.id), method: :delete %>
+            <li><%= link_to "Je ne participe plus", event_delete_participation_path(@event_participant), data: {turbo_method: :delete} %></li>
+
           </ul>
         </div>
       </div>
     </div>
 </div>
 
-<%# <%= button_to "Je ne participe plus", event_event_participants_path(event_id: @event.id), method: :destroy %>
+<%#
+<%= button_to 'Supprimer', delete_participation_path(event_id: @event.id, id: @event_participant.id), method: :delete %>
+
+<%# event_delete_participation %>
 
 <%# <script>
   window.onload = function() {
