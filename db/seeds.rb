@@ -196,8 +196,8 @@ event7 = Event.create!(
   max_participant: 6,
   datetime: Date.parse("20-06-2023")
 )
-file = File.open(Rails.root.join("db/images/escalation.jpg"))
-event7.photo.attach(io: file, filename: "escalation.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/volley-ball.jpg"))
+event7.photo.attach(io: file, filename: "volley-ball.jpg", content_type: "image/jpeg")
 event7.save!
 
 event8 = Event.create!(
@@ -210,8 +210,8 @@ event8 = Event.create!(
   max_participant: 2,
   datetime: Date.parse("18-06-2023")
 )
-file = File.open(Rails.root.join("db/images/fitness.jpg"))
-event8.photo.attach(io: file, filename: "fitness.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/paddle.jpg"))
+event8.photo.attach(io: file, filename: "paddle.jpg", content_type: "image/jpeg")
 event8.save!
 
 event9 = Event.create!(
@@ -256,8 +256,8 @@ event11 = Event.create!(
   max_participant: 10,
   datetime: Date.parse("26-06-2023")
 )
-file = File.open(Rails.root.join("db/images/football.jpg"))
-event11.photo.attach(io: file, filename: "football.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/badminton.jpg"))
+event11.photo.attach(io: file, filename: "badminton.jpg", content_type: "image/jpeg")
 event11.save!
 
 event12 = Event.create!(
@@ -680,4 +680,3 @@ Chatbox.create!(
   event_id: event20.id,
   name: event20.title
 )
-
