@@ -52,24 +52,16 @@
       </div>
 
       <div class="show-participant">
-        <p><%= @event.users.count %> /<%= @event.max_participant %> mates participate</p>
-          <% @event.users.joins(:event_participants).uniq.each do |participant| %>
-            <div class="show-each-participant">
-              <%= cl_image_tag participant.photo.key, class:'organizer-img' %>
-              <%= participant.username %>
-            </div>
-          <% end %>
+        <p><%= @event.event_participants.participe.count %> / <%= @event.max_participant %> mates participate</p>
+        <% @event.event_participants.participe.each do |event_participant| %>
+          <div class="show-each-participant">
+            <%= cl_image_tag event_participant.user.photo.key, class: 'organizer-img' %>
+            <%= event_participant.user.username %>
+          </div>
+        <% end %>
       </div>
 
-
       <div>
-        <p>Les personnes participant à l'événement : </p>
-        <ul>
-          <% @event.event_participants.participe.each do |event_participant| %>
-            <li><%= event_participant.user.username %></li>
-          <% end %>
-        </ul>
-
         <p>Les personnes intéressées par l'événement : </p>
         <ul>
           <% @event.event_participants.interesse.each do |event_participant| %>
@@ -77,9 +69,6 @@
           <% end %>
         </ul>
       </div>
-
-
-
 
       <div class="btn-message-interested d-flex justify-content-center mt-3">
         <button class= "btn-message">
