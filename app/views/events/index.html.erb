@@ -2,9 +2,11 @@
 <div data-controller="displayevent">
   <div class="fitmate-container">
     <%# TITLE %>
+    <% if current_user %>
     <div class="fitmate-title">FitMate
           <%= cl_image_tag current_user.photo.key, class:'image-profil-corner' %>
     </div>
+    <% end %>
 
     <%# FILTER BTN %>
     <div class="filter-cta">
@@ -25,7 +27,7 @@
 
     <%# MAP %>
     <div id='map' class="position-relative" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_FIT_MATE'] %>">
-      <div class="big-container position-absolute fixed-bottom">
+      <div class="big-container-card position-absolute fixed-bottom">
         <%= link_to new_organizer_event_path do %>
           <div class="button-create">
             <%= image_tag('add_event (1).svg', class: "add_event") %>
