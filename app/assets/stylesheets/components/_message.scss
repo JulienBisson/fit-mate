@@ -20,14 +20,16 @@
   margin-top: 0;
 }
 
-.btn-chat-send {
-  color: #414141;
+.send-icon {
   padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: bold;
+  border-radius: 0 20px 20px 0;
+  margin-bottom: 1rem;
   background-color: #F6D0A5;
-  margin-left: 10px;
+  font-weight: bold;
   border: 0px solid black;
+  img {
+    width: 35px;
+  }
 }
 
 .message-row {
