@@ -1,5 +1,6 @@
 .page-container { //page commune pour tous le monde
   padding: 20px;
+  min-height: 100dvh;
 }
 
 .fitmate-container-show {
@@ -27,6 +28,25 @@
   color: #F6D0A5;
   margin-left: 31px;
   }
+}
+
+.btn-group > .btn, .btn-group-vertical > .btn {
+  position: relative;
+  flex: 1 1 auto;
+  background-color: #F6D0A5;
+  color: #4B4B4B;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.dropup .dropdown-menu[data-bs-popper] {
+  top: auto;
+  bottom: 51px;
+  margin-top: 0;
+  margin-bottom: var(--bs-dropdown-spacer);
+  background-color: #888888;
+  border-radius: 10px;
+  color: #F6D0A5;
 }
 
 .image-event {
@@ -90,6 +110,7 @@ padding-bottom: 10px;
 .show-info-list-club {
   margin-top: 30px;
 }
+
 
 .show-list-club {
   display: flex;
