@@ -1,22 +1,27 @@
+<%# ADD-EVENT %>
 <div class="event-wrapper page-container">
-  <%= link_to events_path do %>
-    <div class="fitmate-header-navbar">
-      <button class='transparent-button'>
-        <i class="fa-solid fa-chevron-left" style="color: #f6d0a5;"></i>
-      </button>
-    </div>
-  <% end %>
-  <div class="container-event">
+  <%# LINK-TITLE-EVENT %>
+  <div class="link-title-add-event">
+    <%= link_to events_path do %>
+      <div class="fitmate-header-navbar">
+        <button class='transparent-button'>
+          <i class="fa-solid fa-chevron-left" style="color: #f6d0a5;"></i>
+        </button>
+      </div>
+    <% end %>
+
     <%# TITLE %>
     <div class="title-event-creation">
-      <h1>Créer un évènement</h1>
-
-      <%# AVATAR USER %>
-      <div class="avatar-user">
-        <%= cl_image_tag current_user.photo.key, width:45, height:45, class:"avatar-event"%>
-      </div>
+      <h3>Créer un évènement</h3>
     </div>
 
+    <%# AVATAR USER %>
+    <div class="avatar-user">
+      <%= link_to user_path(current_user) do %>
+        <%= cl_image_tag current_user.photo.key, width:45, height:45, class:"avatar-event"%>
+      <% end %>
+    </div>
+  </div>
 
     <%# FORM %>
     <div class= "form-new-events">
@@ -62,7 +67,7 @@
           <%= f.input :title, label: "Titre de l'évènement", placeholder: "Séance de yoga..." %>
         </div>
 
-        <%# DESC %>
+        <%# DESCRIPTION %>
         <div class="description-event">
           <%= f.input :description, label: "Description", placeholder: "...maximum 800 caractères"%>
         </div>
@@ -76,5 +81,5 @@
         <%= f.submit "Ajouter", class: "btn-signin btn-create-event"%>
       <% end %>
     </div>
-  </div>
+
 </div>
