@@ -75,48 +75,45 @@
             Intéressé?
           </button>
           <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-right dropdown-al" aria-labelledby="dropdownMenuButton2">
+            <%# 1 - SI LE PARTICIPANT EST DEJA INSCRIT %>
             <% if EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "participe") %>
 
               <li><%= button_to "Inscrit ✔️", "#", class: "btn-du-dropdown" %></li>
 
-              <li><%= button_to "Annuler?", event_delete_participation_path(@event_participant), data: {turbo_method: :delete, turbo_confirm: "Sure ?"}, class: "btn-du-dropdown", form: { "data-turbo-frame": "frame-annule" } %></li>
+              <li>
+                <button type="button" class="btn-du-dropdown" data-bs-toggle="modal" data-bs-target="#annuleModal">
+                  Annuler?
+                </button>
+              </li>
 
+            <%# 2 - SI LE PARTICIPANT EST DEJA INTERESSE %>
             <% elsif EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "intéressé")%>
 
               <li><%= button_to "Intéressé ✔️", "#", class: "btn-du-dropdown"%></li>
 
-              <li><%= button_to "Annuler?", event_delete_participation_path(@event_participant), method: :delete, class: "btn-du-dropdown" %></li>
+              <li>
+                <button type="button" class="btn-du-dropdown" data-bs-toggle="modal" data-bs-target="#annuleModal">
+                  Plus intéressé?
+                </button>
+              </li>
 
+            <%# 3 - SI LE PARTICIPANT N'A PAS ENCORE REAGI %>
             <% else %>
               <li>
                 <button type="button" class="btn-du-dropdown" data-bs-toggle="modal" data-bs-target="#participeModal">
                   Je participe!
                 </button>
-              </li>
 
-              <li><%= button_to "Ca m'intéresse", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "intéressé"), method: :post, class: "btn-du-dropdown" %></li>
+              </li>
+                <button type="button" class="btn-du-dropdown" data-bs-toggle="modal" data-bs-target="#interesseModal">
+                  Ca m'intéresse
+                </button>
+              </li>
             <% end %>
           </ul>
-
-          <!-- Modal -->
-          <div class="modal fade" id="participeModal" tabindex="-1" aria-labelledby="participeModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="participeModalLabel">Modal title</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  Participation prise en compte !
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                  <%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post, class: "btn-du-dropdown" %>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render partial: "shared/participe_modal" %>
+          <%= render partial: "shared/annule_modal" %>
+          <%= render partial: "shared/interesse_modal" %>
         </div>
       </div>
 

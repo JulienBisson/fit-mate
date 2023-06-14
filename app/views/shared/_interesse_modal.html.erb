@@ -1,0 +1,18 @@
+<div class="modal fade" id="interesseModal" tabindex="-1" aria-labelledby="interesseModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="interesseModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Retrouver les événements qui vous intéresse sur votre page de profil.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        <%= button_to "Ca m'intéresse", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "intéressé"), method: :post, class: "btn-du-dropdown" %>
+      </div>
+    </div>
+  </div>
+</div>

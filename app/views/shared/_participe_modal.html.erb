@@ -1,0 +1,18 @@
+<div class="modal fade" id="participeModal" tabindex="-1" aria-labelledby="participeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="participeModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Participation prise en compte !
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        <%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post, class: "btn-du-dropdown" %>
+      </div>
+    </div>
+  </div>
+</div>
