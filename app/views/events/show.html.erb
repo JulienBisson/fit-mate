@@ -59,17 +59,10 @@
         <% end %>
       </div>
 
-      <div>
-        <p>Les personnes intéressées par l'événement : </p>
-        <ul>
-          <% @event.event_participants.interesse.each do |event_participant| %>
-            <li><%= event_participant.user.username %></li>
-          <% end %>
-        </ul>
-        <p>Titre de l'évenement :<%= Event.find(params[:id]).title %></p>
-        <p>id de l'évenement :<%= @event.id %></p>
-
-      </div>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+      </button>
 
       <div class="btn-message-interested d-flex justify-content-center mt-3">
         <button class= "btn-message">
@@ -83,8 +76,8 @@
           </button>
           <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-right dropdown-al" aria-labelledby="dropdownMenuButton2">
             <% if EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "participe") %>
-              <li><%= button_to "Inscrit ✔️", "#", class: "btn-du-dropdown" %></li>
-              <li><%= button_to "Annuler?", event_delete_participation_path(@event_participant), method: :delete, class: "btn-du-dropdown" %></li>
+              <li><%= button_to "Inscrit ✔️", "#", data: {turbo_confirm: "Vous êtes déjà inscrit "}, class: "btn-du-dropdown" %></li>
+              <li><%= button_to "Annuler?", event_delete_participation_path(@event_participant), data: {turbo_method: :delete, turbo_confirm: "Sure ?"}, class: "btn-du-dropdown" %></li>
             <% elsif EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "intéressé")%>
               <li><%= button_to "Intéressé ✔️", "#", class: "btn-du-dropdown"%></li>
               <li><%= button_to "Annuler?", event_delete_participation_path(@event_participant), method: :delete, class: "btn-du-dropdown" %></li>
