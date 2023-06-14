@@ -73,20 +73,20 @@
           <%= image_tag('icon-message.svg') %>
         </button>
 
-        <div class="dropdown">
+        <div class="dropdown dropup">
           <button class="btn btn-secondary dropdown-toggle btn-interested" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
             Intéressé?
           </button>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-right dropdown-al" aria-labelledby="dropdownMenuButton2">
             <% if EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "participe") %>
-              <li><%= button_to "Vous participez!"%></li>
+              <li><%= button_to "Vous participez!", "#", class: "btn-deja-active" %></li>
               <li><%= button_to "Je ne participe plus", event_delete_participation_path(@event_participant), method: :delete %></li>
             <% elsif EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "intéressé")%>
-              <li><%= button_to "Vous êtes intéressé!"%></li>
+              <li><%= button_to "Vous êtes intéressé!", "#", class: "btn-deja-active"%></li>
               <li><%= button_to "Ca ne m'intéresse plus", event_delete_participation_path(@event_participant), method: :delete %></li>
             <% else %>
-              <li><%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post %></li>
-              <li><%= button_to "Ca m'intéresse", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "intéressé"), method: :post %></li>
+              <li><%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post, class: "btn-a-active" %></li>
+              <li><%= button_to "Ca m'intéresse", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "intéressé"), method: :post, class: "btn-a-active" %></li>
             <% end %>
           </ul>
         </div>

@@ -134,3 +134,37 @@ padding-bottom: 10px;
     text-decoration: none;
   }
 }
+
+// DROPDOWN
+
+.dropdown-al {
+  background-color: transparent;
+  margin-bottom: 12px;
+  border: none;
+
+
+
+
+}
+
+.dropdown-al li {
+  margin-bottom: 10px;
+}
+
+.btn-deja-active {
+background-color: aqua;
+
+}
+
+.btn-a-active {
+// background-color: red;
+all: unset;
+
+padding: 4px 12px;
+box-shadow: none;
+border-radius: 50px;
+font-weight: bold;
+background-color: #565E64;
+color: white;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
