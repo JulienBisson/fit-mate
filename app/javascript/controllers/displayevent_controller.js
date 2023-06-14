@@ -36,6 +36,10 @@ function checkDirection(idElementDisplayed, firstId, lastId) {
 
       return newId;
     }
+
+    if (touchendX === touchstartX) {
+      window.location.href = `/events/${idElementDisplayed}`;
+    }
   }
 }
 
