@@ -52,14 +52,36 @@
 
   <%# DESCRIPTION %>
   <div class="description-user">
-    <%= @current_user.description.capitalize %>
+    <h6>Description</h6>
+      <%= @current_user.description.capitalize %>
   </div>
 
   <%# FAVORITE-SPORT %>
   <div class="favorite-sport">
-    <button class="btn-favorite-sport">
-      <%= @current_user.favorite_sport %>
-    </button>
+    <h6>Sport favori</h6>
+      <button class="btn-favorite-sport">
+        <%= @current_user.favorite_sport %>
+      </button>
+  </div>
+
+  <%# EVENEMENT CREER PAR LE USER %>
+  <div class="event-create-user">
+    <h6>Evenement créer</h6>
+      <% @organizer.each do |event| %>
+        <li>
+        <%= event.title %>
+        </li>
+      <% end %>
+  </div>
+
+  <%# EVENEMENT AUQUEL PARTICIPE LE USER %>
+  <div class="event-particip-user">
+    <h6>Participation aux évènements</h6>
+      <% @events.each do |event_participant|%>
+        <li>
+        <%= event_participant.event.title %>
+        </li>
+      <% end %>
   </div>
 
 </div>
