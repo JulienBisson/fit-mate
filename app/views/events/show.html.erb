@@ -65,13 +65,6 @@
         <p>Titre de l'évenement :<%= Event.find(params[:id]).title %></p>
         <p>id de l'évenement :<%= @event.id %></p>
 
-        <% if EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "participe") %>
-        <%= "Le user participe à l'event" %>
-        <% elsif EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "intéressé")%>
-        <%= "Le user est intéressé par l'event" %>
-        <% else %>
-        <%= "Le user n'a pas réagi à l'event" %>
-        <% end %>
       </div>
 
       <div class="btn-message-interested d-flex justify-content-center mt-3">
@@ -85,10 +78,16 @@
             Intéressé?
           </button>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-            <li><%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post %></li>
-            <li><%= button_to "Ca m'intéresse", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "intéressé"), method: :post %></li>
-            <li><%= button_to "Ca ne m'intéresse plus", event_delete_participation_path(@event_participant), method: :delete %></li>
-            <li><%= button_to "Je ne participe plus", event_delete_participation_path(@event_participant), method: :delete %></li>
+            <% if EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "participe") %>
+              <li><%= button_to "Vous participez!"%></li>
+              <li><%= button_to "Je ne participe plus", event_delete_participation_path(@event_participant), method: :delete %></li>
+            <% elsif EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "intéressé")%>
+              <li><%= button_to "Vous êtes intéressé!"%></li>
+              <li><%= button_to "Ca ne m'intéresse plus", event_delete_participation_path(@event_participant), method: :delete %></li>
+            <% else %>
+              <li><%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post %></li>
+              <li><%= button_to "Ca m'intéresse", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "intéressé"), method: :post %></li>
+            <% end %>
           </ul>
         </div>
       </div>
