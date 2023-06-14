@@ -65,10 +65,12 @@
         <p>Titre de l'évenement :<%= Event.find(params[:id]).title %></p>
         <p>id de l'évenement :<%= @event.id %></p>
 
-        <% if EventParticipant.exists?(user_id: current_user, event_id: @event.id) %>
-        <%= "Le user participe ou est intéressé par l'event" %>
+        <% if EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "participe") %>
+        <%= "Le user participe à l'event" %>
+        <% elsif EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "intéressé")%>
+        <%= "Le user est intéressé par l'event" %>
         <% else %>
-        <%= "Le user ne participe pas encore" %>
+        <%= "Le user n'a pas réagi à l'event" %>
         <% end %>
       </div>
 
