@@ -8,7 +8,7 @@ module Organizer
       @event = Event.new(organizer_params)
       @event.organizer = current_user
       if @event.save
-        redirect_to event_path(@event), notice: "Event adding ✔️"
+        redirect_to event_path(@event), notice: "Event added ✔️"
       else
         render :new, status: :unprocessable_entity
       end

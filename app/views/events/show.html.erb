@@ -60,9 +60,9 @@
       </div>
 
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#participeModal">
         Launch demo modal
-      </button>
+      </button> %>
 
       <div class="btn-message-interested d-flex justify-content-center mt-3">
         <button class= "btn-message">
@@ -76,18 +76,50 @@
           </button>
           <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-right dropdown-al" aria-labelledby="dropdownMenuButton2">
             <% if EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "participe") %>
-              <li><%= button_to "Inscrit ✔️", "#", data: {turbo_confirm: "Vous êtes déjà inscrit "}, class: "btn-du-dropdown" %></li>
-              <li><%= button_to "Annuler?", event_delete_participation_path(@event_participant), data: {turbo_method: :delete, turbo_confirm: "Sure ?"}, class: "btn-du-dropdown" %></li>
+
+              <li><%= button_to "Inscrit ✔️", "#", class: "btn-du-dropdown" %></li>
+
+              <li><%= button_to "Annuler?", event_delete_participation_path(@event_participant), data: {turbo_method: :delete, turbo_confirm: "Sure ?"}, class: "btn-du-dropdown", form: { "data-turbo-frame": "frame-annule" } %></li>
+
             <% elsif EventParticipant.exists?(user_id: current_user, event_id: @event.id, status: "intéressé")%>
+
               <li><%= button_to "Intéressé ✔️", "#", class: "btn-du-dropdown"%></li>
+
               <li><%= button_to "Annuler?", event_delete_participation_path(@event_participant), method: :delete, class: "btn-du-dropdown" %></li>
+
             <% else %>
-              <li><%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post, class: "btn-du-dropdown" %></li>
+              <li>
+                <button type="button" class="btn-du-dropdown" data-bs-toggle="modal" data-bs-target="#participeModal">
+                  Je participe!
+                </button>
+              </li>
+
               <li><%= button_to "Ca m'intéresse", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "intéressé"), method: :post, class: "btn-du-dropdown" %></li>
             <% end %>
           </ul>
+
+          <!-- Modal -->
+          <div class="modal fade" id="participeModal" tabindex="-1" aria-labelledby="participeModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="participeModalLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Participation prise en compte !
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                  <%= button_to "Je participe!", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post, class: "btn-du-dropdown" %>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
       <h5 class= show-info-list-club>Vous voulez rencontrer encore plus de potes ?</h5>
       <em>Voici une liste des clubs à prowimité de vous</em>
         <div class="btn-group dropup mt-3 dropdown-list-club">
@@ -108,29 +140,3 @@
         </div>
     </div>
 </div>
-
-<%# <script>
-  window.onload = function() {
-    let goingLink = document.getElementById('going-link');
-    let interestedLink = document.getElementById('interested-link');
-    let notInterestedLink = document.getElementById('not-interested-link');
-
-    goingLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      window.location.href = '/events';
-      alert('You are successfully registered for this event!');
-    });
-
-    interestedLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      window.location.href = '/events';
-      alert('You are interested by this event');
-    });
-
-    notInterestedLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      window.location.href = '/events';
-      alert('Not interested by this event? Look for another!');
-    });
-  };
-</script> %>
