@@ -2,7 +2,7 @@ require 'open-uri'
 require 'nokogiri'
 
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index ]
+  skip_before_action :authenticate_user!
 
   def index
     @events = Event.all
