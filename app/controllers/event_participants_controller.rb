@@ -30,14 +30,14 @@ class EventParticipantsController < ApplicationController
   end
 
   def update
-    @event_participant = EventParticipant.new(user_id: user_id, event_id: event_id, status: status)
-    status = params[:status]
+    # @event_participant = EventParticipant.new(user_id: user_id, event_id: event_id, status: status)
+    # status = params[:status]
 
-    if @event_participant.update(status: status)
-      redirect_to event_path(@event_participant.event_id)
-    else
-      render plain: "ERREUR"
-    end
+    # if @event_participant.update(status: status)
+    #   redirect_to event_path(@event_participant.event_id)
+    # else
+    #   render plain: "ERREUR"
+    # end
   end
 
   def destroy
