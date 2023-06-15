@@ -197,7 +197,7 @@ event9 = Event.create!(
   localisation: "Rue des Dervallières, 44100 Nantes",
   event_level: "intermediaire",
   max_participant: 9,
-  datetime: Date.parse("22-06-2023")
+  datetime: Date.parse("01-07-2023")
 )
 file = File.open(Rails.root.join("db/images/basketball.jpg"))
 event9.photo.attach(io: file, filename: "basketball.jpg", content_type: "image/jpeg")
