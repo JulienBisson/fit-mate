@@ -85,7 +85,7 @@ event1 = Event.create!(
   localisation: "30 Allée Robert Cheval, 44980 Sainte-Luce-sur-Loire",
   event_level: "intermediaire",
   max_participant: 6,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("21-06-2023")
 )
 file = File.open(Rails.root.join("db/images/yoga.jpg"))
 event1.photo.attach(io: file, filename: "yoga.jpg", content_type: "image/jpeg")
@@ -99,7 +99,7 @@ event2 = Event.create!(
   localisation: "Bd Guichet Serex, 44120 Vertou",
   event_level: "débutant",
   max_participant: 4,
-  datetime: Date.parse("18-06-2023")
+  datetime: Date.parse("17-06-2023")
 )
 file = File.open(Rails.root.join("db/images/fitness.jpg"))
 event2.photo.attach(io: file, filename: "fitness.jpg", content_type: "image/jpeg")
@@ -141,7 +141,7 @@ event5 = Event.create!(
   localisation: "6 Rue des Bourdonnières, 44200 Nantes",
   event_level: "intermediaire",
   max_participant: 8,
-  datetime: Date.parse("16-06-2023")
+  datetime: Date.parse("24-06-2023")
 )
 file = File.open(Rails.root.join("db/images/basketball.jpg"))
 event5.photo.attach(io: file, filename: "basketball.jpg", content_type: "image/jpeg")
@@ -192,7 +192,7 @@ event8.save!
 event9 = Event.create!(
   organizer_id: julien.id,
   sport: 'basketball',
-  title: "Basketball Friendzy !",
+  title: "Basketball Friendzy",
   description: "Prêt à déchaîner votre talent basketteur ? Rejoignez-nous pour une partie endiablée de basketball ! Plongez dans les sensations du sport collectif le plus populaire en salle. Au programme : des matchs amicaux, deux équipes de cinq joueurs. Peu importe votre niveau, venez vous éclater, vous dépenser et partager un moment de fair-play et de respect. Enflammez le terrain et laissez briller votre esprit d'équipe ! 🏀🔥💪",
   localisation: "Rue des Dervallières, 44100 Nantes",
   event_level: "intermediaire",

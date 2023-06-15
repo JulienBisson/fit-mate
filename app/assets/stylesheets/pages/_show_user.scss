@@ -151,7 +151,7 @@
 
 .container-orga-interest {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: start;
 }
 
@@ -163,6 +163,8 @@
   padding: 10px;
   list-style-type: none;
   border-right: 1px solid rgba(255, 255, 255, 0.9);
+  width: 100%;
+
   h6{
     font-weight: bold;
     background-color: #F6D0A5;
@@ -183,7 +185,6 @@
   border-radius: 25px;
   list-style-type: none;
   margin-bottom:20px;
-
   h6{
     font-weight: bold;
     background-color: #F6D0A5;
@@ -209,16 +210,19 @@ h6 {
   padding: 10px;
   border-radius: 25px;
   list-style-type: none;
+  width: 100%;;
   h6{
     font-weight: bold;
     background-color: #F6D0A5;
     padding: 10px;
     width: fit-content;
     color: #414141;
-    border-radius: 30px 30px 0px 30px;
+    border-radius: 30px 30px 30px 0px;
+    margin-left: auto;
     }
   li {
     padding: 5px;
+    text-align: end;
   }
 }
 
