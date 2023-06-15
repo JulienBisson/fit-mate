@@ -17,23 +17,23 @@ User.destroy_all
 
 puts 'Creating user...'
 
-alice = User.create!(first_name: "Alice", last_name: "Martin", username: "alice25", age: 25,
-  email: "alice.martin@gmail.com", password: "secret",
+alexia = User.create!(first_name: "Alexia", last_name: "Nicoleau", username: "alexia25", age: 25,
+  email: "alexia.martin@gmail.com", password: "secret",
   description: "étudiante en littérature et passionnée de lecture",
   favorite_sport: "yoga", sport_level: "intermediaire")
 
-file = File.open(Rails.root.join("db/images/alice.jpg"))
-alice.photo.attach(io: file, filename: "alice.jpg", content_type: "image/jpeg")
-alice.save!
+file = File.open(Rails.root.join("db/images/alexia.jpg"))
+alexia.photo.attach(io: file, filename: "alexia.jpg", content_type: "image/jpeg")
+alexia.save!
 
-julien = User.create!(first_name: "Julien", last_name: "Dubois", username: "JulesD", age: 30,
-  email: "julien.dubois@gmail.com", password: "secret",
-  description: "Je suis un étudiant en informatique qui aime le cinéma, la musique et les jeux vidéo.
+julien = User.create!(first_name: "Julien", last_name: "Bisson", username: "JulienBsn", age: 32,
+  email: "julien.bisson@gmail.com", password: "secret",
+  description: "Je suis un étudiant en informatique qui aime le cinéma, la moto et les jeux vidéo.
   Je suis curieux, créatif et sociable.",
   favorite_sport: "basketball", sport_level: "intermediaire")
 
-file = File.open(Rails.root.join("db/images/julien.jpg"))
-julien.photo.attach(io: file, filename: "julien.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/julien.png"))
+julien.photo.attach(io: file, filename: "julien.png", content_type: "image/png")
 julien.save!
 
 lea = User.create!(first_name: "Lea", last_name: "richmond", username: "LeaR", age: 22,
@@ -78,13 +78,13 @@ lucas.save!
 puts "Creating events..."
 
 event1 = Event.create!(
-  organizer_id: alice.id,
+  organizer_id: alexia.id,
   sport: 'yoga',
   title: "Yoga pour tous",
   description: "Rejoignez-nous pour une séance de yoga épique ! Découvrez les bienfaits millénaires sur le corps et l'esprit. Hatha yoga, respiration, postures adaptées, relaxation... Tout y est ! Que vous soyez débutant ou pro, détendez-vous, étirez-vous et vibrez en toute sérénité. Harmonie assurée ! 🧘‍♀️✨",
   localisation: "30 Allée Robert Cheval, 44980 Sainte-Luce-sur-Loire",
   event_level: "intermediaire",
-  max_participant: 14,
+  max_participant: 6,
   datetime: Date.parse("16-06-2023")
 )
 file = File.open(Rails.root.join("db/images/yoga.jpg"))
@@ -92,7 +92,7 @@ event1.photo.attach(io: file, filename: "yoga.jpg", content_type: "image/jpeg")
 event1.save!
 
 event2 = Event.create!(
-  organizer_id: alice.id,
+  organizer_id: alexia.id,
   sport: 'fitness',
   title: "Fitness au Loiry",
   description: "Préparez-vous à une séance de fitness démentielle ! Découvrez les bienfaits du sport sur votre forme et votre santé. Au menu : exercices variés, adaptés à tous les niveaux, pour renforcer chaque muscle et booster votre endurance. Débutant ou pro, éclatez-vous, défoulez-vous et partagez une ambiance conviviale et bienfaisante. Rejoignez-nous pour un pur moment de plaisir et de bien-être ! 💪🔥🥳 ",
@@ -106,7 +106,7 @@ event2.photo.attach(io: file, filename: "fitness.jpg", content_type: "image/jpeg
 event2.save!
 
 event3 = Event.create!(
-  organizer_id: alice.id,
+  organizer_id: lea.id,
   sport: 'tennis',
   title: "Grand Chelem pour les nuls",
   description: "Prêt à plonger dans l'action ? Rejoignez-nous pour une partie de tennis palpitante ! Découvrez les sensations du sport de raquette le plus populaire au monde. Au menu : des matchs amicaux en solo ou en équipe. Que vous soyez débutant ou pro, amusez-vous, dépensez-vous et partagez un moment de fair-play et de respect. Venez vibrer sur le court avec nous ! 🎾💥🤩",
@@ -120,7 +120,7 @@ event3.photo.attach(io: file, filename: "tennis.jpg", content_type: "image/jpeg"
 event3.save!
 
 event4 = Event.create!(
-  organizer_id: alice.id,
+  organizer_id: maxime.id,
   sport: 'football',
   title: "Foot à la Beaujoire",
   description: "Venez vivre l'excitation du football à la Beaujoire à Nantes ! Rejoignez-nous pour un événement inoubliable qui enflammera votre passion. Découvrez le talent des joueurs sur le terrain verdoyant, entouré d'une ambiance électrique. Que vous soyez joueur ou fan de foot, cette invitation est pour vous. Ne manquez pas l'occasion de marquer des buts sur ce terrain légendaire. Rejoignez-nous, encouragez les autres fans et créez des souvenirs qui dureront toute une vie. Enfilez vos chaussures et vivez l'ivresse du football à la Beaujoire de Nantes. Laissez le jeu vous couper le souffle !",
@@ -129,18 +129,18 @@ event4 = Event.create!(
   max_participant: 21,
   datetime: Date.parse("10-06-2023")
 )
-file = File.open(Rails.root.join("db/images/yoga.jpg"))
-event4.photo.attach(io: file, filename: "yoga.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/football.jpg"))
+event4.photo.attach(io: file, filename: "football.jpg", content_type: "image/jpeg")
 event4.save!
 
 event5 = Event.create!(
   organizer_id: julien.id,
   sport: 'basketball',
-  title: "Vivez le playground",
+  title: "All Star Games",
   description: "Prêt à faire vibrer le parquet ? Rejoignez-nous pour une partie de basketball survoltée ! Découvrez les sensations du sport collectif le plus joué en salle. Au menu : des matchs amicaux entre deux équipes de cinq joueurs. Que vous soyez débutant ou pro, amusez-vous, dépensez-vous et partagez un moment de fair-play et de respect. Prenez part à l'action et montrez vos talents de basketteur ! 🏀🔥😎 ",
   localisation: "6 Rue des Bourdonnières, 44200 Nantes",
   event_level: "intermediaire",
-  max_participant: 9,
+  max_participant: 8,
   datetime: Date.parse("16-06-2023")
 )
 file = File.open(Rails.root.join("db/images/basketball.jpg"))
@@ -148,7 +148,7 @@ event5.photo.attach(io: file, filename: "basketball.jpg", content_type: "image/j
 event5.save!
 
 event6 = Event.create!(
-  organizer_id: julien.id,
+  organizer_id: lucas.id,
   sport: 'boxe',
   title: "Séance de boxe",
   description: "Prêt à encaisser les coups ? Rejoignez-nous pour une séance de boxe décoiffante ! Découvrez les sensations du sport de combat le plus pratiqué en salle. Au menu : des exercices variés, adaptés à tous les niveaux, qui mettront tous vos muscles à l'épreuve et amélioreront votre endurance. Que vous soyez débutant ou pro, amusez-vous, dépensez-vous et partagez un moment empreint de respect et de discipline. Rendez-vous au 5 Rue Gaston Michel, 44000 Nantes. Let's get ready to rumble! 🥊💥😎",
@@ -162,7 +162,7 @@ event6.photo.attach(io: file, filename: "boxe.jpg", content_type: "image/jpeg")
 event6.save!
 
 event7 = Event.create!(
-  organizer_id: julien.id,
+  organizer_id: sarah.id,
   sport: 'volleyball',
   title: "Beach's Volley",
   description: "Préparez-vous à rire, transpirer et atteindre de nouveaux sommets lors d'une session de paddle sur la Sèvre, au sud de Nantes ! Rejoignez-nous pour une expérience pleine d'amusement où vous glisserez sur les eaux pittoresques. Que vous soyez débutant ou expert, cette invitation est pour tous les aventuriers. Équilibrez-vous, riez et peut-être même faites quelques plongeons imprévus (pas de panique, c'est dans l'esprit du jeu !). Alors, enfilez votre crème solaire, libérez le paddleboardeur qui sommeille en vous et rejoignez-nous pour une journée de rires, de folies aquatiques et de paddleboard inoubliable sur la Sèvre, au sud de Nantes !",
@@ -190,9 +190,9 @@ event8.photo.attach(io: file, filename: "paddle.jpg", content_type: "image/jpeg"
 event8.save!
 
 event9 = Event.create!(
-  organizer_id: lea.id,
+  organizer_id: julien.id,
   sport: 'basketball',
-  title: "Basketball Frenzy !",
+  title: "Basketball Friendzy !",
   description: "Prêt à déchaîner votre talent basketteur ? Rejoignez-nous pour une partie endiablée de basketball ! Plongez dans les sensations du sport collectif le plus populaire en salle. Au programme : des matchs amicaux, deux équipes de cinq joueurs. Peu importe votre niveau, venez vous éclater, vous dépenser et partager un moment de fair-play et de respect. Enflammez le terrain et laissez briller votre esprit d'équipe ! 🏀🔥💪",
   localisation: "Rue des Dervallières, 44100 Nantes",
   event_level: "intermediaire",
@@ -204,7 +204,7 @@ event9.photo.attach(io: file, filename: "basketball.jpg", content_type: "image/j
 event9.save!
 
 event10 = Event.create!(
-  organizer_id: lea.id,
+  organizer_id: maxime.id,
   sport: 'cyclisme',
   title: "Tour de Nantes",
   description: "Appel à tous les passionnés de vélo et aventuriers ! Rejoignez-nous pour une balade exaltante à travers les rues pittoresques de Nantes, à la découverte des emblèmes qui font la fierté de la duchesse Anne. Enfourchez vos vélos pour un parcours panoramique, passant par le magnifique Château des Ducs de Bretagne et l'effervescente Île de Nantes. Chaque coup de pédale vous fera vivre une nouvelle tranche d'histoire et de culture. Alors, sortez vos casques, préparez vos vélos et joignez-vous à nous pour une journée inoubliable de cyclisme, d'amitié et de découverte au cœur de Nantes, le royaume de la duchesse Anne.",
@@ -218,7 +218,7 @@ event10.photo.attach(io: file, filename: "cyclisme.jpg", content_type: "image/jp
 event10.save!
 
 event11 = Event.create!(
-  organizer_id: maxime.id,
+  organizer_id: sarah.id,
   sport: 'badminton',
   title: "A vos volants",
   description: "Préparez-vous à smasher, glisser et faire la fête comme jamais lors de notre soirée de badminton déjantée ! Rejoignez-nous pour un événement hilarant où vous pourrez brandir vos raquettes avec style et vous tordre de rire. Que vous soyez un pro du badminton ou un novice intrépide, cette soirée est placée sous le signe des échanges loufoques, des ratés spectaculaires et des mouvements de danse décalés. Attendez-vous à des coups délirants, des plongeons déjantés et des éclats de rire à n'en plus finir. Alors, attrapez votre raquette, mettez votre plus beau sourire et préparez-vous à une soirée de folie badmintonesque qui vous laissera des souvenirs mémorables !",
@@ -246,7 +246,7 @@ event12.photo.attach(io: file, filename: "cyclisme.jpg", content_type: "image/jp
 event12.save!
 
 event13 = Event.create!(
-  organizer_id: maxime.id,
+  organizer_id: lucas.id,
   sport: 'musculation',
   title: "Séance de musculation",
   description: "Prêt à sculpter ton corps de super-héros ? Rejoins notre séance de musculation explosive ! Découvre les incroyables bienfaits du sport sur ta forme et ta santé. Au menu : exercices variés, adaptés à ton niveau, pour travailler tous les muscles et booster ton endurance. Que tu sois débutant ou pro, éclate-toi, défoule-toi et partage un moment convivial de pur bien-être. Viens te déchaîner et repousse tes limites avec nous ! 💪🔥🥳",
@@ -260,7 +260,7 @@ event13.photo.attach(io: file, filename: "musculation.jpg", content_type: "image
 event13.save!
 
 event14 = Event.create!(
-  organizer_id: maxime.id,
+  organizer_id: lea.id,
   sport: 'judo',
   title: "Judo Mania: Domination Totale!",
   description: "Prêt à relever le défi du tatami ? Rejoignez notre séance de judo survoltée ! Découvrez les sensations uniques du sport de combat le plus pratiqué en France. Au programme : exercices variés, adaptés à ton niveau, pour solliciter tous les muscles et améliorer ton équilibre. Le but du jeu ? Maîtriser ton adversaire en utilisant des techniques de projection, d'immobilisation, d'étranglement ou de clé. Que tu sois débutant ou confirmé, viens t'amuser, te dépasser et partager un moment de respect et de discipline. Prépare-toi à briller sur le tatami avec nous ! 🥋💥👊",
@@ -274,7 +274,7 @@ event14.photo.attach(io: file, filename: "judo.jpg", content_type: "image/jpeg")
 event14.save!
 
 event15 = Event.create!(
-  organizer_id: sarah.id,
+  organizer_id: lea.id,
   sport: 'tennis',
   title: "Tennis Extrême: 2 vs 2",
   description: "Plongez dans une aventure tennistique palpitante ! Rejoignez-nous pour un match enflammé de tennis en duo, où l'excitation est à son comble. Affrontez vos adversaires lors de rencontres amicales survoltées. Peu importe votre niveau, venez vous éclater, vous déchaîner et vivre des sensations fortes dans une ambiance de fair-play et de respect. Faites résonner les courts de vos smashes et de vos services, et triomphez avec style. Préparez-vous à créer des souvenirs mémorables et à repousser vos limites dans cette compétition tennistique effervescente ! 🎾💥🏆",
@@ -302,7 +302,7 @@ event16.photo.attach(io: file, filename: "natation.jpg", content_type: "image/jp
 event16.save!
 
 event17 = Event.create!(
-  organizer_id: sarah.id,
+  organizer_id: alexia.id,
   sport: 'escalade',
   title: "Vertical ascensionnel",
   description: "Rejoignez-nous pour une séance d'escalade palpitante et découvrez les sensations uniques de ce sport vertical. Au programme : des voies et des blocs adaptés à votre niveau sur notre mur artificiel. Que vous soyez débutant ou confirmé, venez vous éclater, vous surpasser et partagez un moment de coopération et de confiance. Grimpez, repoussez vos limites et forgez des souvenirs inoubliables en grimpant avec nous !",
@@ -330,7 +330,7 @@ event18.photo.attach(io: file, filename: "rugby.jpg", content_type: "image/jpeg"
 event18.save!
 
 event19 = Event.create!(
-  organizer_id: lucas.id,
+  organizer_id: maxime.id,
   sport: 'cyclisme',
   title: "Un son de roue libre",
   description: "Rejoignez-nous pour une balade à vélo épique à travers les merveilles de Nantes. Explorez les itinéraires les plus enchanteurs, adaptés à tous les niveaux de cyclistes, des novices aux experts. Que vous recherchiez l'aventure, la nature ou la culture, cette balade est faite pour vous. Laissez-vous emporter par la liberté du vélo, ressourcez-vous en pleine nature et créez des liens avec les autres passionnés lors de moments conviviaux et de découvertes inspirantes. Préparez-vous à pédaler vers de nouvelles aventures et à vivre des sensations cyclistes extraordinaires ! 🚴‍♂️🌍🌟",
@@ -361,116 +361,43 @@ puts "Creating event_participants..."
 
 EventParticipant.create!(
   status: "participe",
-  user_id: lucas.id,
-  event_id: event16.id
+  user_id: lea.id,
+  event_id: event1.id
 )
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: lucas.id,
-  event_id: event14.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: lucas.id,
-  event_id: event17.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: lucas.id,
-  event_id: event10.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: alice.id,
-  event_id: event17.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: alice.id,
-  event_id: event19.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: alice.id,
-  event_id: event14.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: alice.id,
-  event_id: event10.id
-)
-
 EventParticipant.create!(
   status: "participe",
   user_id: maxime.id,
-  event_id: event20.id
+  event_id: event1.id
 )
-
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event1.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event1.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event5.id
+)
 EventParticipant.create!(
   status: "participe",
   user_id: maxime.id,
-  event_id: event19.id
+  event_id: event5.id
 )
-
 EventParticipant.create!(
   status: "participe",
-  user_id: maxime.id,
-  event_id: event4.id
+  user_id: lucas.id,
+  event_id: event5.id
 )
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: maxime.id,
-  event_id: event7.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: julien.id,
-  event_id: event20.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: julien.id,
-  event_id: event8.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: julien.id,
-  event_id: event15.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: julien.id,
-  event_id: event9.id
-)
-
 EventParticipant.create!(
   status: "participe",
   user_id: lea.id,
-  event_id: event15.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: lea.id,
-  event_id: event16.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: lea.id,
-  event_id: event7.id
+  event_id: event5.id
 )
 
 EventParticipant.create!(
@@ -478,64 +405,269 @@ EventParticipant.create!(
   user_id: lea.id,
   event_id: event2.id
 )
-
 EventParticipant.create!(
   status: "participe",
-  user_id: sarah.id,
-  event_id: event4.id
+  user_id: lucas.id,
+  event_id: event2.id
 )
-
 EventParticipant.create!(
   status: "participe",
-  user_id: sarah.id,
-  event_id: event7.id
+  user_id: maxime.id,
+  event_id: event2.id
 )
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: sarah.id,
-  event_id: event8.id
-)
-
-EventParticipant.create!(
-  status: "participe",
-  user_id: sarah.id,
-  event_id: event9.id
-)
-
 EventParticipant.create!(
   status: "participe",
   user_id: lea.id,
   event_id: event3.id
 )
-
 EventParticipant.create!(
   status: "participe",
-  user_id: lea.id,
-  event_id: event1.id
+  user_id: sarah.id,
+  event_id: event3.id
 )
-
 EventParticipant.create!(
   status: "participe",
   user_id: maxime.id,
-  event_id: event2.id
+  event_id: event3.id
 )
-
+EventParticipant.create!(
+  status: "participe",
+  user_id: lea.id,
+  event_id: event4.id
+)
 EventParticipant.create!(
   status: "participe",
   user_id: lucas.id,
-  event_id: event2.id
+  event_id: event4.id
 )
-
 EventParticipant.create!(
-  status: "intéressé",
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event4.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event6.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event6.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lea.id,
+  event_id: event6.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event7.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lea.id,
+  event_id: event7.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event7.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event8.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event8.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lea.id,
+  event_id: event8.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event9.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event9.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lea.id,
+  event_id: event9.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event10.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event10.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event10.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lea.id,
+  event_id: event11.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event11.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event11.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event12.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lea.id,
+  event_id: event12.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event12.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event13.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event13.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event13.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event14.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event14.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event14.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event15.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event15.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event15.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lea.id,
+  event_id: event16.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event16.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event16.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event17.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lea.id,
+  event_id: event17.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event17.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event18.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event18.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event18.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event19.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event19.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lea.id,
+  event_id: event19.id
+)
+EventParticipant.create!(
+  status: "participe",
   user_id: lea.id,
   event_id: event20.id
 )
-
 EventParticipant.create!(
-  status: "intéressé",
-  user_id: sarah.id,
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event20.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
   event_id: event20.id
 )
 
@@ -621,3 +753,4 @@ Chatbox.create!(
   event_id: event20.id,
   name: event20.title
 )
+puts "Finish !!!"

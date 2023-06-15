@@ -123,35 +123,53 @@
 /* FAVORITE-SPORT */
 .favorite-sport {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .favorite-sport-title {
+    margin-bottom: 18px;
+  }
 
   .btn-favorite-sport {
-    color: #414141;
     background-color: #F6D0A5;
-    border: 1px solid #F6D0A5;
     font-weight: bold;
-    border-radius: 25px;
+    border-radius: 15px;
     padding: 6px;
-    width: 100%;
+    width: 50%;
     margin-top: 10px;
+    text-align: center;
+    margin: 0 auto;
+}
+  a {
+    text-decoration: none;
+    color: #414141;
+
   }
 }
+
+.container-orga-interest {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+}
+
 
 /* EVENEMENT CREER PAR LE USER */
 .event-create-user {
   // border: 3px solid #F6D0A5;
   margin-bottom: 20px;
   padding: 10px;
-  border-radius: 25px;
   list-style-type: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.9);
   h6{
     font-weight: bold;
     background-color: #F6D0A5;
     padding: 10px;
     width: fit-content;
     color: #414141;
-    border-radius: 30px 0px 30px 30px;
+    border-radius: 30px 30px 0px 30px;
     }
   li{
     padding: 5px;
@@ -165,13 +183,14 @@
   border-radius: 25px;
   list-style-type: none;
   margin-bottom:20px;
+
   h6{
     font-weight: bold;
     background-color: #F6D0A5;
     padding: 10px;
     width: fit-content;
     color: #414141;
-    border-radius: 30px 0px 30px 30px;
+    border-radius: 30px 30px 0px 30px;
     }
   li {
     padding: 5px;
@@ -196,10 +215,28 @@ h6 {
     padding: 10px;
     width: fit-content;
     color: #414141;
-    border-radius: 30px 0px 30px 30px;
+    border-radius: 30px 30px 0px 30px;
     }
   li {
     padding: 5px;
   }
+}
 
+.log-out-session {
+  display: flex;
+  justify-content: center;
+  .link-log-out-session {
+    border: 1px solid white;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+    padding: 6px;
+    width: 50%;
+    margin-top: 10px;
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+  }
 }
