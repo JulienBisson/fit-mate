@@ -11,7 +11,6 @@ class Event < ApplicationRecord
   validates :event_level, inclusion: { in: %w(débutant intermediaire expert), message: "%{value} n'est pas valide" }
   validates :max_participant, inclusion: { in: (1..25) }
   validates :datetime, presence: true
-  validates :photo, presence: true
 
   include PgSearch::Model
   pg_search_scope :search_by_sport_and_localisation,
