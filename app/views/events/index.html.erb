@@ -19,7 +19,7 @@
             <div class="inside-form-container">
               <%= form.label :query, "Filtres:", class: "form-label" %>
               <div class="formpasselect">
-                <%= form.select :query, [["Sport", ""]] + @selected_sports, {}, data: { action: "change->displayevent#submitForm" } %>
+                <%= form.select :query, [["Tous les sports", ""]] + @selected_sports, {selected: params[:query]}, data: { action: "change->displayevent#submitForm" } %>
               </div>
             </div>
           <% end %>
