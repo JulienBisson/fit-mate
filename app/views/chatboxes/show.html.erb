@@ -14,10 +14,12 @@
   <%= simple_form_for [@event, @chatbox, @message],
     html: { data: { action: "turbo:submit-end->chatbox-subscription#resetForm" },
     class: "d-flex" } do |f| %>
-    <%= f.input :content,
-    label: false,
-    placeholder: "Parle avec tes potes",
-    wrapper_html: {class: "flex-grow-1"} %>
-    <%= f.submit "send", class: "btn-chat-send mb-3" %>
+      <%= f.input :content,
+      label: false,
+      placeholder: "Parle avec tes potes",
+      wrapper_html: {class: "flex-grow-1"} %>
+      <button type="submit" class="send-icon">
+        <%= image_tag('send-icon.png') %>
+      </button>
     <% end %>
 </div>

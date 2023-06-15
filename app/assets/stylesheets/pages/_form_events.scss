@@ -1,103 +1,117 @@
+/* ADD-EVENT */
 .event-wrapper {
   background-color: #414141;
   padding: 10px;
+}
 
-  .container-event{
-    background-color: #414141;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 10px;
-    margin-top: 0px;
+/* LINK-TITLE-EVENT */
+.link-title-add-event {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 
-    .title-event-creation{
-      display:flex;
-      align-self: center;
-      background-color: #414141;
-      color: white;
-      text-align: center;
-      align-items: center;
-      h1{
-        padding: 10px;
-        border-bottom: 1px solid white;
-      }
-      .avatar-user{
-        padding-left: 15px;
-        .avatar-event{
-          border-radius: 50%;
-          border: 1px solid #F6D0A5;
-        }
-      }
+  .fitmate-header-navbar {
+    border: 0px solid;
+
+    .transparent-button {
+      background-color: transparent;
+      font-size: 25px;
     }
+  }
 
-    .form-new-events{
-      display: flex;
-      justify-content: center;
-      background-color: #414141;
-      padding: 10px;
+  /* TITLE */
+  .title-event-creation {
+    color: #F6D0A5;
 
-      .sport-selection{
-        align-items: center;
-        color: white;
-        margin-bottom: 20px;
-        overflow-x: scroll;
-        width: 90vw;
+    h3 {
+      padding-bottom: 5px;
+      border-bottom: 1px solid #F6D0A5;
+      margin-bottom: 0;
+    }
+  }
 
-        .btn-sport-event{
-          color: #888888;
-          background-color: white;
-          border-radius: 10px;
-          padding: 5px;
-          width: 100%;
-          text-align: left;
-          border: none;
-        }
-        .radio_buttons .col-form-label{
-          display: none;
-          background-color: #888888;
-        }
-        .dropdown-menu {
-          background-color: #888888;
-          border: 1px solid #F6D0A5;
-        }
-        .category-wrapper{
-          display: flex;
-          justify-content: flex-start;
-          column-gap: 10px;
-          padding: 0px 20px 0px 20px;
-          /* overflow-x: scroll;
-          width: 100vw; */
+  /* AVATAR */
+  .avatar-user {
+    padding-left: 15px;
 
-          .category-item{
-            margin: 5px 0;
+    .avatar-event {
+      border-radius: 50%;
+      border: 1px solid #F6D0A5;
+      border-radius: 25px 0px 25px 25px;
+    }
+  }
+}
 
-            .category-selector{
-              position: absolute;
-              transform: scale(0)
-            }
-          }
-        }
+/* FORM */
+.form-new-events {
+  display: flex;
+  justify-content: center;
+  background-color: #414141;
+  padding: 10px;
+}
+
+/* SPORT SELECT */
+.sport-selection{
+  align-items: center;
+  color: white;
+  margin-bottom: 20px;
+  overflow-x: scroll;
+  width: 90vw;
+
+  .btn-sport-event{
+    color: #888888;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+    text-align: left;
+    border: none;
+  }
+  .radio_buttons .col-form-label{
+    display: none;
+    background-color: #888888;
+  }
+  .dropdown-menu {
+    background-color: #888888;
+    border: 1px solid #F6D0A5;
+  }
+  .category-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+    padding: 0px 20px 0px 20px;
+    /* overflow-x: scroll;
+    width: 100vw; */
+
+    .category-item{
+      margin: 5px 0;
+
+      .category-selector{
+        position: absolute;
+        transform: scale(0)
+      }
+      .category-selector + label{
+        cursor: pointer;
+        color: #414141;;
+        background-color: #F6D0A5;
+        border: 1px solid #414141;;
+        border-radius: 25px;
+        padding: 6px;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+      .category-selector:checked + label{
+      color: #F6D0A5;
+      background-color: #414141;;
+      border: 1px solid #F6D0A5;
+      font-weight: bold;
       }
     }
   }
 }
 
-.category-selector + label{
-  cursor: pointer;
-  color: #888888;
-  background-color: #F6D0A5;
-  border: 1px solid #888888;
-  border-radius: 25px;
-  padding: 6px;
-}
-
-.category-selector:checked + label{
-color: #F6D0A5;
-background-color: #888888;
-border: 1px solid #F6D0A5;
-}
-
+/* DATE */
 .select-date .datetime{
   color: #888888;
 }
@@ -106,6 +120,7 @@ border: 1px solid #F6D0A5;
   border-radius: 10px;
 }
 
+/* LOCAL */
 .localisation-event .string .form-control{
   border-radius: 10px;
   color: #888888;
@@ -114,6 +129,7 @@ border: 1px solid #F6D0A5;
   color: #888888;
 }
 
+/* PARTICIPANTS */
 .max-participant-event .integer .form-control{
   border-radius: 10px;
   color: #888888;
@@ -122,14 +138,19 @@ border: 1px solid #F6D0A5;
   color: #888888;
 }
 
-.event-level .form-check .radio_buttons{
+/* LEVEL */
+.event-level .form-check .radio_buttons {
   background-color: #888888;
   border: 1px solid #F6D0A5;
+}
+.event-level .form-check .collection_radio_buttons {
+  color: white;
 }
 .event-level .col-form-label{
   color: #F6D0A5;
 }
 
+/* TITLE */
 .title-event .string .form-control{
   border-radius: 10px;
   color: #888888;
@@ -139,6 +160,7 @@ border: 1px solid #F6D0A5;
   color: #888888;
 }
 
+/* DESCRIPTION */
 .description-event .event_description .form-control{
   border-radius: 10px;
   color: #888888;
@@ -147,14 +169,17 @@ border: 1px solid #F6D0A5;
   color: #888888;
 }
 
+/* IMG */
 .photo-event .file .form-control{
   border-radius: 10px;
   color: #888888;
 }
 
+/* CTA */
 .btn-create-event {
   width: 100%;
-  color: #888888;
+  color: #414141;
   border: none;
   margin-top: 10px;
+  font-weight: bold;
 }

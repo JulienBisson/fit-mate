@@ -36,8 +36,10 @@
 
 
 // label "filtres:"
-.form-label {
+.filter-form .form-label {
   display: none;
+}
+.form-label {
   color: #F6D0A5;
   margin-right: 2vh;
 }
