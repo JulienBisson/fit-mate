@@ -1,0 +1,69 @@
+/* USER-CONNEXION */
+.container-connexion {
+  background-color: #414141;
+}
+
+/* TITLE LOG IN */
+.title-log-in {
+  margin: 10px 0px 20px 0px;
+  color: #F6D0A5;
+}
+
+/* FORM-LOG-IN */
+.form-log-in {
+  /* border: 1px solid black; */
+
+  /* EMAIL */
+  .email-log-in {
+    padding: 10px;
+  }
+  .email-log-in .string {
+    border-radius: 10px;
+    color: #888888;
+  }
+  .email-log-in .string::placeholder {
+    color: #888888;
+  }
+
+  /* PASSWORD */
+  .password-log-in {
+    padding: 10px;
+  }
+  .password-log-in .form-control {
+    border-radius: 10px;
+    color: #888888;
+  }
+  .password-log-in .form-control::placeholder {
+    color: #888888;
+  }
+  .password-log-in .user_remember_me {
+    color: #F6D0A5;
+  }
+  .password-log-in .user_remember_me .form-check-input {
+    border-radius: 10px;
+  }
+
+  /* SUBMIT-LOG-IN */
+  .submit-log-in {
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+  }
+  .form-actions .btn-log-in {
+    color: #F6D0A5;
+    border: 2px solid #F6D0A5;
+    font-weight: bold;
+    border-radius: 25px;
+  }
+
+  /* RENDER */
+  .render-log-in {
+    padding: 20px 0 10px 0;
+    margin: 10px 0 10px 0;
+
+    a {
+      text-decoration: none;
+      color: #F6D0A5;
+    }
+  }
+}

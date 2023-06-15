@@ -1267,6 +1267,11 @@ stimulus-dropdown@^2.1.0:
   dependencies:
     stimulus-use "^0.51.1"
 
+stimulus-places-autocomplete@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/stimulus-places-autocomplete/-/stimulus-places-autocomplete-0.5.0.tgz#a18603ee629ec0944c4adae6b76b3fed515e1e1a"
+  integrity sha512-9cVHWDXlkewELruJlbkNjLm4izybkOnLKQLUX/5F18ht5Dev+4/p+venaTfcHOkX9lyVj1qDz/SAiAjZnLx7tQ==
+
 stimulus-use@^0.51.1:
   version "0.51.3"
   resolved "https://registry.yarnpkg.com/stimulus-use/-/stimulus-use-0.51.3.tgz#d7ac671aff8d0db253296dec89d38aa6f4b27e2a"

@@ -44,8 +44,8 @@
 
     <%# LEVEL %>
     <div class="level-user">
-      <%= @current_user.sport_level %>
       <%= image_tag("#{@current_user.sport_level}.svg", class: "pictogram-levels") %>
+      <%= @current_user.sport_level %>
     </div>
   </div>
 
@@ -57,30 +57,49 @@
 
   <%# FAVORITE-SPORT %>
   <div class="favorite-sport">
-    <h6>Sport favori</h6>
+    <h6 class="favorite-sport-title">Sport favori</h6>
       <button class="btn-favorite-sport">
-        <%= @current_user.favorite_sport %>
+        <a href="/events?query=<%= @current_user.favorite_sport %>"><%= @current_user.favorite_sport.capitalize %></a>
       </button>
   </div>
 
-  <%# EVENEMENT CREER PAR LE USER %>
-  <div class="event-create-user">
-    <h6>Evenement créer</h6>
-      <% @organizer.each do |event| %>
-        <li>
-        <%= event.title %>
-        </li>
-      <% end %>
+  <div class="container-orga-interest">
+    <%# EVENEMENT CREER PAR LE USER %>
+    <div class="event-create-user">
+      <h6>Organise</h6>
+        <% @organizer.each do |event| %>
+          <li>
+            <div><strong><%= event.title %></strong></div>
+            <div><em><%= event.datetime.strftime("%d/%m/%Y") %></em></div>
+          </li>
+        <% end %>
+    </div>
+      <%# EVENEMENT AUQUEL EST INTERESSE LE USER %>
+    <div class="event-interested-user">
+      <h6>Interessé</h6>
+        <% @interested.each do |interested|%>
+          <li>
+            <div><strong><%= interested.event.title %></strong></div>
+            <div><em><%= interested.event.datetime.strftime("%d/%m/%Y") %></em></div>
+          </li>
+        <% end %>
+    </div>
   </div>
 
   <%# EVENEMENT AUQUEL PARTICIPE LE USER %>
   <div class="event-particip-user">
-    <h6>Participation aux évènements</h6>
+    <h6>Participe</h6>
       <% @events.each do |event_participant|%>
         <li>
-        <%= event_participant.event.title %>
+          <div><strong><%= event_participant.event.title %></strong></div>
+          <div><em><%= event_participant.event.datetime.strftime("%d/%m/%Y") %></em></div>
         </li>
       <% end %>
   </div>
-
+<%# Lot out %>
+  <div class="log-out-session">
+    <div class="link-log-out-session">
+      <%= link_to 'Deconnexion' %>
+    </div>
+  </div>
 </div>

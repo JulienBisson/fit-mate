@@ -24,33 +24,32 @@
       <%= cl_image_tag @event.photo.key, class:'image-event' %>
     </div>
 
-    <div class="show-distance">
-      <% wagon_coordinates = [47.21112643898949, -1.5500990500139393] %>
-      <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i><%= Geocoder::Calculations.distance_between(wagon_coordinates,[@event.latitude,@event.longitude]).round(2).to_s %> km from your position
-    </div>
+    <div class="details-events">
 
-    <div class="show-duration-level">
-      <%= @event.event_level %>
-      <%= image_tag("#{@event.event_level}.svg", class: "pictogram-levels") %>
+      <div class="show-distance">
+        <div><% wagon_coordinates = [47.21112643898949, -1.5500990500139393] %></div>
+        <div><%= image_tag("place_small_card.png", class: "icon-map") %></div>
+        <div> à <%= Geocoder::Calculations.distance_between(wagon_coordinates,[@event.latitude,@event.longitude]).round(2).to_s %> km de votre position</div>
+      </div>
+
+      <div class="show-duration-level">
+        <div><%= image_tag("#{@event.event_level}.svg", class: "pictogram-levels") %></div>
+        <div> <%= @event.event_level %></div>
+      </div>
     </div>
 
     <div class="show-description">
       <%= @event.description %>
     </div>
 
-    <div class="show-organizer">
-      <p>Organized by</p>
-      <div class="show-organizer-img d-flex align-items-center justify-content-between">
-        <div class="d-flex align-items-center">
-          <%= cl_image_tag @organizer.photo.key, class:"organizer-img" %>
-          <p class="m-0"><%= @event.organizer.username %></p>
-          </div>
-          <i class="fa-sharp fa-solid fa-share-nodes fa-2xl" style="color: #f6d0a5;"></i>
-        </div>
-      </div>
-
       <div class="show-participant">
-        <p><%= @event.event_participants.participe.count %> / <%= @event.max_participant %> potes sont de la partie</p>
+        <p><%= @event.event_participants.participe.size + 1 %> / <%= @event.max_participant %> potes sont de la partie</p>
+        <%= cl_image_tag @organizer.photo.key, class:"organizer-img" %>
+        <% if @event.organizer.username == "alexia25" || @event.organizer.username == "SarahD" || @event.organizer.username == "LeaR" %>
+          <%= @event.organizer.username %> - Organisatrice
+        <% else %>
+          <%= @event.organizer.username %> - Organisateur
+        <% end %>
         <% @event.event_participants.participe.each do |event_participant| %>
           <div class="show-each-participant">
             <%= cl_image_tag event_participant.user.photo.key, class: 'organizer-img' %>
@@ -93,7 +92,12 @@
                 </button>
               </li>
 
-            <%# 3 - SI LE PARTICIPANT N'A PAS ENCORE REAGI %>
+            <%# 3 - SI LE CURRENT_USER EST L'ORGANISATEUR %>
+
+            <% elsif @organizer.id == current_user.id %>
+              <li><%= button_to "Organisateur ✔️", "#", class: "btn-du-dropdown"%></li>
+
+            <%# 4 - SI LE PARTICIPANT N'A PAS ENCORE REAGI %>
             <% else %>
               <li>
                 <button type="button" class="btn-du-dropdown" data-bs-toggle="modal" data-bs-target="#participeModal">
@@ -112,6 +116,24 @@
           <%= render partial: "shared/interesse_modal" %>
         </div>
       </div>
+
+      <h5 class= "show-info-list-club">Vous voulez rencontrer plus de potes ?</h5>
+      <p class="show-info-list-club-paraf"><em>Voici une liste des clubs à proximité </em></p>
+        <div class="btn-group dropup mt-3 dropdown-list-club">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+            Liste des clubs
+          </button>
+          <ul class="dropdown-menu dropdown-menu-lg-end w-100">
+            <% Sport::LIST_CLUB.each do |club| %>
+              <li>
+                <div class="show-list-club">
+                  <div class="show-list-club-name"><strong><%= club["name"].upcase %></strong></div>
+                  <div class="show-list-club-locality"><%= club["localisation"].capitalize %></div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
     </div>
   </div>
 </div>
