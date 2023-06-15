@@ -65,7 +65,7 @@
 
   <%# EVENEMENT CREER PAR LE USER %>
   <div class="event-create-user">
-    <h6>Evenement créer</h6>
+    <h6>Organise</h6>
       <% @organizer.each do |event| %>
         <li>
         <%= event.title %>
@@ -75,12 +75,11 @@
 
   <%# EVENEMENT AUQUEL PARTICIPE LE USER %>
   <div class="event-particip-user">
-    <h6>Participation aux évènements</h6>
+    <h6>Participe</h6>
       <% @events.each do |event_participant|%>
         <li>
         <%= event_participant.event.title %>
         </li>
       <% end %>
   </div>
-
 </div>
