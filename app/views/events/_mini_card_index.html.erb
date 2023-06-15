@@ -10,7 +10,7 @@
             <%= image_tag("#{event.sport}-1.png", class: "pictogram-sports-card") %>
           </div>
           <div class="icon-people-group">
-            <i class="fa-solid fa-people-group event-icon-group" style="color: ##4B4B4B;"><%= event.users.count %> /<%= event.max_participant %></i>
+            <i class="fa-solid fa-people-group event-icon-group" style="color: ##4B4B4B;"><%= event.event_participants.participe.size + 1 %> /<%= event.max_participant %></i>
           </div>
 
           <div class="d-flex justify-content-between align-items-center">

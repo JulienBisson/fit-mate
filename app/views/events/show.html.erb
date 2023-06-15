@@ -26,7 +26,7 @@
 
     <div class="show-distance">
       <% wagon_coordinates = [47.21112643898949, -1.5500990500139393] %>
-      <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i><%= Geocoder::Calculations.distance_between(wagon_coordinates,[@event.latitude,@event.longitude]).round(2).to_s %> km from your position
+      <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i>à <%= Geocoder::Calculations.distance_between(wagon_coordinates,[@event.latitude,@event.longitude]).round(2).to_s %> km de votre position
     </div>
 
     <div class="show-duration-level">
@@ -38,19 +38,10 @@
       <%= @event.description %>
     </div>
 
-    <div class="show-organizer">
-      <p>Organized by</p>
-      <div class="show-organizer-img d-flex align-items-center justify-content-between">
-        <div class="d-flex align-items-center">
-          <%= cl_image_tag @organizer.photo.key, class:"organizer-img" %>
-          <p class="m-0"><%= @event.organizer.username %></p>
-          </div>
-          <i class="fa-sharp fa-solid fa-share-nodes fa-2xl" style="color: #f6d0a5;"></i>
-        </div>
-      </div>
-
       <div class="show-participant">
-        <p><%= @event.event_participants.participe.count %> / <%= @event.max_participant %> potes sont de la partie</p>
+        <p><%= @event.event_participants.participe.size + 1 %> / <%= @event.max_participant %> potes sont de la partie</p>
+        <%= cl_image_tag @organizer.photo.key, class:"organizer-img" %>
+        <%= @event.organizer.username %> <%= "(organise l'événement)" %>
         <% @event.event_participants.participe.each do |event_participant| %>
           <div class="show-each-participant">
             <%= cl_image_tag event_participant.user.photo.key, class: 'organizer-img' %>
@@ -112,6 +103,6 @@
           <%= render partial: "shared/interesse_modal" %>
         </div>
       </div>
-      </div>
     </div>
+  </div>
 </div>
