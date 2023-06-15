@@ -62,3 +62,18 @@
   background-color: darkgray;
   color: #414141;
 }
+
+.user-info {
+
+  img {
+    margin: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.message-container {
+  position: relative;
+  p {
+    overflow-wrap: break-word
+  }
+}

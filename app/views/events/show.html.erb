@@ -117,8 +117,8 @@
         </div>
       </div>
 
-      <h5 class= show-info-list-club>Vous voulez rencontrer encore plus de potes ?</h5>
-      <em>Voici une liste des clubs à proximité de vous</em>
+      <h5 class= "show-info-list-club">Vous voulez rencontrer encore plus de potes ?</h5>
+      <em>Voici une liste des clubs à proximité </em>
         <div class="btn-group dropup mt-3 dropdown-list-club">
           <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
             Liste des clubs
@@ -127,7 +127,7 @@
             <% Sport::LIST_CLUB.each do |club| %>
               <li>
                 <div class="show-list-club">
-                  <div class="show-list-club-name"><strong><%= club["name"].capitalize %></strong></div>
+                  <div class="show-list-club-name"><strong><%= club["name"].upcase %></strong></div>
                   <div class="show-list-club-locality"><%= club["localisation"].capitalize %></div>
                 </div>
               </li>
