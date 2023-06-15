@@ -379,31 +379,29 @@ EventParticipant.create!(
   user_id: lucas.id,
   event_id: event1.id
 )
+EventParticipant.create!(
+  status: "participe",
+  user_id: sarah.id,
+  event_id: event5.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: maxime.id,
+  event_id: event5.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lucas.id,
+  event_id: event5.id
+)
+EventParticipant.create!(
+  status: "participe",
+  user_id: lea.id,
+  event_id: event5.id
+)
 
 EventParticipant.create!(
   status: "participe",
-  user_id: sarah.id,
-  event_id: event5.id
-)
-EventParticipant.create!(
-  status: "participe",
-  user_id: maxime.id,
-  event_id: event5.id
-)
-EventParticipant.create!(
-  status: "participe",
-  user_id: lucas.id,
-  event_id: event5.id
-)
-EventParticipant.create!(
-  status: "participe",
-  user_id: lea.id,
-  event_id: event5.id
-)
-# autre event_participant
-
-EventParticipant.create!(
-  status: "participe",
   user_id: lea.id,
   event_id: event2.id
 )
@@ -446,21 +444,6 @@ EventParticipant.create!(
   status: "participe",
   user_id: maxime.id,
   event_id: event4.id
-)
-EventParticipant.create!(
-  status: "participe",
-  user_id: sarah.id,
-  event_id: event5.id
-)
-EventParticipant.create!(
-  status: "participe",
-  user_id: lea.id,
-  event_id: event5.id
-)
-EventParticipant.create!(
-  status: "participe",
-  user_id: maxime.id,
-  event_id: event5.id
 )
 EventParticipant.create!(
   status: "participe",
@@ -544,12 +527,12 @@ EventParticipant.create!(
 )
 EventParticipant.create!(
   status: "participe",
-  user_id: lea.id,
+  user_id: lucas.id,
   event_id: event11.id
 )
 EventParticipant.create!(
   status: "participe",
-  user_id: lea.id,
+  user_id: maxime.id,
   event_id: event11.id
 )
 EventParticipant.create!(
