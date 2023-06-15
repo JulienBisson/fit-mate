@@ -143,16 +143,10 @@ padding-bottom: 10px;
   align-items: center;
   margin: 0px 5px 0px 5px;
   .show-list-club-name {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    max-width: 22ch;
+    color: white;
   }
-  .show-list-club-locality  {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    max-width: 14ch;
+  .show-list-club-locality {
+    color: white;
   }
 }
 
