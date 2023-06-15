@@ -88,7 +88,12 @@
                 </button>
               </li>
 
-            <%# 3 - SI LE PARTICIPANT N'A PAS ENCORE REAGI %>
+            <%# 3 - SI LE CURRENT_USER EST L'ORGANISATEUR %>
+
+            <% elsif @organizer.id == current_user.id %>
+              <li><%= button_to "Organisateur ✔️", "#", class: "btn-du-dropdown"%></li>
+
+            <%# 4 - SI LE PARTICIPANT N'A PAS ENCORE REAGI %>
             <% else %>
               <li>
                 <button type="button" class="btn-du-dropdown" data-bs-toggle="modal" data-bs-target="#participeModal">
