@@ -125,11 +125,15 @@ padding-bottom: 10px;
   border-bottom-right-radius: 50px;
 }
 
+.dropup .dropdown-menu[data-bs-popper] {
+  background-color: #F6D0A5;
+}
+
 .dropdown-list-club {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;;
 }
 
 .show-info-list-club {
@@ -141,12 +145,12 @@ padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 5px 0px 5px;
+  margin: 5px 15px 5px 15px;
   .show-list-club-name {
-    color: white;
+    color: #414141;
   }
   .show-list-club-locality {
-    color: white;
+    color: #414141;
   }
 }
 

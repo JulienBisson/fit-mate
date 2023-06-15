@@ -1,11 +1,12 @@
-<div id="message-<%= message.id %>">
-  <small>
+<div id="message-<%= message.id %>" class="message-container">
+  <div class="user-info">
+  <%= cl_image_tag message.user.photo.key, class:"organizer-img" %>
     <strong><span class="username"><%= message.user.username %></span></strong>
-    <i><span class="message-time"><%= message.created_at.strftime("%H:%M:%S") %></span></i>
-    <i><span class="message-separation"><%= "-" %></span></i>
-    <i><span class="message-date"><%= message.created_at.strftime("%Y-%m-%d") %></span></i>
-  </small>
+  </div>
   <p><%= message.content %></p>
+  <small>
+    <i><span class="message-time"><%= message.created_at.strftime("%H:%M") %></span></i>
+  </small>
 </div>
 
 <style>
