@@ -7,6 +7,9 @@ import { application } from "./application"
 import AddressAutocompleteController from "./address_autocomplete_controller"
 application.register("address-autocomplete", AddressAutocompleteController)
 
+import BurgerMenuController from "./burger_menu_controller"
+application.register("burger-menu", BurgerMenuController)
+
 import ChatboxSubscriptionController from "./chatbox_subscription_controller"
 application.register("chatbox-subscription", ChatboxSubscriptionController)
 
@@ -18,9 +21,6 @@ application.register("flatpickr", FlatpickrController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
-import BurgerMenuController from "./burger_menu_controller"
-application.register("burger-menu", BurgerMenuController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
