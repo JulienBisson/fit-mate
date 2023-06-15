@@ -57,20 +57,31 @@
 
   <%# FAVORITE-SPORT %>
   <div class="favorite-sport">
-    <h6>Sport favori</h6>
+    <h6 class="favorite-sport-title">Sport favori</h6>
       <button class="btn-favorite-sport">
-        <%= @current_user.favorite_sport %>
+        <a href="/events?query=<%= @current_user.favorite_sport %>"><%= @current_user.favorite_sport.capitalize %></a>
       </button>
   </div>
 
-  <%# EVENEMENT CREER PAR LE USER %>
-  <div class="event-create-user">
-    <h6>Organise</h6>
-      <% @organizer.each do |event| %>
-        <li>
-        <%= event.title %>
-        </li>
-      <% end %>
+  <div class="container-orga-interest">
+    <%# EVENEMENT CREER PAR LE USER %>
+    <div class="event-create-user">
+      <h6>Organise</h6>
+        <% @organizer.each do |event| %>
+          <li>
+            <%= event.title %>
+          </li>
+        <% end %>
+    </div>
+      <%# EVENEMENT AUQUEL EST INTERESSE LE USER %>
+    <div class="event-interested-user">
+      <h6>Interessé</h6>
+        <% @interested.each do |interested|%>
+          <li>
+          <%= interested.event.title %>
+          </li>
+        <% end %>
+    </div>
   </div>
 
   <%# EVENEMENT AUQUEL PARTICIPE LE USER %>
@@ -82,15 +93,10 @@
         </li>
       <% end %>
   </div>
-
-  <%# EVENEMENT AUQUEL EST INTERESSE LE USER %>
-  <div class="event-interested-user">
-    <h6>Interessé</h6>
-      <% @interested.each do |interested|%>
-        <li>
-        <%= interested.event.title %>
-        </li>
-      <% end %>
+<%# Lot out %>
+  <div class="log-out-session">
+    <div class="link-log-out-session">
+      <%= link_to 'Deconnexion' %>
+    </div>
   </div>
 </div>
-
