@@ -44,8 +44,8 @@
 
     <%# LEVEL %>
     <div class="level-user">
-      <%= @current_user.sport_level %>
       <%= image_tag("#{@current_user.sport_level}.svg", class: "pictogram-levels") %>
+      <%= @current_user.sport_level %>
     </div>
   </div>
 
@@ -82,4 +82,15 @@
         </li>
       <% end %>
   </div>
+
+  <%# EVENEMENT AUQUEL EST INTERESSE LE USER %>
+  <div class="event-interested-user">
+    <h6>Interessé</h6>
+      <% @interested.each do |interested|%>
+        <li>
+        <%= interested.event.title %>
+        </li>
+      <% end %>
+  </div>
 </div>
+
