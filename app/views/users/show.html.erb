@@ -69,7 +69,8 @@
       <h6>Organise</h6>
         <% @organizer.each do |event| %>
           <li>
-            <%= event.title %>
+            <div><strong><%= event.title %></strong></div>
+            <div><em><%= event.datetime.strftime("%d/%m/%Y") %></em></div>
           </li>
         <% end %>
     </div>
@@ -78,7 +79,8 @@
       <h6>Interessé</h6>
         <% @interested.each do |interested|%>
           <li>
-          <%= interested.event.title %>
+            <div><strong><%= interested.event.title %></strong></div>
+            <div><em><%= interested.event.datetime.strftime("%d/%m/%Y") %></em></div>
           </li>
         <% end %>
     </div>
@@ -89,7 +91,8 @@
     <h6>Participe</h6>
       <% @events.each do |event_participant|%>
         <li>
-        <%= event_participant.event.title %>
+          <div><strong><%= event_participant.event.title %></strong></div>
+          <div><em><%= event_participant.event.datetime.strftime("%d/%m/%Y") %></em></div>
         </li>
       <% end %>
   </div>

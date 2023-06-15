@@ -45,7 +45,7 @@
       <div class="show-participant">
         <p><%= @event.event_participants.participe.size + 1 %> / <%= @event.max_participant %> potes sont de la partie</p>
         <%= cl_image_tag @organizer.photo.key, class:"organizer-img" %>
-        <% if @event.organizer.username == "alice25" || @event.organizer.username == "SarahD" || @event.organizer.username == "LeaR" %>
+        <% if @event.organizer.username == "alexia25" || @event.organizer.username == "SarahD" || @event.organizer.username == "LeaR" %>
           <%= @event.organizer.username %> - Organisatrice
         <% else %>
           <%= @event.organizer.username %> - Organisateur
