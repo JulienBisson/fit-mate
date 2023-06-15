@@ -1,0 +1,18 @@
+<div class="modal fade" id="participeModal" tabindex="-1" aria-labelledby="participeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="participeModalLabel">Confirmation</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Confirmer la participation ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-retour-popup" data-bs-dismiss="modal">Retour</button>
+
+        <%= button_to "Confirmer", event_event_participants_path(event_id: @event.id, user_id: current_user.id, status: "participe"), method: :post, class: "btn-du-dropdown" %>
+      </div>
+    </div>
+  </div>
+</div>

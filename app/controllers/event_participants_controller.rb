@@ -22,7 +22,7 @@ class EventParticipantsController < ApplicationController
       @event_participant = EventParticipant.new(user_id: user_id, event_id: event_id, status: status)
 
       if @event_participant.save
-        redirect_to event_path(event_id)
+        redirect_to event_path(event_id), notice: "tezazertyuikjhg"
       else
         render :new
       end

@@ -1,0 +1,19 @@
+<div class="modal fade" id="annuleModal" tabindex="-1" aria-labelledby="annuleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="annuleModalLabel">Annulation</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Annuler ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-retour-popup" data-bs-dismiss="modal">Non</button>
+
+        <%= button_to "Oui", event_delete_participation_path(@event_participant), method: :delete, data: {turbo: "false"}, class: "btn-du-dropdown" %>
+
+      </div>
+    </div>
+  </div>
+</div>
