@@ -24,14 +24,18 @@
       <%= cl_image_tag @event.photo.key, class:'image-event' %>
     </div>
 
-    <div class="show-distance">
-      <% wagon_coordinates = [47.21112643898949, -1.5500990500139393] %>
-      <i class="fa-solid fa-map-location-dot icon-map" style="color: #f6d0a5;"></i>à <%= Geocoder::Calculations.distance_between(wagon_coordinates,[@event.latitude,@event.longitude]).round(2).to_s %> km de votre position
-    </div>
+    <div class="details-events">
 
-    <div class="show-duration-level">
-      <%= @event.event_level %>
-      <%= image_tag("#{@event.event_level}.svg", class: "pictogram-levels") %>
+      <div class="show-distance">
+        <div><% wagon_coordinates = [47.21112643898949, -1.5500990500139393] %></div>
+        <div><%= image_tag("place_small_card.png", class: "icon-map") %></div>
+        <div> à <%= Geocoder::Calculations.distance_between(wagon_coordinates,[@event.latitude,@event.longitude]).round(2).to_s %> km de votre position</div>
+      </div>
+
+      <div class="show-duration-level">
+        <div><%= image_tag("#{@event.event_level}.svg", class: "pictogram-levels") %></div>
+        <div> <%= @event.event_level %></div>
+      </div>
     </div>
 
     <div class="show-description">
