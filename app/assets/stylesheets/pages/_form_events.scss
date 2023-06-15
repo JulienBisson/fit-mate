@@ -121,12 +121,21 @@
 }
 
 /* LOCAL */
-.localisation-event .string .form-control{
+.localisation-event .string .form-control {
   border-radius: 10px;
   color: #888888;
 }
 .localisation-event .string .form-control::placeholder{
   color: #888888;
+}
+.mapboxgl-ctrl-geocoder {
+  border-radius: 10px;
+}
+.mapboxgl-ctrl-geocoder--input {
+  padding: 0.375rem 0.75rem;
+}
+.mapboxgl-ctrl-geocoder--icon-search  {
+  display: none;
 }
 
 /* PARTICIPANTS */
