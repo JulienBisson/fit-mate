@@ -1,7 +1,32 @@
 <div id="message-<%= message.id %>">
   <small>
-    <strong><%= message.user.username %></strong>
-    <i><%= message.created_at.strftime("%Y-%m-%d %H:%M:%S") %></i>
+    <strong><span class="username"><%= message.user.username %></span></strong>
+    <i><span class="message-time"><%= message.created_at.strftime("%H:%M:%S") %></span></i>
+    <i><span class="message-separation"><%= "-" %></span></i>
+    <i><span class="message-date"><%= message.created_at.strftime("%Y-%m-%d") %></span></i>
   </small>
   <p><%= message.content %></p>
 </div>
+
+<style>
+  .username {
+      margin-right: 10px;
+    }
+
+  .message-date {
+    float: right;
+    /* margin-right: 10px; */
+
+  }
+
+.message-separation {
+    float: right;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+  .message-time {
+    float: right;
+  }
+
+</style>
