@@ -18,7 +18,7 @@ User.destroy_all
 puts 'Creating user...'
 
 alexia = User.create!(first_name: "Alexia", last_name: "Nicoleau", username: "alexia25", age: 25,
-  email: "alexia.martin@gmail.com", password: "secret",
+  email: "alexia.nicoleau@gmail.com", password: "secret",
   description: "étudiante en littérature et passionnée de lecture",
   favorite_sport: "yoga", sport_level: "intermediaire")
 
@@ -238,7 +238,7 @@ event13 = Event.create!(
   description: "Prêt à sculpter ton corps de super-héros ? Rejoins notre séance de musculation explosive ! Découvre les incroyables bienfaits du sport sur ta forme et ta santé. Au menu : exercices variés, adaptés à ton niveau, pour travailler tous les muscles et booster ton endurance. Que tu sois débutant ou pro, éclate-toi, défoule-toi et partage un moment convivial de pur bien-être. Viens te déchaîner et repousse tes limites avec nous ! 💪🔥🥳",
   localisation: "Bd Général de Gaulle, 44200 Nantes",
   event_level: "intermediaire",
-  max_participant: 1,
+  max_participant: 5,
   datetime: Date.parse("15-06-2023")
 )
 file = File.open(Rails.root.join("db/images/musculation.jpg"))
@@ -252,7 +252,7 @@ event14 = Event.create!(
   description: "Prêt à relever le défi du tatami ? Rejoignez notre séance de judo survoltée ! Découvrez les sensations uniques du sport de combat le plus pratiqué en France. Au programme : exercices variés, adaptés à ton niveau, pour solliciter tous les muscles et améliorer ton équilibre. Le but du jeu ? Maîtriser ton adversaire en utilisant des techniques de projection, d'immobilisation, d'étranglement ou de clé. Que tu sois débutant ou confirmé, viens t'amuser, te dépasser et partager un moment de respect et de discipline. Prépare-toi à briller sur le tatami avec nous ! 🥋💥👊",
   localisation: "Palais des Sports de Beaulieu, Rue André Tardieu, 44200 Nantes",
   event_level: "intermediaire",
-  max_participant: 3,
+  max_participant: 4,
   datetime: Date.parse("23-06-2023")
 )
 file = File.open(Rails.root.join("db/images/judo.jpg"))
@@ -266,7 +266,7 @@ event15 = Event.create!(
   description: "Plongez dans une aventure tennistique palpitante ! Rejoignez-nous pour un match enflammé de tennis en duo, où l'excitation est à son comble. Affrontez vos adversaires lors de rencontres amicales survoltées. Peu importe votre niveau, venez vous éclater, vous déchaîner et vivre des sensations fortes dans une ambiance de fair-play et de respect. Faites résonner les courts de vos smashes et de vos services, et triomphez avec style. Préparez-vous à créer des souvenirs mémorables et à repousser vos limites dans cette compétition tennistique effervescente ! 🎾💥🏆",
   localisation: "Rue des Champs Garnier, 44400 Rezé",
   event_level: "débutant",
-  max_participant: 3,
+  max_participant: 4,
   datetime: Date.parse("24-06-2023")
 )
 file = File.open(Rails.root.join("db/images/tennis.jpg"))
@@ -577,11 +577,7 @@ EventParticipant.create!(
   user_id: lea.id,
   event_id: event16.id
 )
-EventParticipant.create!(
-  status: "participe",
-  user_id: lucas.id,
-  event_id: event16.id
-)
+
 EventParticipant.create!(
   status: "participe",
   user_id: maxime.id,
