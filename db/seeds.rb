@@ -87,8 +87,8 @@ event1 = Event.create!(
   max_participant: 6,
   datetime: Date.parse("21-06-2023")
 )
-file = File.open(Rails.root.join("db/images/yoga.jpg"))
-event1.photo.attach(io: file, filename: "yoga.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/yoga.png"))
+event1.photo.attach(io: file, filename: "yoga.png", content_type: "image/png")
 event1.save!
 
 event2 = Event.create!(
@@ -101,8 +101,8 @@ event2 = Event.create!(
   max_participant: 7,
   datetime: Date.parse("17-06-2023")
 )
-file = File.open(Rails.root.join("db/images/fitness.jpg"))
-event2.photo.attach(io: file, filename: "fitness.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/fitness.png"))
+event2.photo.attach(io: file, filename: "fitness.png", content_type: "image/png")
 event2.save!
 
 event3 = Event.create!(
@@ -143,8 +143,8 @@ event5 = Event.create!(
   max_participant: 8,
   datetime: Date.parse("24-06-2023")
 )
-file = File.open(Rails.root.join("db/images/basketball.jpg"))
-event5.photo.attach(io: file, filename: "basketball.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/images/basketball.png"))
+event5.photo.attach(io: file, filename: "basketball.png", content_type: "image/png")
 event5.save!
 
 event6 = Event.create!(
