@@ -402,6 +402,11 @@ EventParticipant.create!(
   event_id: event2.id
 )
 EventParticipant.create!(
+  status: "intéressé",
+  user_id: julien.id,
+  event_id: event2.id
+)
+EventParticipant.create!(
   status: "participe",
   user_id: lea.id,
   event_id: event3.id
