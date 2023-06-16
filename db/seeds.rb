@@ -448,11 +448,6 @@ EventParticipant.create!(
 )
 EventParticipant.create!(
   status: "participe",
-  user_id: lea.id,
-  event_id: event6.id
-)
-EventParticipant.create!(
-  status: "participe",
   user_id: lucas.id,
   event_id: event7.id
 )
