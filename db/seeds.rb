@@ -180,7 +180,7 @@ event8 = Event.create!(
   sport: 'paddle',
   title: "Paddle à Beautour",
   description: "Préparez-vous à pagayer, éclabousser et rire à volonté lors d'une session de paddle sur la Sèvre, au sud de Nantes ! Rejoignez-nous pour un événement délirant où vous glisserez sur les eaux pittoresques. Que vous soyez débutant ou expert, cette invitation est pour tous les aventuriers. Équilibrez-vous, vacillez et laissez-vous surprendre par quelques plongeons inattendus (pas de souci, c'est tout le charme de l'aventure !). Alors, préparez votre crème solaire, libérez votre esprit paddle et venez vous amuser avec nous lors d'une journée mémorable de rires, d'éclaboussures et de paddle sur la Sèvre, au sud de Nantes !",
-  localisation: "Rue du Calvaire 18, 44000 Nantes",
+  localisation: "18 rue du Calvaire, 44000 Nantes",
   event_level: "intermediaire",
   max_participant: 5,
   datetime: Date.parse("18-06-2023")
@@ -208,7 +208,7 @@ event11 = Event.create!(
   sport: 'badminton',
   title: "A vos volants",
   description: "Préparez-vous à smasher, glisser et faire la fête comme jamais lors de notre soirée de badminton déjantée ! Rejoignez-nous pour un événement hilarant où vous pourrez brandir vos raquettes avec style et vous tordre de rire. Que vous soyez un pro du badminton ou un novice intrépide, cette soirée est placée sous le signe des échanges loufoques, des ratés spectaculaires et des mouvements de danse décalés. Attendez-vous à des coups délirants, des plongeons déjantés et des éclats de rire à n'en plus finir. Alors, attrapez votre raquette, mettez votre plus beau sourire et préparez-vous à une soirée de folie badmintonesque qui vous laissera des souvenirs mémorables !",
-  localisation: "20 rue de la Saint-Médard, 44300 Nantes",
+  localisation: "20 Rue Saint-Médard, 44300 Nantes",
   event_level: "intermediaire",
   max_participant: 5,
   datetime: Date.parse("26-06-2023")
@@ -236,7 +236,7 @@ event13 = Event.create!(
   sport: 'musculation',
   title: "Séance de musculation",
   description: "Prêt à sculpter ton corps de super-héros ? Rejoins notre séance de musculation explosive ! Découvre les incroyables bienfaits du sport sur ta forme et ta santé. Au menu : exercices variés, adaptés à ton niveau, pour travailler tous les muscles et booster ton endurance. Que tu sois débutant ou pro, éclate-toi, défoule-toi et partage un moment convivial de pur bien-être. Viens te déchaîner et repousse tes limites avec nous ! 💪🔥🥳",
-  localisation: "Bd Général de Gaulle, 44200 Nantes",
+  localisation: "3 Rue René Viviani, 44200 Nantes",
   event_level: "intermediaire",
   max_participant: 5,
   datetime: Date.parse("15-06-2023")
