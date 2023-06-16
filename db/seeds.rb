@@ -92,13 +92,13 @@ event1.photo.attach(io: file, filename: "yoga.jpg", content_type: "image/jpeg")
 event1.save!
 
 event2 = Event.create!(
-  organizer_id: alexia.id,
+  organizer_id: lea.id,
   sport: 'fitness',
   title: "Fitness au Loiry",
   description: "Préparez-vous à une séance de fitness démentielle ! Découvrez les bienfaits du sport sur votre forme et votre santé. Au menu : exercices variés, adaptés à tous les niveaux, pour renforcer chaque muscle et booster votre endurance. Débutant ou pro, éclatez-vous, défoulez-vous et partagez une ambiance conviviale et bienfaisante. Rejoignez-nous pour un pur moment de plaisir et de bien-être ! 💪🔥🥳 ",
   localisation: "Bd Guichet Serex, 44120 Vertou",
   event_level: "débutant",
-  max_participant: 4,
+  max_participant: 7,
   datetime: Date.parse("17-06-2023")
 )
 file = File.open(Rails.root.join("db/images/fitness.jpg"))
@@ -134,7 +134,7 @@ event4.photo.attach(io: file, filename: "football.jpg", content_type: "image/jpe
 event4.save!
 
 event5 = Event.create!(
-  organizer_id: julien.id,
+  organizer_id: lucas.id,
   sport: 'basketball',
   title: "All Star Games",
   description: "Prêt à faire vibrer le parquet ? Rejoignez-nous pour une partie de basketball survoltée ! Découvrez les sensations du sport collectif le plus joué en salle. Au menu : des matchs amicaux entre deux équipes de cinq joueurs. Que vous soyez débutant ou pro, amusez-vous, dépensez-vous et partagez un moment de fair-play et de respect. Prenez part à l'action et montrez vos talents de basketteur ! 🏀🔥😎 ",
@@ -188,20 +188,6 @@ event8 = Event.create!(
 file = File.open(Rails.root.join("db/images/paddle.jpg"))
 event8.photo.attach(io: file, filename: "paddle.jpg", content_type: "image/jpeg")
 event8.save!
-
-event9 = Event.create!(
-  organizer_id: julien.id,
-  sport: 'basketball',
-  title: "Basketball Friendzy",
-  description: "Prêt à déchaîner votre talent basketteur ? Rejoignez-nous pour une partie endiablée de basketball ! Plongez dans les sensations du sport collectif le plus populaire en salle. Au programme : des matchs amicaux, deux équipes de cinq joueurs. Peu importe votre niveau, venez vous éclater, vous dépenser et partager un moment de fair-play et de respect. Enflammez le terrain et laissez briller votre esprit d'équipe ! 🏀🔥💪",
-  localisation: "Rue des Dervallières, 44100 Nantes",
-  event_level: "intermediaire",
-  max_participant: 9,
-  datetime: Date.parse("01-07-2023")
-)
-file = File.open(Rails.root.join("db/images/basketball.jpg"))
-event9.photo.attach(io: file, filename: "basketball.jpg", content_type: "image/jpeg")
-event9.save!
 
 event10 = Event.create!(
   organizer_id: maxime.id,
@@ -262,7 +248,7 @@ event13.save!
 event14 = Event.create!(
   organizer_id: lea.id,
   sport: 'judo',
-  title: "Judo Mania: Domination Totale!",
+  title: "Tatami mania",
   description: "Prêt à relever le défi du tatami ? Rejoignez notre séance de judo survoltée ! Découvrez les sensations uniques du sport de combat le plus pratiqué en France. Au programme : exercices variés, adaptés à ton niveau, pour solliciter tous les muscles et améliorer ton équilibre. Le but du jeu ? Maîtriser ton adversaire en utilisant des techniques de projection, d'immobilisation, d'étranglement ou de clé. Que tu sois débutant ou confirmé, viens t'amuser, te dépasser et partager un moment de respect et de discipline. Prépare-toi à briller sur le tatami avec nous ! 🥋💥👊",
   localisation: "Palais des Sports de Beaulieu, Rue André Tardieu, 44200 Nantes",
   event_level: "intermediaire",
@@ -290,7 +276,7 @@ event15.save!
 event16 = Event.create!(
   organizer_id: sarah.id,
   sport: 'natation',
-  title: "Dive into the Swim Zone! ",
+  title: "Swim Zone! ",
   description: "Joignez-vous à notre séance aquatique sensationnelle où la natation règne en maître. Découvrez les bienfaits incomparables de ce sport aquatique. Au programme : des exercices variés adaptés à tous les niveaux, qui sollicitent tous les muscles et boostent votre endurance. Que vous soyez débutant ou confirmé, plongez dans l'amusement, l'effort et partagez un moment de détente et de bien-être absolu. Rejoignez-nous pour une expérience aquatique qui fera des vagues de plaisir et de rafraîchissement !",
   localisation: "Allée de l'Île Gloriette, 44000 Nantes",
   event_level: "débutant",
@@ -402,7 +388,7 @@ EventParticipant.create!(
 
 EventParticipant.create!(
   status: "participe",
-  user_id: lea.id,
+  user_id: sarah.id,
   event_id: event2.id
 )
 EventParticipant.create!(
@@ -490,21 +476,7 @@ EventParticipant.create!(
   user_id: lea.id,
   event_id: event8.id
 )
-EventParticipant.create!(
-  status: "participe",
-  user_id: sarah.id,
-  event_id: event9.id
-)
-EventParticipant.create!(
-  status: "participe",
-  user_id: lucas.id,
-  event_id: event9.id
-)
-EventParticipant.create!(
-  status: "participe",
-  user_id: lea.id,
-  event_id: event9.id
-)
+
 EventParticipant.create!(
   status: "participe",
   user_id: maxime.id,
@@ -705,10 +677,7 @@ Chatbox.create!(
   event_id: event8.id,
   name: event8.title
 )
-Chatbox.create!(
-  event_id: event9.id,
-  name: event9.title
-)
+
 Chatbox.create!(
   event_id: event10.id,
   name: event10.title
